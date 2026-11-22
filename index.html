@@ -531,7 +531,7 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <script>
 (function(){
 var KEY='anprovilla-v2',OLD='anprovilla-v1';
@@ -591,7 +591,7 @@ function save(){
  try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}
  cloudPush();}
 function cst(t,ok){var e=$('cst');if(!e)return;e.hidden=!t;e.textContent=t||'';e.style.color=ok?'var(--ok)':'#e5484d';}
-function cloudWrite(){var c=Object.assign({},S);delete c.covers;return fbDb.collection('users').doc(USER).set({d:JSON.stringify(c),u:S.u||0}).then(function(){cst('☁ guardado en la nube ✓',true);},function(e){cst('☁ ✕ no guarda: '+((e&&e.code)||'error'));throw e;});}
+function cloudWrite(){var c=Object.assign({},S);delete c.covers;return withTO(fbDb.ref('users/'+USER).set({d:JSON.stringify(c),u:S.u||0}),8000).then(function(){cst('☁ guardado en la nube ✓',true);},function(e){cst('☁ ✕ no guarda: '+((e&&e.code)||'error'));throw e;});}
 function cloudPush(){
  if(!CLOUD||!USER||!cloudOK||applying)return;
  clearTimeout(pushT);pend=true;
@@ -753,39 +753,49 @@ function dayState(k){
 var GUEST='anprovilla-v2',SK='anprovilla-session',AK='anprovilla-accts',USER='',UL='',mode='in';
 /* ===== SINCRONIZACIÓN EN LA NUBE (Firebase) =====
    Pega aquí la configuración de tu proyecto de Firebase (Configuración del proyecto > Tus apps > Web). */
-var FBCFG={apiKey:'AIzaSyBEx30zp3PZ1n53NkxNSZFIl8Pcm5hrkzQ',authDomain:'thenewpiece-f80de.firebaseapp.com',projectId:'thenewpiece-f80de',appId:'1:95339495777:web:e61b1835e264c02feb8520'};
+var FBCFG={apiKey:'AIzaSyBEx30zp3PZ1n53NkxNSZFIl8Pcm5hrkzQ',authDomain:'thenewpiece-f80de.firebaseapp.com',projectId:'thenewpiece-f80de',appId:'1:95339495777:web:e61b1835e264c02feb8520',
+ /* Pega aquí la URL de tu Realtime Database (Firebase > Realtime Database, arriba del todo) */
+ databaseURL:'https://thenewpiece-f80de-default-rtdb.europe-west1.firebasedatabase.app'};
 var CLOUD=false,fbAuth=null,fbDb=null,unsub=null,CERR='';
 try{
  if(!window.firebase)CERR='no se pudo cargar el SDK de Firebase (sin conexión o bloqueado por una extensión/red)';
  else if(!window.firebase.auth)CERR='no se cargó el módulo de autenticación de Firebase';
- else if(!window.firebase.firestore)CERR='no se cargó el módulo Firestore de Firebase';
  else if(!FBCFG.apiKey||FBCFG.apiKey.indexOf('PEGA')>-1)CERR='la configuración de Firebase está sin rellenar';
- else{firebase.initializeApp(FBCFG);fbAuth=firebase.auth();fbDb=firebase.firestore();CLOUD=true;}
+ else{
+  var cfg=Object.assign({},FBCFG);if(!cfg.databaseURL||cfg.databaseURL.indexOf('PEGA')>-1)delete cfg.databaseURL;
+  firebase.initializeApp(cfg);fbAuth=firebase.auth();CLOUD=true;
+  if(cfg.databaseURL&&window.firebase.database)fbDb=firebase.database();
+ }
 }catch(e){CLOUD=false;CERR=String((e&&e.message)||e);}
+function withTO(p,ms){return new Promise(function(res,rej){var t=setTimeout(function(){rej({code:'tiempo agotado: revisa la databaseURL y las reglas'});},ms);p.then(function(v){clearTimeout(t);res(v);},function(e){clearTimeout(t);rej(e);});});}
 if(CLOUD)$('anote').textContent='Tu cuenta y tus datos se guardan en la nube: entra con el mismo correo o con Google desde el móvil, el PC o donde quieras.';
 function fbErr(e){var m={'auth/email-already-in-use':'Ya existe una cuenta con ese correo. Inicia sesión.','auth/invalid-credential':'Correo o contraseña incorrectos.','auth/wrong-password':'Contraseña incorrecta.','auth/user-not-found':'No existe ninguna cuenta con ese correo.','auth/weak-password':'La contraseña debe tener al menos 6 caracteres.','auth/invalid-email':'Escribe un correo válido.','auth/network-request-failed':'Sin conexión. Inténtalo de nuevo.','auth/operation-not-allowed':'Este método de acceso no está activado en Firebase.','auth/unauthorized-domain':'Esta web no está autorizada en Firebase (Authentication > Configuración > Dominios autorizados).','auth/too-many-requests':'Demasiados intentos. Espera un poco.'};return m[e&&e.code]||('Error: '+((e&&e.code)||'desconocido'));}
 function listen(uid){
  if(unsub){unsub();unsub=null;}
- unsub=fbDb.collection('users').doc(uid).onSnapshot(function(sn){
-  if(sn.metadata.hasPendingWrites||!sn.exists)return;
-  var d=sn.data();if((d.u||0)<=(S.u||0))return;
+ var ref=fbDb.ref('users/'+uid),cb=function(sn){
+  var d=sn.val();if(!d||!d.d)return;
+  if((d.u||0)<=(S.u||0))return;
   var cv=S.covers;applying=true;
   try{S=Object.assign(defaults(),JSON.parse(d.d));S.u=d.u;if(cv)S.covers=cv;}catch(e){applying=false;return;}
-  lastJ=sjson();save();applying=false;render();},function(){});}
+  lastJ=sjson();save();applying=false;render();};
+ ref.on('value',cb,function(){});
+ unsub=function(){ref.off('value',cb);};}
 function cloudIn(u){
  var gs=S,wasGuest=!USER;
  USER=u.uid;UL=u.email||u.displayName||'usuario';KEY='anprovilla-u-'+u.uid;cloudOK=false;
  var lc=null;try{lc=(JSON.parse(localStorage.getItem(KEY))||{}).covers;}catch(e){}
- updLogin();cst('☁ conectando… (v3)',true);
- fbDb.collection('users').doc(u.uid).get().then(function(sn){
+ updLogin();
+ if(!fbDb){applying=false;S=defaults();load();lastJ=sjson();SELD=CT;render();cst('☁ ✕ falta la databaseURL de la base de datos (v4)');return;}
+ cst('☁ conectando… (v4)',true);
+ withTO(fbDb.ref('users/'+u.uid).once('value'),8000).then(function(sn){
   applying=true;
   var lcS=null;try{lcS=JSON.parse(localStorage.getItem(KEY));}catch(e){}
-  var cu=sn.exists?(sn.data().u||0):-1;
-  if(sn.exists&&!(lcS&&(lcS.u||0)>cu)){try{S=Object.assign(defaults(),JSON.parse(sn.data().d));S.u=cu;}catch(e){S=defaults();}lastJ=sjson();}
+  var rv=sn.val(),ex=!!(rv&&rv.d),cu=ex?(rv.u||0):-1;
+  if(ex&&!(lcS&&(lcS.u||0)>cu)){try{S=Object.assign(defaults(),JSON.parse(rv.d));S.u=cu;}catch(e){S=defaults();}lastJ=sjson();}
   else{S=Object.assign(defaults(),lcS||(wasGuest?gs:{}));lastJ='';}
   if(lc)S.covers=lc;
   if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
-  applying=false;cloudOK=true;cst('☁ sincronizado ✓ (v3)',true);save();SELD=CT;render();listen(u.uid);
+  applying=false;cloudOK=true;cst('☁ sincronizado ✓ (v4)',true);save();SELD=CT;render();listen(u.uid);
  }).catch(function(e){
   applying=false;cloudOK=false;S=defaults();load();lastJ=sjson();SELD=CT;render();
   cst('☁ ✕ no se puede leer la nube: '+((e&&e.code)||'error'));
