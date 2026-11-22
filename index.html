@@ -445,13 +445,15 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
   <div class="ac">
     <h2 id="at">Iniciar sesión</h2>
     <p class="sub">Tus hábitos, puntos y recordatorios se guardan en tu cuenta.</p>
-    <div class="tabs"><button id="tin" class="on">Iniciar sesión</button><button id="tup">Crear cuenta</button></div>
+    <button class="btn" id="agg" style="background:#fff;color:#1f1f1f;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:10px"><span style="font-weight:800;font-size:18px;color:#4285f4">G</span> Continuar con Google</button>
+    <p class="note" style="text-align:center">o con tu correo</p>
+    <div class="tabs"><button id="atin" class="on">Iniciar sesión</button><button id="tup">Crear cuenta</button></div>
     <input type="email" id="aem" placeholder="Correo electrónico" autocomplete="email" aria-label="Correo electrónico">
     <input type="password" id="apw" placeholder="Contraseña (mínimo 6 caracteres)" autocomplete="current-password" aria-label="Contraseña">
     <p class="err" id="aerr" role="alert"></p>
     <button class="btn" id="ago">Iniciar sesión</button>
     <button class="x" id="acl">Cancelar</button>
-    <p class="note">Las cuentas se guardan solo en este dispositivo y navegador, no se sincronizan entre dispositivos.</p>
+    <p class="note" id="anote">Las cuentas se guardan solo en este dispositivo y navegador, no se sincronizan entre dispositivos.</p>
   </div>
 </div>
 <div class="win" id="pledge" role="dialog" aria-modal="true" aria-labelledby="pt" hidden>
@@ -466,6 +468,9 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
 <canvas id="fx" aria-hidden="true"></canvas>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
 (function(){
 var KEY='anprovilla-v2',OLD='anprovilla-v1';
@@ -517,7 +522,17 @@ function ds(d){d=d||new Date();return d.getFullYear()+'-'+String(d.getMonth()+1)
 function ago(n){var d=new Date();d.setDate(d.getDate()-n);return d;}
 var T=ds(),Y=ds(ago(1));
 function load(){try{var r=localStorage.getItem(KEY);if(r){S=Object.assign(S,JSON.parse(r));return;}var o=KEY==='anprovilla-v2'?localStorage.getItem(OLD):null;if(o){var p=JSON.parse(o);S.streak=p.streak||0;S.best=S.streak;S.points=p.points||0;S.last=p.last||'';S.owned=p.owned||{};S.habits=(p.habits||[]).map(function(h){return {id:Math.random().toString(36).slice(2),name:h.name,emoji:'🎯',done:h.done||''};});if(S.last)S.hist=[S.last];}}catch(e){}}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+var lastJ='',applying=false,pushT=0,cloudOK=false;
+function sjson(){var c=Object.assign({},S);delete c.u;return JSON.stringify(c);}
+function save(){
+ if(!applying){var j=sjson();if(j!==lastJ){S.u=Date.now();lastJ=j;}}
+ try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}
+ cloudPush();}
+function cloudPush(){
+ if(!CLOUD||!USER||!cloudOK||applying)return;
+ clearTimeout(pushT);
+ pushT=setTimeout(function(){var c=Object.assign({},S);delete c.covers;
+  fbDb.collection('users').doc(USER).set({d:JSON.stringify(c),u:S.u||0}).catch(function(){toast('No se pudo sincronizar. Revisa tu conexión.');});},700);}
 var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');},2400);}
 function doneToday(){return S.habits.filter(function(h){return h.done===T;}).length;}
 function readToday(){return S.reads.filter(function(r){return r.date===T;}).reduce(function(a,r){return a+r.pages;},0);}
@@ -665,7 +680,48 @@ function dayState(k){
  if(ns.some(function(r){return r.d===2;})||k<CT)return ' bad';
  return '';
 }
-var GUEST='anprovilla-v2',SK='anprovilla-session',AK='anprovilla-accts',USER='',mode='in';
+var GUEST='anprovilla-v2',SK='anprovilla-session',AK='anprovilla-accts',USER='',UL='',mode='in';
+/* ===== SINCRONIZACIÓN EN LA NUBE (Firebase) =====
+   Pega aquí la configuración de tu proyecto de Firebase (Configuración del proyecto > Tus apps > Web). */
+var FBCFG={apiKey:'AIzaSyBEx30zp3PZ1n53NkxNSZFIl8Pcm5hrkzQ',authDomain:'thenewpiece-f80de.firebaseapp.com',projectId:'thenewpiece-f80de',appId:'1:95339495777:web:e61b1835e264c02feb8520'};
+var CLOUD=false,fbAuth=null,fbDb=null,unsub=null,CERR='';
+try{
+ if(!window.firebase)CERR='no se pudo cargar el SDK de Firebase (sin conexión o bloqueado por una extensión/red)';
+ else if(!window.firebase.auth)CERR='no se cargó el módulo de autenticación de Firebase';
+ else if(!window.firebase.firestore)CERR='no se cargó el módulo Firestore de Firebase';
+ else if(!FBCFG.apiKey||FBCFG.apiKey.indexOf('PEGA')>-1)CERR='la configuración de Firebase está sin rellenar';
+ else{firebase.initializeApp(FBCFG);fbAuth=firebase.auth();fbDb=firebase.firestore();CLOUD=true;}
+}catch(e){CLOUD=false;CERR=String((e&&e.message)||e);}
+if(CLOUD)$('anote').textContent='Tu cuenta y tus datos se guardan en la nube: entra con el mismo correo o con Google desde el móvil, el PC o donde quieras.';
+function fbErr(e){var m={'auth/email-already-in-use':'Ya existe una cuenta con ese correo. Inicia sesión.','auth/invalid-credential':'Correo o contraseña incorrectos.','auth/wrong-password':'Contraseña incorrecta.','auth/user-not-found':'No existe ninguna cuenta con ese correo.','auth/weak-password':'La contraseña debe tener al menos 6 caracteres.','auth/invalid-email':'Escribe un correo válido.','auth/network-request-failed':'Sin conexión. Inténtalo de nuevo.','auth/operation-not-allowed':'Este método de acceso no está activado en Firebase.','auth/unauthorized-domain':'Esta web no está autorizada en Firebase (Authentication > Configuración > Dominios autorizados).','auth/too-many-requests':'Demasiados intentos. Espera un poco.'};return m[e&&e.code]||('Error: '+((e&&e.code)||'desconocido'));}
+function listen(uid){
+ if(unsub){unsub();unsub=null;}
+ unsub=fbDb.collection('users').doc(uid).onSnapshot(function(sn){
+  if(sn.metadata.hasPendingWrites||!sn.exists)return;
+  var d=sn.data();if((d.u||0)<=(S.u||0))return;
+  var cv=S.covers;applying=true;
+  try{S=Object.assign(defaults(),JSON.parse(d.d));S.u=d.u;if(cv)S.covers=cv;}catch(e){applying=false;return;}
+  lastJ=sjson();save();applying=false;render();},function(){});}
+function cloudIn(u){
+ var gs=S,wasGuest=!USER;
+ USER=u.uid;UL=u.email||u.displayName||'usuario';KEY='anprovilla-u-'+u.uid;cloudOK=false;
+ var lc=null;try{lc=(JSON.parse(localStorage.getItem(KEY))||{}).covers;}catch(e){}
+ updLogin();
+ fbDb.collection('users').doc(u.uid).get().then(function(sn){
+  applying=true;
+  if(sn.exists){try{S=Object.assign(defaults(),JSON.parse(sn.data().d));S.u=sn.data().u||0;}catch(e){S=defaults();}lastJ=sjson();}
+  else{S=Object.assign(defaults(),wasGuest?gs:{});lastJ='';}
+  if(lc)S.covers=lc;
+  if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
+  applying=false;cloudOK=true;save();SELD=CT;render();listen(u.uid);
+ }).catch(function(){
+  applying=false;cloudOK=false;S=defaults();load();lastJ=sjson();SELD=CT;render();
+  toast('Sin conexión: se muestran los datos guardados en este dispositivo.');});}
+function cloudOut(){
+ if(unsub){unsub();unsub=null;}
+ cloudOK=false;USER='';UL='';KEY=GUEST;S=defaults();load();lastJ=sjson();
+ if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
+ SELD=CT;render();updLogin();}
 function accts(){try{return JSON.parse(localStorage.getItem(AK))||{};}catch(e){return {};}}
 function hex(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return x.toString(16).padStart(2,'0');}).join('');}
 function hashPw(pw,salt){var enc=new TextEncoder();return crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveBits']).then(function(k){return crypto.subtle.deriveBits({name:'PBKDF2',salt:enc.encode(salt),iterations:100000,hash:'SHA-256'},k,256);}).then(hex);}
@@ -673,16 +729,16 @@ function updLogin(){$('login').textContent=USER?'Salir':'Iniciar sesión';}
 function switchTo(email){
  USER=email;KEY=email?'anprovilla-u-'+email:GUEST;
  try{if(email)localStorage.setItem(SK,email);else localStorage.removeItem(SK);}catch(e){}
- S=defaults();load();if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
+ S=defaults();load();lastJ=sjson();if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
  save();SELD=CT;render();updLogin();
 }
-function setMode(m){mode=m;$('tin').classList.toggle('on',m==='in');$('tup').classList.toggle('on',m==='up');var t=m==='up'?'Crear cuenta':'Iniciar sesión';$('at').textContent=t;$('ago').textContent=t;$('apw').autocomplete=m==='up'?'new-password':'current-password';$('aerr').textContent='';}
+function setMode(m){mode=m;$('atin').classList.toggle('on',m==='in');$('tup').classList.toggle('on',m==='up');var t=m==='up'?'Crear cuenta':'Iniciar sesión';$('at').textContent=t;$('ago').textContent=t;$('apw').autocomplete=m==='up'?'new-password':'current-password';$('aerr').textContent='';}
 function authDone(em,m){$('auth').hidden=true;$('apw').value='';$('aerr').textContent='';switchTo(em);toast(m);}
 $('login').onclick=function(){
- if(USER){switchTo('');toast('Sesión cerrada');return;}
+ if(USER){if(CLOUD)fbAuth.signOut();else switchTo('');toast('Sesión cerrada');return;}
  setMode('in');$('auth').hidden=false;$('aem').focus();
 };
-$('tin').onclick=function(){setMode('in');};
+$('atin').onclick=function(){setMode('in');};
 $('tup').onclick=function(){setMode('up');};
 $('acl').onclick=function(){$('auth').hidden=true;};
 $('auth').addEventListener('click',function(e){if(e.target===this)this.hidden=true;});
@@ -690,6 +746,10 @@ $('ago').onclick=function(){
  var em=$('aem').value.trim().toLowerCase(),pw=$('apw').value,er=$('aerr');
  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){er.textContent='Escribe un correo válido.';return;}
  if(pw.length<6){er.textContent='La contraseña debe tener al menos 6 caracteres.';return;}
+ if(CLOUD){
+  var pr=mode==='up'?fbAuth.createUserWithEmailAndPassword(em,pw):fbAuth.signInWithEmailAndPassword(em,pw);
+  pr.then(function(){$('auth').hidden=true;$('apw').value='';er.textContent='';toast(mode==='up'?'Cuenta creada. ¡Bienvenido!':'Sesión iniciada');}).catch(function(e){er.textContent=fbErr(e);});
+  return;}
  if(!window.crypto||!crypto.subtle){er.textContent='Tu navegador no permite crear cuentas aquí.';return;}
  var A=accts();
  if(mode==='up'){
@@ -702,6 +762,16 @@ $('ago').onclick=function(){
  }
 };
 $('apw').addEventListener('keydown',function(e){if(e.key==='Enter')$('ago').click();});
+$('agg').onclick=function(){
+ var er=$('aerr');er.textContent='';
+ if(!CLOUD){er.textContent='Firebase no está activo (v2): '+(CERR||'motivo desconocido')+'.';return;}
+ var gp=new firebase.auth.GoogleAuthProvider();
+ fbAuth.signInWithPopup(gp).then(function(){$('auth').hidden=true;$('apw').value='';toast('Sesión iniciada');}).catch(function(e){
+  var c=e&&e.code;
+  if(c==='auth/popup-blocked'||c==='auth/operation-not-supported-in-this-environment'){fbAuth.signInWithRedirect(gp);return;}
+  if(c==='auth/popup-closed-by-user'||c==='auth/cancelled-popup-request')return;
+  er.textContent=fbErr(e);});
+};
 var STK='anprovilla-style';
 function setStyle(v,keep){if(v)document.documentElement.setAttribute('data-style',v);else document.documentElement.removeAttribute('data-style');$('stl').value=v||'';syncDD();if(keep){try{localStorage.setItem(STK,v);}catch(e){}}}
 var PREV='',PBACK='';
@@ -785,7 +855,7 @@ function tcmd(raw){tout('C:\\Anprovilla>'+raw);var c=raw.trim();if(!c)return;var
  else if(k==='puntos')tout(S.points+' puntos');
  else if(k==='racha')tout(S.streak+' días de racha (mejor: '+S.best+')');
  else if(k==='habitos'||k==='hábitos')tout(doneToday()+' de '+S.habits.length+' hábitos cumplidos hoy');
- else if(k==='whoami')tout(USER||'invitado');
+ else if(k==='whoami')tout(UL||USER||'invitado');
  else tout("'"+w[0]+"' no se reconoce como un comando interno o externo, programa o archivo por lotes ejecutable.");
  tout('');}
 $('tin').addEventListener('keydown',function(e){if(e.key==='Enter'){var v=this.value;if(v.trim())TH.push(v);TI=TH.length;this.value='';tcmd(v);}else if(e.key==='ArrowUp'){e.preventDefault();if(TI>0)TI--;this.value=TH[TI]||'';}else if(e.key==='ArrowDown'){e.preventDefault();if(TI<TH.length)TI++;this.value=TH[TI]||'';}});
@@ -800,10 +870,11 @@ function route(){
  if(h==='terminal'){if(!TINIT){TINIT=true;tout('Anprovilla Terminal [Versión 1.0]');tout('Escribe «ayuda» para ver los comandos.');tout('');}setTimeout(function(){$('tin').focus();},0);}
 }
 window.addEventListener('hashchange',route);
-try{var sv=localStorage.getItem(SK);if(sv&&accts()[sv]){USER=sv;KEY='anprovilla-u-'+sv;}}catch(e){}
-load();
+try{var sv=localStorage.getItem(SK);if(!CLOUD&&sv&&accts()[sv]){USER=sv;KEY='anprovilla-u-'+sv;}}catch(e){}
+load();lastJ=sjson();
 if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
 save();render();route();updLogin();
+if(CLOUD)fbAuth.onAuthStateChanged(function(u){if(u)cloudIn(u);else if(USER)cloudOut();});
 $('pb').onclick=function(){$('pledge').hidden=true;toast('Compromiso hecho 💪');};
 $('pledge').hidden=false;$('pb').focus();
 })();
