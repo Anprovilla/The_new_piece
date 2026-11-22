@@ -226,6 +226,37 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
 .pal{height:38px;border-radius:10px;margin-bottom:6px;border:1px solid var(--line)}
 .alt{background:var(--prisoft);color:var(--pri)}
 .back{display:inline-block;margin-bottom:12px;color:var(--pri);font-weight:700;text-decoration:none}
+/* ===== NOTAS ===== */
+:root{--nty:#f5b800}
+.nts{display:grid;grid-template-columns:minmax(250px,330px) minmax(0,1fr);gap:14px;align-items:start}
+.ntl,.nte{min-width:0}
+.nth{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.ntb{background:transparent;color:var(--nty);font-size:20px;font-weight:600;padding:6px 10px;border-radius:10px;line-height:1.2}
+.ntb:hover{background:var(--prisoft)}
+.ntb.act{background:var(--prisoft)}
+.ntb:disabled{opacity:.35;cursor:default}
+.ntback{display:none;font-size:17px}
+#ntq{width:100%;border-radius:12px;margin-bottom:6px}
+.ntg{margin:14px 0 6px 6px;font-size:13px;font-weight:700;color:var(--mute)}
+.ntgl{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.ntr{display:block;width:100%;text-align:left;background:transparent;padding:10px 14px;border-radius:0;border-bottom:1px solid var(--line);color:var(--ink)}
+.ntr:last-child{border-bottom:0}
+.ntr:hover{background:var(--prisoft)}
+.ntr.sel{background:var(--nty);color:#1a1300}
+.ntr b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ntr small{display:block;color:var(--mute);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ntr.sel small{color:rgba(26,19,0,.7)}
+.nte{background:var(--card);border:1px solid var(--line);border-radius:18px;min-height:min(72vh,580px);display:flex;flex-direction:column;overflow:hidden}
+.ntbar{display:flex;align-items:center;gap:2px;padding:8px 10px;border-bottom:1px solid var(--line)}
+.ntbar .grow{flex:1}
+.ntbody{flex:1;display:flex;flex-direction:column;min-height:0}
+.ntdate{text-align:center;color:var(--mute);font-size:12px;padding:10px 16px 0}
+#nted{flex:1;width:100%;min-height:340px;resize:none;border:0;border-radius:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;line-height:1.55;padding:10px 18px 18px;outline:none}
+.ntfmt{display:flex;gap:4px;padding:6px 10px;border-top:1px solid var(--line)}
+.ntlock{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:30px 20px;text-align:center}
+.ntlock input{width:min(280px,100%);text-align:center}
+.ntempty{flex:1;display:grid;place-items:center;color:var(--mute);padding:30px;text-align:center}
+@media (max-width:760px){.nts{grid-template-columns:1fr}.nts.ed .ntl{display:none}.nts:not(.ed) .nte{display:none}.ntback{display:inline-block}}
 /* ===== NEÓN ===== */
 :root[data-style="neon"]{--bg:#060a18;--card:#0d1430;--ink:#e6f6ff;--mute:#7f93c0;--line:#1b2a5e;--pri:#00e5ff;--prisoft:#0a2a4a;--on:#021018;--sun:#ff2bd6;--sunink:#ffffff;--ok:#39ff88;--oksoft:#0b2e22}
 :root[data-style="neon"] body{font-family:"Chakra Petch",system-ui,sans-serif;background-image:linear-gradient(rgba(0,229,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.05) 1px,transparent 1px);background-size:36px 36px}
@@ -293,6 +324,7 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
     <a href="#puntos" data-s="puntos">Puntos y racha</a>
     <a href="#lectura" data-s="lectura">Lectura</a>
     <a href="#duolingo" data-s="duolingo">Duolingo</a>
+    <a href="#notas" data-s="notas">Notas</a>
     <a href="#extensiones" data-s="extensiones">Extensiones</a>
     <a href="#terminal" data-s="terminal" hidden>Terminal</a>
     <a href="#futbol" data-s="futbol" hidden>Fútbol Masculino</a>
@@ -384,6 +416,21 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
     <div class="shop" id="shop"></div>
   </section>
 
+  <section id="s-notas">
+    <div class="nts" id="nts">
+      <div class="ntl">
+        <div class="nth"><h2>Notas</h2><button class="ntb" id="ntnew" aria-label="Nueva nota" title="Nueva nota">✎</button></div>
+        <input type="search" id="ntq" placeholder="Buscar" aria-label="Buscar en las notas" autocomplete="off">
+        <div id="ntlist"></div>
+        <p class="note" id="ntcount" style="text-align:center;margin-top:12px"></p>
+      </div>
+      <div class="nte">
+        <div class="ntbar"><button class="ntb ntback" id="ntback">‹ Notas</button><span class="grow"></span><button class="ntb" id="ntpin" aria-label="Fijar nota" title="Fijar">📌</button><button class="ntb" id="ntlk" aria-label="Bloquear nota" title="Bloquear nota">🔒</button><button class="ntb" id="ntrm" aria-label="Quitar contraseña" title="Quitar contraseña" hidden>🔓</button><button class="ntb" id="ntdel" aria-label="Eliminar nota" title="Eliminar">🗑</button></div>
+        <div id="ntbody" class="ntbody"></div>
+      </div>
+    </div>
+  </section>
+
   <section id="s-extensiones">
     <h2>Extensiones</h2>
     <p class="sub">Activa o desactiva las partes de Anprovilla que quieras usar. Al desactivar una no pierdes sus datos: vuelven al activarla.</p>
@@ -441,6 +488,19 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
     <button class="btn" id="wb">¡Genial!</button>
   </div>
 </div>
+<div class="win" id="ntmod" role="dialog" aria-modal="true" aria-labelledby="ntmt" hidden>
+  <div class="ac">
+    <h2 id="ntmt">Bloquear nota 🔒</h2>
+    <p class="sub">Elige una contraseña para esta nota. Su contenido se cifra en tu cuenta.</p>
+    <input type="password" id="ntp1" placeholder="Contraseña (mínimo 4 caracteres)" autocomplete="new-password" aria-label="Contraseña">
+    <input type="password" id="ntp2" placeholder="Repite la contraseña" autocomplete="new-password" aria-label="Repite la contraseña">
+    <input type="text" id="nthint" placeholder="Pista (opcional)" maxlength="60" aria-label="Pista">
+    <p class="err" id="nterr2" role="alert"></p>
+    <button class="btn" id="ntok">Bloquear</button>
+    <button class="x" id="ntcancel">Cancelar</button>
+    <p class="note">Si olvidas la contraseña no se puede recuperar el contenido de la nota. El título y la pista siguen visibles en la lista.</p>
+  </div>
+</div>
 <div class="win" id="auth" role="dialog" aria-modal="true" aria-labelledby="at" hidden>
   <div class="ac">
     <h2 id="at">Iniciar sesión</h2>
@@ -467,6 +527,7 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
 <div class="pvbar" id="pvbar" hidden><span id="pvt"></span><button class="buy" id="pvb">Desbloquear · 25 puntos</button><button class="x" id="pvx">Salir de la vista previa</button></div>
 <canvas id="fx" aria-hidden="true"></canvas>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="cst" hidden style="position:fixed;left:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:35;font-size:12px;font-weight:700;padding:5px 10px;border-radius:99px;background:var(--card);border:1px solid var(--line);max-width:92vw;pointer-events:none"></div>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
@@ -510,6 +571,7 @@ var EXT=[
  {id:'habitos',n:'Hábitos',d:'Añadir y marcar hábitos, y su resumen en Inicio.',secs:['habitos']},
  {id:'lectura',n:'Lectura',d:'Registro de páginas leídas y su resumen en Inicio.',secs:['lectura']},
  {id:'duolingo',n:'Duolingo',d:'Registro de lecciones y su resumen en Inicio.',secs:['duolingo']},
+ {id:'notas',n:'Notas',d:'Notas al estilo iPhone: agrupadas por fecha, fijar, listas de tareas y notas bloqueadas con contraseña.',secs:['notas']},
  {id:'terminal',n:'Terminal',d:'Una terminal al estilo de Windows. Escribe «juegos» para abrir la página de juegos.',secs:['terminal','juegos','snake']},
  {id:'futbol',n:'Fútbol Masculino',d:'Una sección de fútbol masculino.',secs:['futbol']}];
 function extOn(id){return (id==='terminal'||id==='futbol')?!!(S.ext&&S.ext[id]):(!S.ext||S.ext[id]!==false);}
@@ -528,7 +590,8 @@ function save(){
  if(!applying){var j=sjson();if(j!==lastJ){S.u=Date.now();lastJ=j;}}
  try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}
  cloudPush();}
-function cloudWrite(){var c=Object.assign({},S);delete c.covers;return fbDb.collection('users').doc(USER).set({d:JSON.stringify(c),u:S.u||0});}
+function cst(t,ok){var e=$('cst');if(!e)return;e.hidden=!t;e.textContent=t||'';e.style.color=ok?'var(--ok)':'#e5484d';}
+function cloudWrite(){var c=Object.assign({},S);delete c.covers;return fbDb.collection('users').doc(USER).set({d:JSON.stringify(c),u:S.u||0}).then(function(){cst('☁ guardado en la nube ✓',true);},function(e){cst('☁ ✕ no guarda: '+((e&&e.code)||'error'));throw e;});}
 function cloudPush(){
  if(!CLOUD||!USER||!cloudOK||applying)return;
  clearTimeout(pushT);pend=true;
@@ -588,6 +651,7 @@ function render(){
  var dr=S.dl.map(function(x,i){x._i=i;return x;}).slice(-8).reverse();
  $('dlist').innerHTML=dr.length?dr.map(function(x){return '<li class="habit"><span class="nm">'+esc(x.lang)+' · '+(x.n||1)+((x.n||1)===1?' lección':' lecciones')+'<br><span style="color:var(--mute);font-size:13px">'+(x.date===T?'hoy':x.date)+'</span></span><button class="x" data-dl="'+x._i+'" aria-label="Quitar registro">✕</button></li>';}).join(''):'<li class="empty">Aún no has registrado lecciones.</li>';
  renderCal();
+ renderNotes();
  // inicio
  $('ih').textContent=dn+'/'+n;$('ir').textContent=readToday();$('idu').textContent=dd?'✓':'—';$('is').textContent=S.streak;
  $('ihint').textContent=S.last!==T?'Entra hoy para mantener tu racha':!extOn('habitos')?'':n===0?'Añade tu primer hábito para empezar.':dn<n?'Te faltan '+(n-dn)+' hábitos por cumplir hoy.':'¡Hábitos de hoy completados! Canjea algo en la tienda';
@@ -649,7 +713,7 @@ function celebrate(it){
 }
 $('wb').onclick=function(){$('win').hidden=true;};
 $('win').addEventListener('click',function(e){if(e.target===this)this.hidden=true;});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){$('win').hidden=true;$('auth').hidden=true;}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){$('win').hidden=true;$('auth').hidden=true;$('ntmod').hidden=true;}});
 function dstreak(){var s=0,i=S.dl.some(function(x){return x.date===T;})?0:1;for(;;i++){var d=ds(ago(i));if(S.dl.some(function(x){return x.date===d;}))s++;else break;}return s;}
 $('dadd').onclick=function(){
  var first=!S.dl.some(function(x){return x.date===T;});
@@ -712,7 +776,7 @@ function cloudIn(u){
  var gs=S,wasGuest=!USER;
  USER=u.uid;UL=u.email||u.displayName||'usuario';KEY='anprovilla-u-'+u.uid;cloudOK=false;
  var lc=null;try{lc=(JSON.parse(localStorage.getItem(KEY))||{}).covers;}catch(e){}
- updLogin();
+ updLogin();cst('☁ conectando… (v3)',true);
  fbDb.collection('users').doc(u.uid).get().then(function(sn){
   applying=true;
   var lcS=null;try{lcS=JSON.parse(localStorage.getItem(KEY));}catch(e){}
@@ -721,13 +785,14 @@ function cloudIn(u){
   else{S=Object.assign(defaults(),lcS||(wasGuest?gs:{}));lastJ='';}
   if(lc)S.covers=lc;
   if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
-  applying=false;cloudOK=true;save();SELD=CT;render();listen(u.uid);
+  applying=false;cloudOK=true;cst('☁ sincronizado ✓ (v3)',true);save();SELD=CT;render();listen(u.uid);
  }).catch(function(e){
   applying=false;cloudOK=false;S=defaults();load();lastJ=sjson();SELD=CT;render();
+  cst('☁ ✕ no se puede leer la nube: '+((e&&e.code)||'error'));
   toast('No se pudo leer la nube ('+((e&&e.code)||'error')+'). Se muestran los datos de este dispositivo.');});}
 function cloudOut(){
  if(unsub){unsub();unsub=null;}
- cloudOK=false;USER='';UL='';KEY=GUEST;S=defaults();load();lastJ=sjson();
+ cloudOK=false;USER='';UL='';KEY=GUEST;cst('');S=defaults();load();lastJ=sjson();
  if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
  SELD=CT;render();updLogin();}
 function accts(){try{return JSON.parse(localStorage.getItem(AK))||{};}catch(e){return {};}}
@@ -868,12 +933,163 @@ function tcmd(raw){tout('C:\\Anprovilla>'+raw);var c=raw.trim();if(!c)return;var
  tout('');}
 $('tin').addEventListener('keydown',function(e){if(e.key==='Enter'){var v=this.value;if(v.trim())TH.push(v);TI=TH.length;this.value='';tcmd(v);}else if(e.key==='ArrowUp'){e.preventDefault();if(TI>0)TI--;this.value=TH[TI]||'';}else if(e.key==='ArrowDown'){e.preventDefault();if(TI<TH.length)TI++;this.value=TH[TI]||'';}});
 $('term').addEventListener('click',function(){$('tin').focus();});
-var SEC=['inicio','tienda','estilos','habitos','puntos','lectura','duolingo','extensiones','terminal','juegos','snake','futbol'];
+/* ===== NOTAS (estilo iPhone, con bloqueo por contraseña cifrado AES-GCM) ===== */
+var NS={id:null},NK={},ntT=0;
+function ntAll(){return S.nt||[];}
+function ntGet(id){var a=ntAll();for(var i=0;i<a.length;i++)if(a[i].id===id)return a[i];return null;}
+function ntTitleOf(t){var l=String(t||'').split('\n').filter(function(x){return x.trim();})[0];return l?l.trim().slice(0,80):'';}
+function ntPrev(n){if(n.l)return 'Nota bloqueada';var ls=(n.b||'').split('\n'),i=0;while(i<ls.length&&!ls[i].trim())i++;var r=ls.slice(i+1).join(' ').replace(/\s+/g,' ').trim();return r||'Sin texto adicional';}
+function ntWhen(ts){var d=new Date(ts);if(d.toDateString()===new Date().toDateString())return d.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});return d.toLocaleDateString('es-ES',{day:'2-digit',month:'2-digit',year:'2-digit'});}
+function ntDateStr(ts){return new Date(ts).toLocaleString('es-ES',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'});}
+function ntGroup(n){if(n.p)return 'Fijadas';var d=new Date(n.u),now=new Date(),a=new Date(now.getFullYear(),now.getMonth(),now.getDate()).getTime(),b=new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime(),df=Math.round((a-b)/864e5);return df<=0?'Hoy':df===1?'Ayer':df<=7?'Últimos 7 días':df<=30?'Últimos 30 días':'Anteriores';}
+function lineStart(v,p){return p?v.lastIndexOf('\n',p-1)+1:0;}
+function b64(buf){var a=new Uint8Array(buf),s='';for(var i=0;i<a.length;i++)s+=String.fromCharCode(a[i]);return btoa(s);}
+function unb64(s){var b=atob(s),a=new Uint8Array(b.length);for(var i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a;}
+function ntKey(pw,salt){var enc=new TextEncoder();return crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveKey']).then(function(k){return crypto.subtle.deriveKey({name:'PBKDF2',salt:salt,iterations:150000,hash:'SHA-256'},k,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);});}
+function ntEnc(key,text){var iv=crypto.getRandomValues(new Uint8Array(12));return crypto.subtle.encrypt({name:'AES-GCM',iv:iv},key,new TextEncoder().encode(text)).then(function(ct){return {i:b64(iv),d:b64(ct)};});}
+function ntDec(key,l){return crypto.subtle.decrypt({name:'AES-GCM',iv:unb64(l.i)},key,unb64(l.d)).then(function(p){return new TextDecoder().decode(p);});}
+function renderNotes(){
+ if(NS.id&&!ntGet(NS.id)){NS.id=null;NK={};ntShowNone();}
+ var q=$('ntq').value.trim().toLowerCase(),all=ntAll(),g={},ord=['Fijadas','Hoy','Ayer','Últimos 7 días','Últimos 30 días','Anteriores'];
+ all.filter(function(n){return !q||(n.t||'').toLowerCase().indexOf(q)>-1||(!n.l&&(n.b||'').toLowerCase().indexOf(q)>-1);}).sort(function(a,b){return b.u-a.u;}).forEach(function(n){var k=ntGroup(n);(g[k]=g[k]||[]).push(n);});
+ var h='';
+ ord.forEach(function(k){if(!g[k])return;h+='<div class="ntg">'+k+'</div><div class="ntgl">'+g[k].map(function(n){var t=n.l?(n.t||'Nota bloqueada'):(ntTitleOf(n.b)||'Nueva nota');return '<button class="ntr'+(n.id===NS.id?' sel':'')+'" data-nid="'+esc(n.id)+'"><b>'+(n.l?'🔒 ':'')+esc(t)+'</b><small>'+ntWhen(n.u)+' · '+esc(ntPrev(n))+'</small></button>';}).join('')+'</div>';});
+ $('ntlist').innerHTML=h||'<div class="empty" style="margin-top:8px">'+(q?'Sin resultados.':'Aún no tienes notas. Pulsa ✎ para crear la primera.')+'</div>';
+ $('ntcount').textContent=all.length?all.length+(all.length===1?' nota':' notas'):'';
+}
+function ntShowNone(){$('ntbody').innerHTML='<div class="ntempty">Selecciona una nota o crea una nueva con ✎</div>';$('nts').classList.remove('ed');ntBar();}
+function ntBar(){
+ var n=NS.id?ntGet(NS.id):null;
+ $('ntpin').disabled=!n;$('ntdel').disabled=!n;$('ntpin').classList.toggle('act',!!(n&&n.p));
+ $('ntlk').hidden=!n||!!(n.l&&!NK[n.id]);$('ntrm').hidden=!(n&&n.l&&NK[n.id]);
+ var lt=n&&n.l?'Volver a bloquear':'Bloquear nota';$('ntlk').title=lt;$('ntlk').setAttribute('aria-label',lt);
+}
+function ntEditor(n,text){
+ $('ntbody').innerHTML='<div class="ntdate">'+esc(ntDateStr(n.u))+'</div><textarea id="nted" placeholder="Escribe aquí. La primera línea es el título." aria-label="Contenido de la nota"></textarea><div class="ntfmt"><button class="ntb" data-nf="☐ " aria-label="Lista de tareas" title="Lista de tareas">☑</button><button class="ntb" data-nf="• " aria-label="Lista con viñetas" title="Lista con viñetas">• —</button></div>';
+ $('nted').value=text||'';
+ if(n.l&&NK[n.id])NK[n.id].last=text||'';
+}
+function ntLockScreen(n){
+ $('ntbody').innerHTML='<div class="ntlock"><div style="font-size:56px;line-height:1">🔒</div><h3>Esta nota está bloqueada</h3><p class="sub" style="margin:0">Introduce la contraseña para verla.</p>'+(n.h?'<p class="note">Pista: '+esc(n.h)+'</p>':'')+'<input type="password" id="ntpw" placeholder="Contraseña" autocomplete="off" aria-label="Contraseña de la nota"><p class="err" id="nterr" role="alert"></p><button class="btn" id="ntview">Ver nota</button></div>';
+ setTimeout(function(){var e=$('ntpw');if(e)e.focus();},0);
+}
+function ntOpen(id){
+ if(NS.id===id&&$('nted'))return;
+ if(NS.id&&NS.id!==id)ntClose();
+ var n=ntGet(id);if(!n)return;
+ NS.id=id;$('nts').classList.add('ed');
+ if(n.l&&!NK[id])ntLockScreen(n);else ntEditor(n,n.b);
+ ntBar();renderNotes();
+}
+function ntSave(){
+ ntT=0;var id=NS.id,n=id&&ntGet(id),ta=$('nted');if(!n||!ta)return;
+ var txt=ta.value;
+ if(n.l){var k=NK[id];if(!k||k.last===txt)return;k.last=txt;
+  n.t=ntTitleOf(txt)||'Nota bloqueada';n.u=Date.now();
+  ntEnc(k.key,txt).then(function(r){n.l.i=r.i;n.l.d=r.d;save();});
+ }else{if(txt===n.b)return;n.b=txt;n.t=ntTitleOf(txt);n.u=Date.now();save();}
+ var dd=document.querySelector('.ntdate');if(dd)dd.textContent=ntDateStr(n.u);
+ renderNotes();
+}
+function ntClose(){
+ if(!NS.id)return;
+ if(ntT){clearTimeout(ntT);ntSave();}
+ var n=ntGet(NS.id);
+ if(n&&!n.l&&!(n.b||'').trim()){S.nt=S.nt.filter(function(x){return x.id!==n.id;});save();}
+ delete NK[NS.id];NS.id=null;
+}
+function ntUnlock(){
+ var id=NS.id,n=ntGet(id),pw=($('ntpw')||{}).value,er=$('nterr');
+ if(!n||!n.l||!er)return;
+ if(!pw){er.textContent='Escribe la contraseña.';return;}
+ if(!(window.crypto&&crypto.subtle)){er.textContent='Tu navegador no permite abrir notas bloqueadas aquí.';return;}
+ er.textContent='';
+ ntKey(pw,unb64(n.l.s)).then(function(key){return ntDec(key,n.l).then(function(t){if(NS.id!==id)return;NK[id]={key:key,last:t};ntEditor(n,t);ntBar();});}).catch(function(){var e=$('nterr');if(e)e.textContent='Contraseña incorrecta.';});
+}
+function ntFmt(pre){
+ var t=$('nted');if(!t)return;
+ var v=t.value,p=t.selectionStart,ls=lineStart(v,p),m=/^(☐ |☑ |• )/.exec(v.slice(ls)),cur=m?m[1]:'',nv=(cur===pre||(pre==='☐ '&&cur==='☑ '))?'':pre;
+ t.value=v.slice(0,ls)+nv+v.slice(ls+cur.length);
+ t.selectionStart=t.selectionEnd=Math.max(ls,p+nv.length-cur.length);t.focus();
+ t.dispatchEvent(new Event('input',{bubbles:true}));
+}
+function ntOpenMod(){['ntp1','ntp2','nthint'].forEach(function(i){$(i).value='';});$('nterr2').textContent='';$('ntmod').hidden=false;$('ntp1').focus();}
+$('ntnew').onclick=function(){
+ $('ntq').value='';ntClose();
+ var n={id:Math.random().toString(36).slice(2),b:'',t:'',p:0,c:Date.now(),u:Date.now(),l:null};
+ S.nt=S.nt||[];S.nt.push(n);save();ntOpen(n.id);
+ var ta=$('nted');if(ta)ta.focus();
+};
+$('ntback').onclick=function(){ntClose();ntShowNone();renderNotes();};
+$('ntq').addEventListener('input',renderNotes);
+$('ntpin').onclick=function(){var n=ntGet(NS.id);if(!n)return;n.p=n.p?0:1;save();ntBar();renderNotes();toast(n.p?'Nota fijada':'Nota desfijada');};
+$('ntdel').onclick=function(){
+ var n=ntGet(NS.id);if(!n)return;
+ if(!confirm('¿Eliminar esta nota?'))return;
+ clearTimeout(ntT);ntT=0;S.nt=S.nt.filter(function(x){return x.id!==n.id;});delete NK[n.id];NS.id=null;
+ save();ntShowNone();renderNotes();toast('Nota eliminada');
+};
+$('ntlk').onclick=function(){
+ var n=ntGet(NS.id);if(!n)return;
+ if(n.l){if(ntT){clearTimeout(ntT);ntSave();}delete NK[n.id];ntLockScreen(n);ntBar();toast('Nota bloqueada 🔒');return;}
+ if(!(window.crypto&&crypto.subtle)){toast('Tu navegador no permite bloquear notas aquí.');return;}
+ ntOpenMod();
+};
+$('ntrm').onclick=function(){
+ var n=ntGet(NS.id),ta=$('nted');if(!n||!n.l||!ta||!NK[n.id])return;
+ if(!confirm('¿Quitar la contraseña de esta nota?'))return;
+ clearTimeout(ntT);ntT=0;n.b=ta.value;n.t=ntTitleOf(n.b);n.l=null;delete n.h;delete NK[n.id];
+ save();ntBar();renderNotes();toast('Contraseña quitada');
+};
+$('ntcancel').onclick=function(){$('ntmod').hidden=true;};
+$('ntmod').addEventListener('click',function(e){if(e.target===this)this.hidden=true;});
+$('ntok').onclick=function(){
+ var n=ntGet(NS.id),p1=$('ntp1').value,p2=$('ntp2').value,er=$('nterr2');
+ if(!n||n.l)return;
+ if(p1.length<4){er.textContent='Usa al menos 4 caracteres.';return;}
+ if(p1!==p2){er.textContent='Las contraseñas no coinciden.';return;}
+ var ta=$('nted'),txt=ta?ta.value:(n.b||''),salt=crypto.getRandomValues(new Uint8Array(16)),hint=$('nthint').value.trim();
+ clearTimeout(ntT);ntT=0;
+ ntKey(p1,salt).then(function(key){return ntEnc(key,txt).then(function(r){
+  n.l={s:b64(salt),i:r.i,d:r.d};n.b='';n.t=ntTitleOf(txt)||'Nota bloqueada';if(hint)n.h=hint;else delete n.h;n.u=Date.now();
+  delete NK[n.id];$('ntmod').hidden=true;save();ntLockScreen(n);ntBar();renderNotes();toast('Nota bloqueada 🔒');});
+ }).catch(function(){er.textContent='No se pudo bloquear la nota.';});
+};
+['ntp1','ntp2','nthint'].forEach(function(i){$(i).addEventListener('keydown',function(e){if(e.key==='Enter')$('ntok').click();});});
+document.addEventListener('input',function(e){if(e.target&&e.target.id==='nted'){clearTimeout(ntT);ntT=setTimeout(ntSave,350);}});
+document.addEventListener('keydown',function(e){
+ var t=e.target;if(!t)return;
+ if(t.id==='ntpw'&&e.key==='Enter'){ntUnlock();return;}
+ if(t.id!=='nted'||e.key!=='Enter'||e.shiftKey||e.isComposing)return;
+ var v=t.value,p=t.selectionStart,pe=t.selectionEnd,ls=lineStart(v,p),line=v.slice(ls,p),m=/^(☐ |☑ |• )/.exec(line);
+ if(!m)return;
+ e.preventDefault();
+ if(line===m[1]){t.value=v.slice(0,ls)+v.slice(pe);t.selectionStart=t.selectionEnd=ls;}
+ else{var pre=m[1]==='☑ '?'☐ ':m[1];t.value=v.slice(0,p)+'\n'+pre+v.slice(pe);t.selectionStart=t.selectionEnd=p+1+pre.length;}
+ t.dispatchEvent(new Event('input',{bubbles:true}));
+});
+document.addEventListener('click',function(e){
+ var t=e.target;if(!t)return;
+ if(t.id==='ntview'){ntUnlock();return;}
+ if(t.id==='nted'){
+  var v=t.value,p=t.selectionStart;if(p!==t.selectionEnd)return;
+  var ls=lineStart(v,p),c=v.charAt(ls);
+  if((c==='☐'||c==='☑')&&v.charAt(ls+1)===' '&&p<=ls+1){t.value=v.slice(0,ls)+(c==='☐'?'☑':'☐')+v.slice(ls+1);t.selectionStart=t.selectionEnd=p;t.dispatchEvent(new Event('input',{bubbles:true}));}
+  return;}
+ var f=t.closest&&t.closest('[data-nf]');if(f){ntFmt(f.dataset.nf);return;}
+ var r=t.closest&&t.closest('.ntr');if(r&&r.dataset.nid)ntOpen(r.dataset.nid);
+});
+function ntFlush(){if(ntT){clearTimeout(ntT);ntSave();}}
+window.addEventListener('pagehide',ntFlush);
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')ntFlush();});
+ntShowNone();
+var SEC=['inicio','tienda','estilos','habitos','puntos','lectura','duolingo','notas','extensiones','terminal','juegos','snake','futbol'];
 function route(){
  var h=(location.hash||'').slice(1);if(h==='anadir')h='habitos';if(SEC.indexOf(h)<0)h='inicio';var xe=extOfSec(h);if(xe&&!extOn(xe))h='extensiones';
  SEC.forEach(function(s){$('s-'+s).classList.toggle('on',s===h);});
  Array.prototype.forEach.call($('nav').children,function(a){if(a.dataset.s===(h==='estilos'?'tienda':(h==='juegos'||h==='snake')?'terminal':h)){a.setAttribute('aria-current','page');a.scrollIntoView({inline:'center',block:'nearest'});}else a.removeAttribute('aria-current');});
  window.scrollTo(0,0);
+ if(h!=='notas'&&NS.id){ntClose();ntShowNone();renderNotes();}
  if(h==='snake')snReset();else if(SN.run){clearInterval(SN.t);SN.run=false;}
  if(h==='terminal'){if(!TINIT){TINIT=true;tout('Anprovilla Terminal [Versión 1.0]');tout('Escribe «ayuda» para ver los comandos.');tout('');}setTimeout(function(){$('tin').focus();},0);}
 }
