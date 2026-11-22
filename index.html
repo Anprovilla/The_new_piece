@@ -522,17 +522,23 @@ function ds(d){d=d||new Date();return d.getFullYear()+'-'+String(d.getMonth()+1)
 function ago(n){var d=new Date();d.setDate(d.getDate()-n);return d;}
 var T=ds(),Y=ds(ago(1));
 function load(){try{var r=localStorage.getItem(KEY);if(r){S=Object.assign(S,JSON.parse(r));return;}var o=KEY==='anprovilla-v2'?localStorage.getItem(OLD):null;if(o){var p=JSON.parse(o);S.streak=p.streak||0;S.best=S.streak;S.points=p.points||0;S.last=p.last||'';S.owned=p.owned||{};S.habits=(p.habits||[]).map(function(h){return {id:Math.random().toString(36).slice(2),name:h.name,emoji:'🎯',done:h.done||''};});if(S.last)S.hist=[S.last];}}catch(e){}}
-var lastJ='',applying=false,pushT=0,cloudOK=false;
+var lastJ='',applying=false,pushT=0,cloudOK=false,pend=false;
 function sjson(){var c=Object.assign({},S);delete c.u;return JSON.stringify(c);}
 function save(){
  if(!applying){var j=sjson();if(j!==lastJ){S.u=Date.now();lastJ=j;}}
  try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}
  cloudPush();}
+function cloudWrite(){var c=Object.assign({},S);delete c.covers;return fbDb.collection('users').doc(USER).set({d:JSON.stringify(c),u:S.u||0});}
 function cloudPush(){
  if(!CLOUD||!USER||!cloudOK||applying)return;
- clearTimeout(pushT);
- pushT=setTimeout(function(){var c=Object.assign({},S);delete c.covers;
-  fbDb.collection('users').doc(USER).set({d:JSON.stringify(c),u:S.u||0}).catch(function(){toast('No se pudo sincronizar. Revisa tu conexión.');});},700);}
+ clearTimeout(pushT);pend=true;
+ pushT=setTimeout(function(){pend=false;cloudWrite().catch(function(e){toast('No se pudo guardar en la nube: '+((e&&e.code)||'error'));});},500);}
+function cloudFlush(){
+ if(!CLOUD||!USER||!cloudOK||!pend)return Promise.resolve();
+ clearTimeout(pushT);pend=false;
+ return cloudWrite().catch(function(e){toast('No se pudo guardar en la nube: '+((e&&e.code)||'error'));});}
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')cloudFlush();});
+window.addEventListener('pagehide',function(){cloudFlush();});
 var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');},2400);}
 function doneToday(){return S.habits.filter(function(h){return h.done===T;}).length;}
 function readToday(){return S.reads.filter(function(r){return r.date===T;}).reduce(function(a,r){return a+r.pages;},0);}
@@ -709,14 +715,16 @@ function cloudIn(u){
  updLogin();
  fbDb.collection('users').doc(u.uid).get().then(function(sn){
   applying=true;
-  if(sn.exists){try{S=Object.assign(defaults(),JSON.parse(sn.data().d));S.u=sn.data().u||0;}catch(e){S=defaults();}lastJ=sjson();}
-  else{S=Object.assign(defaults(),wasGuest?gs:{});lastJ='';}
+  var lcS=null;try{lcS=JSON.parse(localStorage.getItem(KEY));}catch(e){}
+  var cu=sn.exists?(sn.data().u||0):-1;
+  if(sn.exists&&!(lcS&&(lcS.u||0)>cu)){try{S=Object.assign(defaults(),JSON.parse(sn.data().d));S.u=cu;}catch(e){S=defaults();}lastJ=sjson();}
+  else{S=Object.assign(defaults(),lcS||(wasGuest?gs:{}));lastJ='';}
   if(lc)S.covers=lc;
   if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
   applying=false;cloudOK=true;save();SELD=CT;render();listen(u.uid);
- }).catch(function(){
+ }).catch(function(e){
   applying=false;cloudOK=false;S=defaults();load();lastJ=sjson();SELD=CT;render();
-  toast('Sin conexión: se muestran los datos guardados en este dispositivo.');});}
+  toast('No se pudo leer la nube ('+((e&&e.code)||'error')+'). Se muestran los datos de este dispositivo.');});}
 function cloudOut(){
  if(unsub){unsub();unsub=null;}
  cloudOK=false;USER='';UL='';KEY=GUEST;S=defaults();load();lastJ=sjson();
@@ -735,7 +743,7 @@ function switchTo(email){
 function setMode(m){mode=m;$('atin').classList.toggle('on',m==='in');$('tup').classList.toggle('on',m==='up');var t=m==='up'?'Crear cuenta':'Iniciar sesión';$('at').textContent=t;$('ago').textContent=t;$('apw').autocomplete=m==='up'?'new-password':'current-password';$('aerr').textContent='';}
 function authDone(em,m){$('auth').hidden=true;$('apw').value='';$('aerr').textContent='';switchTo(em);toast(m);}
 $('login').onclick=function(){
- if(USER){if(CLOUD)fbAuth.signOut();else switchTo('');toast('Sesión cerrada');return;}
+ if(USER){if(CLOUD)cloudFlush().then(function(){fbAuth.signOut();});else switchTo('');toast('Sesión cerrada');return;}
  setMode('in');$('auth').hidden=false;$('aem').focus();
 };
 $('atin').onclick=function(){setMode('in');};
