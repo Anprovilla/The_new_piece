@@ -77,6 +77,11 @@ main{max-width:880px;margin:0 auto;padding:24px 16px 80px}
 .item{transition:transform .15s,border-color .15s}
 .item:hover{transform:translateY(-3px)}
 .item.can{border-color:var(--sun);box-shadow:0 0 0 1px var(--sun) inset}
+.card.restb{display:flex;align-items:center;gap:14px;margin-bottom:16px;border:1px solid var(--ok);background:linear-gradient(135deg,var(--oksoft),var(--card));box-shadow:0 0 0 1px var(--ok) inset}
+.restb b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:20px}
+.restb small{color:var(--mute)}
+.item.gold{background:linear-gradient(160deg,var(--card) 40%,rgba(232,184,74,.22));border-color:#e8b84a}
+.badge{display:inline-flex;align-items:center;margin-left:8px;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.04em;color:#3d2800;background:linear-gradient(135deg,#ffe08a,#e8b84a 55%,#c98d1e);box-shadow:0 0 14px rgba(232,184,74,.55);vertical-align:middle}
 .item .e{width:64px;height:64px;display:grid;place-items:center;border-radius:18px;background:var(--prisoft);font-size:34px}
 .dd{position:relative;display:inline-block}
 .ddb{appearance:none;-webkit-appearance:none;border:1px solid var(--line);background:transparent linear-gradient(45deg,transparent 50%,var(--mute) 50%) right 14px center/5px 5px no-repeat,transparent linear-gradient(-45deg,transparent 50%,var(--mute) 50%) right 9px center/5px 5px no-repeat;padding:10px 30px 10px 14px;border-radius:999px;color:var(--ink);font-weight:600;text-align:left;white-space:nowrap}
@@ -316,7 +321,7 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
 </head>
 <body>
 <div class="bar"><div class="bar-in">
-  <div class="row"><span class="logo">Anprovilla</span><div class="row" style="gap:8px"><select id="stl" class="stl" aria-label="Estilo de la página"><option value="">Actual</option><option value="neon">Neón</option><option value="aurora">Aurora</option><option value="terminal">Terminal</option><option value="synth">Synthwave</option><option value="chrome">Cromo</option><option value="plasma">Plasma</option></select><button class="login" id="login">Iniciar sesión</button></div></div>
+  <div class="row"><span><span class="logo">Anprovilla</span><span class="badge" id="badge" title="Insignia Constante" hidden>Constante</span></span><div class="row" style="gap:8px"><select id="stl" class="stl" aria-label="Estilo de la página"><option value="">Actual</option><option value="neon">Neón</option><option value="aurora">Aurora</option><option value="terminal">Terminal</option><option value="synth">Synthwave</option><option value="chrome">Cromo</option><option value="plasma">Plasma</option></select><button class="login" id="login">Iniciar sesión</button></div></div>
   <nav id="nav" aria-label="Secciones">
     <a href="#inicio" data-s="inicio">Inicio</a>
     <a href="#tienda" data-s="tienda">Tienda</a>
@@ -332,6 +337,7 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
 </div></div>
 
 <main>
+  <div class="card restb" id="restb" role="status" hidden><div><b>Es tu día de descanso, tómatelo para ti</b><small id="restt"></small></div></div>
   <section id="s-inicio">
     <div class="hero"><h1>Anpro</h1><p>Anprovilla es tu espacio para construir hábitos que se quedan. Esta web te ayudará a mejorar tus hábitos diarios: eliges los que quieres cumplir, los marcas cada día con un clic y ves cómo crece tu progreso. Entra todos los días para ganar la racha y suma puntos con cada hábito, cada lectura y cada lección de Duolingo. Después cámbialos por premios en la tienda y celebra lo que has conseguido. Usa el calendario de abajo para apuntar recordatorios y no olvidarte de nada importante.</p></div>
     <p class="hint" id="ihint"></p>
@@ -364,6 +370,7 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
       <div class="card stat"><div class="big" id="best">0</div><span>mejor racha 🏆</span></div>
     </div>
     <button class="cta" id="checkin">Entrar hoy (+10)</button>
+    <p class="note" id="frz" style="margin:-4px 0 14px;font-size:14px"></p>
     <div class="card"><h3>Esta semana</h3><div class="week" id="week"></div></div>
   </section>
 
@@ -536,10 +543,15 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
 (function(){
 var KEY='anprovilla-v2',OLD='anprovilla-v1';
 var ITEMS=[
- {id:'a',e:'🏅',n:'Insignia Constante',d:'Una insignia para presumir de disciplina.',c:50},
+ {id:'a',e:'🏅',n:'Insignia Constante',d:'Luce la insignia dorada junto a tu nombre y gana +5 puntos extra cada día que entres. Para siempre.',c:275,once:true},
  {id:'b',e:'🍫',n:'Capricho dulce',d:'Date un gusto sin remordimientos.',c:100},
- {id:'c',e:'🎬',n:'Noche de película',d:'Una noche libre para ver lo que quieras.',c:150},
- {id:'d',e:'🛋️',n:'Día de descanso',d:'Un día sin culpa para desconectar.',c:250},
+ {id:'c',e:'🎬',n:'Noche de película',d:'Una noche libre para ver lo que quieras.',c:125},
+ {id:'f',e:'🧊',n:'Protector de racha',d:'Si un día se te olvida entrar, tu racha no se pierde. Se gasta solo. Puedes guardar hasta 3.',c:80,frz:true},
+ {id:'g',e:'📚',n:'Libro nuevo',d:'Ese libro que tienes ganas de leer. Elígelo y estrénalo.',c:50},
+ {id:'j',e:'😴',n:'Dormir sin despertador',d:'Un día del fin de semana te levantas cuando tu cuerpo quiera.',c:150},
+ {id:'i',e:'📦',n:'Cofre misterioso',d:'Ábrelo y gana entre 20 y 100 puntos al azar. Uno al día.',c:40,box:true},
+ {id:'h',e:'🎳',n:'Plan con amigos',d:'Una tarde de bolos, cine o lo que elijáis juntos.',c:350},
+ {id:'d',e:'🛋️',n:'Día de descanso',d:'24 horas con todo hecho: hábitos, entrada diaria, lectura y Duolingo cuentan como cumplidos y te dan sus puntos.',c:250,rest:true},
  {id:'e',e:'🎁',n:'Regalo sorpresa',d:'Un regalo que tú eliges para ti.',c:400},
  {id:'st_neon',e:'💠',n:'Estilo Neón',d:'Desbloquea el estilo cyberpunk con brillo neón.',c:25,st:'neon'},
  {id:'st_aurora',e:'🌌',n:'Estilo Aurora',d:'Cristal translúcido y luces de aurora.',c:25,st:'aurora'},
@@ -576,8 +588,29 @@ var EXT=[
  {id:'futbol',n:'Fútbol Masculino',d:'Una sección de fútbol masculino.',secs:['futbol']}];
 function extOn(id){return (id==='terminal'||id==='futbol')?!!(S.ext&&S.ext[id]):(!S.ext||S.ext[id]!==false);}
 function extOfSec(sec){for(var i=0;i<EXT.length;i++){if(EXT[i].secs.indexOf(sec)>-1)return EXT[i].id;}return '';}
-function defaults(){return {streak:0,best:0,points:0,last:'',hist:[],habits:[],owned:{},reads:[],dl:[],notes:{},ext:{},extOrder:[]};}
+function defaults(){return {streak:0,best:0,points:0,last:'',hist:[],habits:[],owned:{},reads:[],dl:[],notes:{},ext:{},extOrder:[],freeze:0};}
 var S=defaults();
+function restOn(){return !!(S.rest&&Date.now()<S.rest.until);}
+function restEnd(){var e=new Date(S.rest.until),h=e.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});return (ds(e)===ds()?'hoy':'mañana')+' a las '+h;}
+function applyRest(){
+ if(!restOn())return 0;
+ var g=0,dd=S.rest.d=S.rest.d||{};
+ if(S.last!==T){S.streak=S.last===Y?S.streak+1:1;S.best=Math.max(S.best,S.streak);S.last=T;if(S.hist.indexOf(T)<0)S.hist.push(T);S.hist=S.hist.slice(-60);var b=bonus();S.points+=b;g+=b;}
+ S.habits.forEach(function(h){if(h.done!==T){h.done=T;S.points+=5;g+=5;}});
+ if(!dd[T]){dd[T]=1;
+  if(extOn('lectura')){var rt=readToday(),r=Math.max(0,5-Math.floor(rt/2));S.points+=r;g+=r;}
+  if(extOn('duolingo')){var dn=S.dl.filter(function(x){return x.date===T;}).reduce(function(a,x){return a+(x.n||1);},0),q=Math.max(0,3-dn)*5;S.points+=q;g+=q;}}
+ return g;}
+function boxRoll(){var r=Math.random();return r<.35?20:r<.7?40:r<.9?60:100;}
+function soldOut(it){return !!((it.once&&S.owned[it.id])||(it.frz&&(S.freeze||0)>=3)||(it.rest&&restOn())||(it.box&&S.boxDay===T));}
+function ownTxt(it,o){if(it.rest&&restOn())return 'Activo hasta '+restEnd();if(it.box)return S.boxDay===T?'Ya lo has abierto hoy. Vuelve mañana':(o?'Abiertos: '+o:'');if(it.once&&o)return 'Conseguida ✓ · +5 extra al entrar cada día';if(it.frz)return (S.freeze||0)?'Tienes '+S.freeze+' de 3':'';return o?'Canjeado: '+o:'';}
+function bonus(){return S.owned&&S.owned.a?15:10;}
+function pd(k){return new Date(+k.slice(0,4),+k.slice(5,7)-1,+k.slice(8,10));}
+function fixStreak(){
+ if(!S.last||S.last===T||S.last===Y)return;
+ var miss=Math.round((pd(T)-pd(S.last))/864e5)-1,f=S.freeze||0;
+ if(S.streak>0&&miss>0&&f>=miss){S.freeze=f-miss;S.last=Y;setTimeout(function(){toast('Tu protector de racha ha salvado tu racha ('+miss+(miss===1?' día':' días')+')');},600);}
+ else S.streak=0;}
 function $(i){return document.getElementById(i);}
 function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 function ds(d){d=d||new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
@@ -612,15 +645,18 @@ function bars(f){var v=[],l=[],sum=0,i,d;for(i=6;i>=0;i--){d=ago(i);v.push(f(ds(
  return {sum:sum,html:v.map(function(x,j){return '<div class="'+(x?'on':'')+(j===6?' td':'')+'"><small>'+(x||'')+'</small><i style="height:'+Math.max(6,Math.round(x/m*70))+'px"></i>'+l[j]+'</div>';}).join('')};}
 function render(){
  enforceStyle();
+ if(applyRest())save();
+ $('restb').hidden=!restOn();if(restOn())$('restt').textContent='Todo cuenta como hecho hasta '+restEnd()+'.';
  $('streak').textContent=S.streak;$('best').textContent=S.best;
  $('points').textContent=S.points;$('tp').textContent=S.points;
  var c=$('checkin'),ok=S.last===T;c.disabled=ok;
- c.textContent=ok?'¡Hoy ya has entrado! Vuelve mañana 🎉':'Entrar hoy (+10) 🚀';
+ c.textContent=ok?'¡Hoy ya has entrado! Vuelve mañana 🎉':'Entrar hoy (+'+bonus()+') 🚀';
+ $('frz').textContent=(S.freeze||0)?'🧊 Protectores de racha guardados: '+S.freeze+' de 3':'';$('badge').hidden=!S.owned.a;
  var w='';for(var i=6;i>=0;i--){var d=ago(i),hit=S.hist.indexOf(ds(d))>-1;w+='<div class="'+(hit?'hit':'')+'">'+DAYS[d.getDay()]+'<i>'+(hit?'🔥':'')+'</i></div>';}
  $('week').innerHTML=w;
  // hábitos
  var n=S.habits.length,dn=doneToday();
- $('hsub').textContent=n?(dn===n?'¡Todo cumplido hoy!':'Llevas '+dn+' de '+n+'. Pulsa el círculo al cumplirlos (+5 puntos).'):'Todavía no tienes hábitos. Añade el primero aquí abajo.';
+ $('hsub').textContent=restOn()?'Día de descanso: hoy todo cuenta como hecho.':n?(dn===n?'¡Todo cumplido hoy!':'Llevas '+dn+' de '+n+'. Pulsa el círculo al cumplirlos (+5 puntos).'):'Todavía no tienes hábitos. Añade el primero aquí abajo.';
  $('hring').style.setProperty('--p',n?Math.round(dn/n*100):0);$('hpct').textContent=dn+'/'+n;
  $('hlist').innerHTML=n?S.habits.map(function(h){var d=h.done===T;return '<li class="habit'+(d?' done':'')+'"><button class="sq" data-t="'+h.id+'" aria-label="'+(d?'Desmarcar ':'Completar ')+esc(h.name)+'">'+(d?'✓':'')+'</button><span class="nm">'+esc(h.name)+'</span><button class="x" data-d="'+h.id+'" aria-label="Borrar '+esc(h.name)+'">✕</button></li>';}).join(''):'<li class="empty">Aún no hay hábitos. Escribe el primero arriba o elige una idea.</li>';
  // lectura
@@ -658,8 +694,9 @@ function render(){
  // extensiones
  applyExt();renderFut();
  // tienda
- var nx=ITEMS.filter(function(i){return !i.st&&i.c>S.points;})[0];$('tnext').textContent=nx?'Siguiente: '+nx.n+' · te faltan '+(nx.c-S.points)+' puntos':'Puedes canjear cualquier premio';
- $('shop').innerHTML=ITEMS.filter(function(it){return !it.st;}).map(function(it){var o=S.owned[it.id]||0;return '<div class="card item'+(S.points>=it.c?' can':'')+'"><div class="e">'+it.e+'</div><h3>'+it.n+'</h3><p>'+it.d+'</p><div class="price">'+it.c+' puntos</div><div class="pg"><b style="width:'+Math.min(100,Math.round(S.points/it.c*100))+'%"></b></div><div class="own">'+(o?(it.st?'Desbloqueado ✓':'Canjeado: '+o):'')+'</div>'+(it.st&&o?'<button class="buy" data-us="'+it.st+'">Usar estilo</button>':'<button class="buy" data-b="'+it.id+'"'+(S.points<it.c?' disabled':'')+'>'+(it.st?'Desbloquear':'Canjear')+'</button>')+'</div>';}).join('');
+ var shopIt=ITEMS.filter(function(i){return !i.st;}).sort(function(x,y){return x.c-y.c;});
+ var nx=shopIt.filter(function(i){return i.c>S.points&&!soldOut(i);})[0];$('tnext').textContent=nx?'Siguiente: '+nx.n+' · te faltan '+(nx.c-S.points)+' puntos':'Puedes canjear cualquier premio';
+ $('shop').innerHTML=shopIt.map(function(it){var o=S.owned[it.id]||0,so=soldOut(it),can=S.points>=it.c&&!so;return '<div class="card item'+(can?' can':'')+(it.once?' gold':'')+'"><div class="e">'+it.e+'</div><h3>'+it.n+'</h3><p>'+it.d+'</p><div class="price">'+it.c+' puntos</div><div class="pg"><b style="width:'+(so?100:Math.min(100,Math.round(S.points/it.c*100)))+'%"></b></div><div class="own">'+ownTxt(it,o)+'</div><button class="buy" data-b="'+it.id+'"'+(can?'':' disabled')+'>'+(it.once&&o?'Conseguida':it.frz&&so?'Máximo 3':it.rest&&so?'En curso':it.box?(so?'Vuelve mañana':'Abrir'):'Canjear')+'</button></div>';}).join('');
  $('ep').textContent=S.points;
  $('slist').innerHTML=ITEMS.filter(function(it){return it.st;}).map(function(it){var o=S.owned[it.id]||0,p=PAL[it.st];return '<div class="card item"><div class="pal" style="background:linear-gradient(90deg,'+p[0]+' 0 34%,'+p[1]+' 34% 67%,'+p[2]+' 67%)"></div><div class="e">'+it.e+'</div><h3>'+it.n+'</h3><p>'+it.d+'</p><div class="own">'+(o?'Desbloqueado ✓':'')+'</div><button class="buy alt" data-pv="'+it.st+'">👁 Vista previa</button>'+(o?'<button class="buy" data-us="'+it.st+'">Usar estilo</button>':'<button class="buy" data-b="'+it.id+'"'+(S.points<it.c?' disabled':'')+'>Desbloquear · '+it.c+' puntos</button>')+'</div>';}).join('');
 }
@@ -688,7 +725,10 @@ document.addEventListener('click',function(e){
   save();render();}
  else if(t.dataset.d){S.habits=S.habits.filter(function(x){return x.id!==t.dataset.d;});save();render();}
  else if(t.dataset.b){var it=ITEMS.filter(function(x){return x.id===t.dataset.b;})[0];
-  if(S.points>=it.c){S.points-=it.c;if(it.st){PREV='';$('pvbar').hidden=true;}S.owned[it.id]=(S.owned[it.id]||0)+1;if(it.st)setStyle(it.st,true);save();render();celebrate(it);}}
+  if(it&&!soldOut(it)&&S.points>=it.c){S.points-=it.c;if(it.st){PREV='';$('pvbar').hidden=true;}S.owned[it.id]=(S.owned[it.id]||0)+1;if(it.frz)S.freeze=(S.freeze||0)+1;var msg='';
+   if(it.rest){S.rest={until:Date.now()+864e5,d:{}};var gg=applyRest();msg='Es tu día de descanso, tómatelo para ti. Durante 24 horas todo cuenta como hecho'+(gg?' y ya has sumado +'+gg+' puntos.':'.');}
+   if(it.box){var pz=boxRoll();S.points+=pz;S.boxDay=T;msg='¡Te han tocado '+pz+' puntos!'+(pz>it.c?' Has ganado '+(pz-it.c)+' más de lo que costaba.':pz===it.c?' Recuperas lo que costaba.':' Mañana puedes volver a probar.');}
+   if(it.st)setStyle(it.st,true);save();render();celebrate(it,msg);}}
  else if(t.dataset.i){var p=IDEAS[+t.dataset.i];addHabit(p[1],p[0]);}
  else if(t.dataset.c){SELD=t.dataset.c;renderCal();}
  else if(t.dataset.rd){var ar=S.notes[SELD]||[];ar.splice(+t.dataset.rd,1);if(!ar.length)delete S.notes[SELD];save();renderCal();}
@@ -703,9 +743,9 @@ function size(){var r=window.devicePixelRatio||1;fx.width=innerWidth*r;fx.height
 function burst(x,y,n){var cols=['#ffb020','#5b4bf5','#16b673','#ff5c8a','#33c6ff','#ffffff'];for(var i=0;i<n;i++){var a=Math.random()*Math.PI*2,v=6+Math.random()*10;P.push({x:x,y:y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-6,w:6+Math.random()*7,h:4+Math.random()*6,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:cols[i%cols.length],l:1});}if(!raf)raf=requestAnimationFrame(tick);}
 function tick(){cx.clearRect(0,0,innerWidth,innerHeight);P=P.filter(function(p){p.vy+=.35;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l-=.008;if(p.l<=0||p.y>innerHeight+20)return false;cx.save();cx.globalAlpha=Math.min(1,p.l*2);cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore();return true;});raf=P.length?requestAnimationFrame(tick):0;if(!raf)cx.clearRect(0,0,innerWidth,innerHeight);}
 function chime(){try{var A=window.AudioContext||window.webkitAudioContext;if(!A)return;var a=new A();[523,659,784,1047].forEach(function(f,i){var o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=f;var t=a.currentTime+i*.09;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.5);o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+.55);});}catch(e){}}
-function celebrate(it){
+function celebrate(it,msg){
  size();
- $('wg').textContent=it.e;$('wt').textContent='¡'+it.n+' desbloqueado!';$('wd').textContent='Te lo has ganado con tu constancia. Has gastado '+it.c+' puntos.';
+ $('wg').textContent=it.e;$('wt').textContent=it.box?'¡Cofre abierto!':it.rest?'¡Día de descanso!':'¡'+it.n+' desbloqueado!';$('wd').textContent=msg?msg:it.once?'Ya luce junto a tu nombre y desde hoy ganas +5 puntos extra cada día que entres. Has gastado '+it.c+' puntos.':it.frz?'Si un día se te olvida entrar, tu racha queda a salvo. Has gastado '+it.c+' puntos.':'Te lo has ganado con tu constancia. Has gastado '+it.c+' puntos.';
  $('win').hidden=false;$('wb').focus();
  var calm=window.matchMedia('(prefers-reduced-motion:reduce)').matches,W=innerWidth,H=innerHeight;
  if(calm){burst(W/2,H/2,40);}else{burst(W/2,H*.4,120);setTimeout(function(){burst(0,H*.7,70);burst(W,H*.7,70);},250);setTimeout(function(){burst(W/2,H*.3,90);},600);}
@@ -794,7 +834,7 @@ function cloudIn(u){
   if(ex&&!(lcS&&(lcS.u||0)>cu)){try{S=Object.assign(defaults(),JSON.parse(rv.d));S.u=cu;}catch(e){S=defaults();}lastJ=sjson();}
   else{S=Object.assign(defaults(),lcS||(wasGuest?gs:{}));lastJ='';}
   if(lc)S.covers=lc;
-  if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
+  fixStreak();
   applying=false;cloudOK=true;cst('☁ sincronizado ✓ (v4)',true);save();SELD=CT;render();listen(u.uid);
  }).catch(function(e){
   applying=false;cloudOK=false;S=defaults();load();lastJ=sjson();SELD=CT;render();
@@ -803,7 +843,7 @@ function cloudIn(u){
 function cloudOut(){
  if(unsub){unsub();unsub=null;}
  cloudOK=false;USER='';UL='';KEY=GUEST;cst('');S=defaults();load();lastJ=sjson();
- if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
+ fixStreak();
  SELD=CT;render();updLogin();}
 function accts(){try{return JSON.parse(localStorage.getItem(AK))||{};}catch(e){return {};}}
 function hex(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return x.toString(16).padStart(2,'0');}).join('');}
@@ -812,7 +852,7 @@ function updLogin(){$('login').textContent=USER?'Salir':'Iniciar sesión';}
 function switchTo(email){
  USER=email;KEY=email?'anprovilla-u-'+email:GUEST;
  try{if(email)localStorage.setItem(SK,email);else localStorage.removeItem(SK);}catch(e){}
- S=defaults();load();lastJ=sjson();if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
+ S=defaults();load();lastJ=sjson();fixStreak();
  save();SELD=CT;render();updLogin();
 }
 function setMode(m){mode=m;$('atin').classList.toggle('on',m==='in');$('tup').classList.toggle('on',m==='up');var t=m==='up'?'Crear cuenta':'Iniciar sesión';$('at').textContent=t;$('ago').textContent=t;$('apw').autocomplete=m==='up'?'new-password':'current-password';$('aerr').textContent='';}
@@ -873,8 +913,8 @@ try{setStyle(localStorage.getItem(STK)||'',false);}catch(e){}
 $('checkin').onclick=function(){
  if(S.last===T)return;
  S.streak=S.last===Y?S.streak+1:1;S.best=Math.max(S.best,S.streak);
- S.last=T;if(S.hist.indexOf(T)<0)S.hist.push(T);S.hist=S.hist.slice(-60);S.points+=10;
- save();render();toast(S.streak>1?'¡Racha de '+S.streak+' días! +10 puntos':'¡Empiezas tu racha! +10 puntos');};
+ S.last=T;if(S.hist.indexOf(T)<0)S.hist.push(T);S.hist=S.hist.slice(-60);var bn=bonus();S.points+=bn;
+ save();render();toast(S.streak>1?'¡Racha de '+S.streak+' días! +'+bn+' puntos':'¡Empiezas tu racha! +'+bn+' puntos');};
 $('hadd').onclick=function(){addHabit($('hname').value,'');$('hname').value='';};
 $('hname').addEventListener('keydown',function(e){if(e.key==='Enter')$('hadd').click();});
 $('radd').onclick=function(){
@@ -1106,8 +1146,9 @@ function route(){
 window.addEventListener('hashchange',route);
 try{var sv=localStorage.getItem(SK);if(!CLOUD&&sv&&accts()[sv]){USER=sv;KEY='anprovilla-u-'+sv;}}catch(e){}
 load();lastJ=sjson();
-if(S.last&&S.last!==T&&S.last!==Y)S.streak=0;
+fixStreak();
 save();render();route();updLogin();
+setInterval(function(){if(!$('restb').hidden&&!restOn())render();},60000);
 if(CLOUD)fbAuth.onAuthStateChanged(function(u){if(u)cloudIn(u);else if(USER)cloudOut();});
 $('pb').onclick=function(){$('pledge').hidden=true;toast('Compromiso hecho 💪');};
 $('pledge').hidden=false;$('pb').focus();
