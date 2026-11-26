@@ -80,6 +80,130 @@ main{max-width:880px;margin:0 auto;padding:24px 16px 80px}
 .card.restb{display:flex;align-items:center;gap:14px;margin-bottom:16px;border:1px solid var(--ok);background:linear-gradient(135deg,var(--oksoft),var(--card));box-shadow:0 0 0 1px var(--ok) inset}
 .restb b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:20px}
 .restb small{color:var(--mute)}
+.pbwrap{position:relative;border-radius:22px;overflow:hidden;border:3px solid rgba(255,255,255,.7);box-shadow:0 18px 50px rgba(20,40,30,.28),0 0 0 1px var(--line);margin-bottom:14px;background:#5fa847}
+.pblab{display:grid;gap:6px;font-weight:700;margin-top:8px}
+.pblab input{max-width:320px}
+#s-pueblo .mstats div{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--card),var(--prisoft))}
+#s-pueblo .mstats div::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,#5fa847,var(--sun))}
+#s-pueblo #pbshop .pbit{transition:transform .15s,box-shadow .15s}
+#s-pueblo #pbshop .pbit:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+#s-pueblo #pbinfo{border-left:4px solid var(--sun)}
+#pbcv{display:block;width:100%;height:clamp(380px,72vh,760px);cursor:grab;touch-action:none}
+.pbzoom{position:absolute;right:10px;top:10px;display:flex;gap:6px}
+.pbzoom button{background:rgba(255,255,255,.92);color:#1b1d2e;font-weight:800;min-width:38px;height:38px;padding:0 12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.pbev{margin-bottom:14px;border-color:var(--sun);box-shadow:0 0 0 1px var(--sun) inset}
+.pbev h3{margin:4px 0 10px}
+.pbk{color:var(--sun);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:12px}
+.pbops{display:flex;flex-wrap:wrap;gap:8px}
+.pbops .btn{flex:1 1 220px;text-align:left}
+.pbcost{display:inline-block;margin-left:6px;font-size:12px;opacity:.85;font-weight:600}
+.chip.neg{background:rgba(229,72,77,.15);color:#e5484d}
+.pbsay{font-style:italic;font-weight:600;color:var(--pri)}
+.pbh{margin:12px 0 8px;font-size:15px}
+.pbwho{align-items:flex-start}
+.pbwho .pbav{margin-top:6px}
+.pbit{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;padding:12px}
+.pbit canvas{width:110px;height:112px}
+.pbit b{font-size:16px}
+.pbit small{color:var(--mute);font-size:12px;min-height:32px;line-height:1.35}
+.pbit .buy{width:100%;margin-top:4px}
+.pbit.sel{border-color:var(--sun);box-shadow:0 0 0 2px var(--sun) inset}
+.pbmode{display:flex;align-items:center;flex-wrap:wrap;gap:10px;color:var(--mute);margin:0 0 12px}
+.pbmode.on{color:var(--ink);background:var(--prisoft);padding:10px 14px;border-radius:14px}
+.pbdot{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:10px;vertical-align:-2px;box-shadow:0 0 0 2px rgba(255,255,255,.6)}
+.pbav{width:14px;height:14px;border-radius:50%;flex:none}
+#pbinfo{margin-bottom:14px}
+.hopt{margin:-4px 0 14px;padding:12px 16px}
+.hopt summary{cursor:pointer;font-weight:700;list-style:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hopt summary::-webkit-details-marker{display:none}
+.hopt summary::before{content:"+";display:grid;place-items:center;width:22px;height:22px;border-radius:7px;background:var(--prisoft);color:var(--pri);font-weight:800}
+.hopt[open] summary::before{content:"−"}
+.hopt summary span{color:var(--mute);font-weight:500;font-size:13px}
+.hrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+.hlab{min-width:130px;font-weight:600;font-size:14px;color:var(--mute)}
+.seg{display:flex;background:var(--bg);padding:4px;border-radius:12px;gap:4px}
+.seg button{padding:8px 12px;background:transparent;color:var(--mute);font-weight:700;font-size:14px}
+.seg button.on{background:var(--card);color:var(--pri);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.dsel{display:flex;gap:6px}
+.dsel button{width:38px;height:38px;border-radius:50%;background:var(--bg);border:1px solid var(--line);color:var(--mute);font-weight:800}
+.dsel button.on{background:var(--pri);border-color:var(--pri);color:var(--on)}
+.hin{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hin input[type=number]{width:84px;text-align:center}
+.hin input[type=text]{width:180px}
+.hgrp{list-style:none;font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);margin:8px 0 -2px 4px}
+.hmeta{color:var(--mute);font-size:13px;font-weight:500}
+.wdots{display:inline-flex;gap:3px;margin-left:8px;vertical-align:middle}
+.wdots i{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;font-style:normal;font-size:9px;font-weight:800;background:var(--bg);color:var(--mute);border:1px solid var(--line)}
+.wdots i.ok{background:var(--ok);border-color:var(--ok);color:#04251a}
+.wdots i.off{opacity:.35}
+.wdots i.td{box-shadow:0 0 0 2px var(--pri)}
+.habit.later{opacity:.7}
+.habit.later .nm{font-weight:500}
+.sq.off{border-style:dashed;border-color:var(--line);background:transparent}
+.sq.qring{position:relative;border:0;background:conic-gradient(var(--ok) calc(var(--p)*1%),var(--line) 0);color:var(--ink)}
+.sq.qring::before{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--card)}
+.sq.qring span{position:relative;font-size:14px}
+.sq.qring.full{background:var(--ok)}.sq.qring.full::before{background:var(--ok)}.sq.qring.full span{color:#04251a}
+.qctl{display:flex;align-items:center;gap:6px;flex:none}
+.qctl button{width:32px;height:32px;border-radius:50%;background:var(--bg);border:1px solid var(--line);font-size:18px;font-weight:800;color:var(--ink)}
+.qctl b{min-width:58px;text-align:center;font-size:15px}
+.qctl b small{color:var(--mute);font-weight:500;font-size:11px}
+.hed{font-size:13px;opacity:.6}
+.hl .habit:hover .hed{opacity:1}
+.achg{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.ach{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:16px 12px;transition:transform .15s}
+.ach:hover{transform:translateY(-3px)}
+.ach.on{background:linear-gradient(170deg,var(--card) 55%,var(--prisoft))}
+.ach b{font-size:15px;line-height:1.2}
+.ach small{color:var(--mute);font-size:12px;min-height:32px}
+.ach .pg{width:100%}
+.achd{font-size:12px;font-weight:700;color:var(--mute)}
+.ach.on .achd{color:var(--ok)}
+.medal{display:grid;place-items:center;border-radius:50%;color:#fff;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.75),transparent 38%),linear-gradient(145deg,var(--m1),var(--m2));box-shadow:0 0 0 4px rgba(255,255,255,.35) inset,0 6px 16px rgba(0,0,0,.22)}
+.medal svg{filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))}
+.medal.lock{filter:grayscale(1);opacity:.35}
+.rwrap{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:18px;align-items:start}
+#rcv{width:100%;height:auto;border-radius:20px;box-shadow:0 16px 40px rgba(20,10,80,.35)}
+@media (max-width:700px){.rwrap{grid-template-columns:1fr}}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:14px}
+.tcard{display:flex;align-items:center;gap:14px}
+.tcard .ti{font-size:38px}.tcard h3{font-size:18px}.tcard p{margin:2px 0 0;color:var(--mute);font-size:13px}.tcard .tar{margin-left:auto;font-size:26px;color:var(--mute)}
+.whybox{display:grid;gap:8px;text-align:left;margin:4px 0 6px}
+.whybox label{font-weight:800;font-size:17px}
+.whybox textarea,#mywhy textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);resize:vertical}
+.whyq{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:20px;font-weight:600;margin:0 0 10px;color:var(--pri)}
+.whyc{position:relative;overflow:hidden;width:min(460px,100%);text-align:center;padding:40px 26px 28px;border-radius:30px;background:linear-gradient(160deg,#1a1450,#5b4bf5);color:#fff;box-shadow:0 30px 80px rgba(20,10,80,.6);animation:pop .7s cubic-bezier(.2,1.6,.4,1)}
+.whyrays{position:absolute;left:50%;top:-40px;width:620px;height:620px;margin-left:-310px;background:repeating-conic-gradient(rgba(255,176,32,.22) 0 8deg,transparent 8deg 20deg);border-radius:50%;-webkit-mask:radial-gradient(circle,#000,transparent 65%);mask:radial-gradient(circle,#000,transparent 65%);animation:spin 18s linear infinite}
+.whyc>*:not(.whyrays){position:relative}
+.whyk{display:inline-block;padding:5px 12px;border-radius:99px;background:rgba(255,255,255,.15);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.whyc h2{margin:14px 0 6px;font-size:30px}
+.whyt{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:24px;font-weight:600;line-height:1.35;min-height:70px;margin:16px 0;color:#ffd166;text-shadow:0 2px 14px rgba(255,176,32,.45)}
+.whys{color:rgba(255,255,255,.75);margin:0 0 18px}
+.whyc .btn{width:100%;padding:14px;font-size:17px;background:#ffb020;color:#2b1a00}
+.dipc{width:min(500px,100%);padding:12px;border-radius:10px;background:#f6ecd2;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:dipin .9s cubic-bezier(.2,1.4,.4,1);color:#3b2a12}
+.dipin{border:3px double #b08d57;outline:2px solid #d8c08a;outline-offset:-10px;padding:30px 24px 22px;text-align:center;background:radial-gradient(circle at 50% 0,rgba(255,255,255,.6),transparent 60%)}
+.dipk{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#8a6a2f}
+.dipc h2{margin:12px 0 4px;font-size:22px;color:#5a4320}
+.dipn{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:34px;font-weight:800;margin:4px 0;color:#2b1d0a;line-height:1.15}
+.dip21{display:inline-block;margin:6px 0 10px;padding:4px 14px;border-radius:99px;background:#b08d57;color:#fff;font-weight:800;font-size:13px}
+.dipm{margin:6px 0 16px;font-size:16px;line-height:1.5}
+.dipf{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;color:#8a6a2f;margin-bottom:16px}
+.dseal{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8a80,#c62828);color:#fff;font-weight:800;font-size:20px;box-shadow:0 0 0 4px #e57373,0 6px 14px rgba(0,0,0,.3);transform:rotate(-12deg);animation:seal 1.1s .5s both}
+.dipb{display:grid;gap:8px}.dipb .btn{background:#5a4320;color:#fff;padding:13px}.dipb .buy{margin:0}
+@keyframes dipin{from{transform:scale(.2) rotate(8deg);opacity:0}}
+@keyframes seal{from{transform:scale(3) rotate(-40deg);opacity:0}}
+.gradg{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.gradc{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px;border-radius:14px;background:#f6ecd2;border:2px solid #d8c08a;color:#3b2a12;text-align:center}
+.gradc small{color:#8a6a2f}
+.gseal{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8a80,#c62828);color:#fff;font-weight:800;font-size:14px}
+.retoc{background:linear-gradient(160deg,var(--card) 40%,var(--prisoft))}
+.retotag{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--mute);font-size:13px;font-weight:600;margin-bottom:8px}
+.rtag{padding:3px 10px;border-radius:99px;background:var(--sun);color:var(--sunink);font-weight:800;letter-spacing:.06em}
+.retoc h2{font-size:32px}
+.rbar{position:relative;height:30px;border-radius:99px;background:var(--bg);overflow:hidden;border:1px solid var(--line)}
+.rbar b{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--ok));border-radius:99px;transition:width .8s}
+.rbar span{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;font-size:14px}
+.rok{margin:12px 0 0;font-weight:700;color:var(--ok)}
 .item.gold{background:linear-gradient(160deg,var(--card) 40%,rgba(232,184,74,.22));border-color:#e8b84a}
 .badge{display:inline-flex;align-items:center;margin-left:8px;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.04em;color:#3d2800;background:linear-gradient(135deg,#ffe08a,#e8b84a 55%,#c98d1e);box-shadow:0 0 14px rgba(232,184,74,.55);vertical-align:middle}
 .item .e{width:64px;height:64px;display:grid;place-items:center;border-radius:18px;background:var(--prisoft);font-size:34px}
@@ -333,6 +457,7 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
     <a href="#extensiones" data-s="extensiones">Extensiones</a>
     <a href="#terminal" data-s="terminal" hidden>Terminal</a>
     <a href="#futbol" data-s="futbol" hidden>Fútbol Masculino</a>
+    <a href="#pueblo" data-s="pueblo">Pueblo</a>
   </nav>
 </div></div>
 
@@ -372,6 +497,7 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
     <button class="cta" id="checkin">Entrar hoy (+10)</button>
     <p class="note" id="frz" style="margin:-4px 0 14px;font-size:14px"></p>
     <div class="card"><h3>Esta semana</h3><div class="week" id="week"></div></div>
+    <div class="card" style="margin-top:14px"><h3>Tu porqué 💭</h3><div id="mywhy" style="margin-top:8px"></div></div>
   </section>
 
   <section id="s-habitos">
@@ -380,11 +506,21 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
       <div><h2>Hábitos</h2><p class="sub" id="hsub"></p></div>
     </div>
     <div class="hadd">
-      <input type="text" id="hname" maxlength="60" placeholder="Añade un hábito nuevo, ej.: beber 2 litros de agua" aria-label="Nombre del hábito">
+      <input type="text" id="hname" maxlength="60" placeholder="Añade un hábito nuevo, ej.: ir al gimnasio" aria-label="Nombre del hábito">
       <button class="btn" id="hadd">Añadir</button>
     </div>
+    <details class="card hopt" id="hopt">
+      <summary>Días y cantidad <span>Por defecto: todos los días, una vez</span></summary>
+      <div class="hrow"><span class="hlab">Frecuencia</span><div class="seg"><button type="button" data-hf="d" class="on">Días concretos</button><button type="button" data-hf="w">Veces por semana</button></div></div>
+      <div class="hrow" id="hdaysrow"><span class="hlab">Qué días</span><div class="dsel"><button type="button" data-hdw="1" class="on">L</button><button type="button" data-hdw="2" class="on">M</button><button type="button" data-hdw="3" class="on">X</button><button type="button" data-hdw="4" class="on">J</button><button type="button" data-hdw="5" class="on">V</button><button type="button" data-hdw="6" class="on">S</button><button type="button" data-hdw="0" class="on">D</button></div></div>
+      <div class="hrow" id="hwrow" hidden><span class="hlab">Cuántas veces</span><div class="hin"><input type="number" id="hwn" min="1" max="7" value="3" aria-label="Veces por semana"><span>a la semana, el día que quieras</span></div></div>
+      <div class="hrow"><span class="hlab">Cantidad al día</span><div class="hin"><input type="number" id="hgoal" min="1" max="100" value="1" aria-label="Cantidad al día"><input type="text" id="hunit" maxlength="14" placeholder="unidad, ej.: vasos" aria-label="Unidad"></div></div>
+      <p class="note" style="margin:8px 0 0">Con cantidad 1 se marca con un toque. Con más, sumas con + y −, y se cumple al llegar a la meta.</p>
+      <button type="button" class="x" id="hcancel" hidden>Cancelar edición</button>
+    </details>
     <div class="chips" id="chips"></div>
     <ul class="list hl" id="hlist"></ul>
+    <div id="hgrad" hidden><h3 style="margin:22px 0 10px">Hábitos graduados</h3><p class="sub" style="margin:-4px 0 10px">Ya forman parte de ti. Toca uno para ver su diploma.</p><div class="gradg" id="hgradl"></div></div>
   </section>
 
   <section id="s-lectura">
@@ -416,10 +552,41 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
     <ul class="list hl" id="dlist"></ul>
   </section>
 
+  <section id="s-logros">
+    <a class="back" href="#tienda">‹ Volver a la tienda</a>
+    <div class="row" style="flex-wrap:wrap;margin-bottom:12px"><h2>Logros</h2><div class="tabs" style="min-width:260px"><button id="tabl" class="on">Logros</button><button id="tabr">Resumen del mes</button></div></div>
+    <div id="achl">
+      <div class="mstats" id="achtop"></div>
+      <div class="pg" style="height:10px;margin:0 0 16px"><b id="achbar" style="width:0"></b></div>
+      <div class="achg" id="achgrid"></div>
+    </div>
+    <div id="achr" hidden>
+      <div class="row" style="justify-content:flex-start;gap:6px;margin-bottom:12px"><button class="x" id="rprev" aria-label="Mes anterior">‹</button><h3 id="rtit" style="min-width:190px;text-align:center"></h3><button class="x" id="rnext" aria-label="Mes siguiente">›</button></div>
+      <div class="rwrap"><canvas id="rcv" width="1080" height="1350" aria-label="Resumen del mes en imagen"></canvas>
+        <div class="rside"><p class="sub" style="margin:0 0 12px">Comparte tu mes en redes o por WhatsApp. La imagen lleva el enlace a Anprovilla.</p>
+          <button class="btn" id="rshare" style="width:100%">Compartir</button>
+          <button class="buy alt" id="rdl" style="width:100%;margin-top:8px">Descargar imagen</button>
+          <button class="buy alt" id="rcopy" style="width:100%;margin-top:8px">Copiar texto</button>
+          <p class="note" id="rtxt" style="margin-top:12px;user-select:all"></p></div></div>
+    </div>
+  </section>
+
+  <section id="s-reto">
+    <a class="back" href="#tienda">‹ Volver a la tienda</a>
+    <div class="card retoc" id="retob"></div>
+    <div class="card" style="margin-top:14px"><h3>Cómo se suma</h3><p class="sub" style="margin:6px 0 0">Todo lo que haces en Anprovilla esta semana cuenta para el reto de todos. Mientras otros compiten en el ranking, aquí remamos todos hacia el mismo lado.</p></div>
+    <h3 style="margin:18px 0 10px">Próximos retos</h3>
+    <ul class="list" id="retonext"></ul>
+  </section>
+
   <section id="s-tienda">
     <h2>Tienda</h2>
     <div class="card bal"><span class="coin">🪙</span><div><div><b id="tp">0</b> puntos</div><small id="tnext"></small></div></div>
-    <a class="card go" href="#estilos" style="display:flex;align-items:center;gap:14px;margin-bottom:14px"><span style="font-size:40px">🎨</span><div><h3>Estilos</h3><p style="margin:0;color:var(--mute);font-size:14px">Cambia el aspecto de toda la página. Mira la vista previa de cada uno · 25 puntos por estilo.</p></div><span style="margin-left:auto;font-size:26px">›</span></a>
+    <div class="tgrid">
+      <a class="card go tcard" href="#estilos"><span class="ti">🎨</span><div><h3>Estilos</h3><p>Cambia el aspecto de toda la página · 25 puntos cada uno.</p></div><span class="tar">›</span></a>
+      <a class="card go tcard" href="#logros"><span class="ti">🏆</span><div><h3>Logros</h3><p id="tlog">Medallas por tu constancia y resumen del mes.</p></div><span class="tar">›</span></a>
+      <a class="card go tcard" href="#reto"><span class="ti">🤝</span><div><h3>Reto semanal</h3><p id="tret">Una meta para todos los usuarios juntos.</p></div><span class="tar">›</span></a>
+    </div>
     <div class="shop" id="shop"></div>
   </section>
 
@@ -478,6 +645,25 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
     <div class="tms" id="ftm"></div>
   </section>
 
+  <section id="s-pueblo">
+    <h2>Pueblo</h2>
+    <p class="sub" id="pbsub"></p>
+    <div class="mstats" id="pbstats"></div>
+    <div class="card pbev" id="pbev" hidden></div>
+    <div class="pbwrap"><canvas id="pbcv" aria-label="Mapa del pueblo con sus vecinos"></canvas><div class="pbzoom"><button data-pbz="1" aria-label="Acercar">+</button><button data-pbz="-1" aria-label="Alejar">−</button><button data-pbz="0">Ver todo</button></div></div>
+    <p class="note" style="margin:-6px 0 14px">Arrastra para moverte por el pueblo. Usa la rueda del ratón o los botones para el zoom. Pasa el ratón por un vecino para ver quién es.</p>
+    <div class="card" id="pbparty" hidden><h3>Funda tu pueblo</h3><label class="pblab">Nombre del alcalde<input type="text" id="pbmn" maxlength="24" placeholder="Por ejemplo: Don Paco" autocomplete="off"></label><h3 style="margin-top:14px">Elige tu partido</h3><p class="sub" style="margin:4px 0 12px">El alcalde gobernará con los colores de tu partido. Todos los partidos funcionan igual en el juego: solo cambia el color del alcalde y de la bandera del ayuntamiento.</p><div class="tms" id="pbpl"></div></div>
+    <div id="pbmain" hidden>
+      <div class="card" id="pbinfo" hidden></div>
+      <h3 style="margin:4px 0 8px">Construir</h3>
+      <div class="pbmode" id="pbmode"></div>
+      <div class="chips" id="pbcat" style="margin-bottom:12px"></div>
+      <div class="shop" id="pbshop"></div>
+      <h3 style="margin:22px 0 10px">Vecinos</h3>
+      <ul class="list hl" id="pbpeople"></ul>
+    </div>
+  </section>
+
   <section id="s-estilos">
     <a class="back" href="#tienda">‹ Volver a la tienda</a>
     <h2>Estilos</h2>
@@ -528,8 +714,16 @@ input,select{font:inherit;padding:12px 14px;border:1px solid var(--line);border-
     <div class="gift" style="font-size:64px">🤝</div>
     <h2 id="pt">Un compromiso contigo ✨</h2>
     <p class="sub" style="font-size:17px;color:var(--ink)">Me comprometo a ser sincero/a conmigo mismo/a: marcaré solo lo que de verdad he cumplido.</p>
+    <div id="whybox" class="whybox"><label for="whyin">¿Por qué has instalado este juego?</label><textarea id="whyin" maxlength="200" rows="3" placeholder="Por ejemplo: quiero dejar el móvil por las noches y leer más"></textarea><p class="note" style="margin:0">Te lo recordaremos cada lunes para que no se te olvide por qué empezaste.</p><p class="err" id="whyerr" role="alert"></p></div>
     <button class="btn" id="pb" style="padding:14px;font-size:17px">Me comprometo 💪</button>
   </div>
+</div>
+<div class="win" id="whyrem" role="dialog" aria-modal="true" aria-labelledby="whyh" hidden>
+  <div class="whyc"><div class="whyrays"></div><span class="whyk">Lunes · nueva semana</span><h2 id="whyh">Recuerda por qué empezaste</h2><p class="whyt" id="whytxt"></p><p class="whys">Misma razón, nueva semana. Tú puedes.</p><button class="btn" id="whyclose">¡Vamos a por ello!</button></div>
+</div>
+<div class="win" id="dipl" role="dialog" aria-modal="true" aria-labelledby="diph" hidden>
+  <div class="dipc"><div class="dipin"><span class="dipk">Diploma de Anprovilla</span><h2 id="diph">Ya tienes el hábito de</h2><p class="dipn" id="dipn"></p><p class="dip21">21 días cumpliéndolo</p><p class="dipm" id="dipmsg"></p><div class="dipf"><span id="dipd"></span><span class="dseal">21</span><span>Firmado: Anprovilla</span></div>
+  <div class="dipb" id="dipbtns"><button class="btn" id="dipgrad">Graduar y dejar sitio a otro</button><button class="buy alt" id="dipkeep">Seguir con él</button></div><button class="btn" id="dipok" hidden style="width:100%">Cerrar</button></div></div>
 </div>
 <div class="pvbar" id="pvbar" hidden><span id="pvt"></span><button class="buy" id="pvb">Desbloquear · 25 puntos</button><button class="x" id="pvx">Salir de la vista previa</button></div>
 <canvas id="fx" aria-hidden="true"></canvas>
@@ -561,7 +755,7 @@ var ITEMS=[
  {id:'st_plasma',e:'🔥',n:'Estilo Plasma',d:'Panel de mandos naranja y rojo.',c:25,st:'plasma'}];
 var NAMES={neon:'Neón',aurora:'Aurora',terminal:'Terminal',synth:'Synthwave',chrome:'Cromo',plasma:'Plasma'};
 var PAL={neon:['#060a18','#00e5ff','#ff2bd6'],aurora:['#0b0a1f','#9d8cff','#5ef2c0'],terminal:['#03060a','#b6ff3c','#ffb000'],synth:['#13002e','#ff3d9a','#2de2e6'],chrome:['#e9eef7','#2a5cff','#ff5a1f'],plasma:['#0a0605','#ff6a00','#ff2d3d']};
-var IDEAS=[['','Beber agua'],['','Hacer ejercicio'],['','Meditar 10 minutos'],['','Dormir 8 horas'],['','Comer fruta'],['','Estudiar 30 minutos']];
+var IDEAS=[['','Beber agua',{goal:8,unit:'vasos'}],['','Ir al gimnasio',{fq:'w',wn:3}],['','Meditar 10 minutos'],['','Dormir 8 horas'],['','Comer fruta',{goal:3,unit:'piezas'}],['','Estudiar 30 minutos',{days:[1,2,3,4,5]}],['','Salir a correr',{fq:'w',wn:2}],['','Leer',{goal:10,unit:'páginas'}]];
 var DAYS=['D','L','M','X','J','V','S'];
 var LGS=[{n:'Premier League',t:['AFC Bournemouth','Arsenal FC','Aston Villa','Brentford FC','Brighton & Hove Albion','Chelsea FC','Coventry City','Crystal Palace','Everton FC','Fulham FC','Hull City','Ipswich Town','Leeds United','Liverpool FC','Manchester City','Manchester United','Newcastle United','Nottingham Forest','Sunderland AFC','Tottenham Hotspur']},
  {n:'La Liga',t:['Athletic Bilbao','Atletico Madrid','CA Osasuna','Deportivo Alaves','Elche CF','Espanyol Barcelona','FC Barcelona','Getafe CF','Levante UD','Malaga CF','Racing Santander','Rayo Vallecano','RC Celta de Vigo','RC Deportivo de A Coruna','Real Betis Seville','Real Madrid','Real Sociedad San Sebastian','Sevilla FC','Valencia CF','Villarreal CF']},
@@ -585,18 +779,19 @@ var EXT=[
  {id:'duolingo',n:'Duolingo',d:'Registro de lecciones y su resumen en Inicio.',secs:['duolingo']},
  {id:'notas',n:'Notas',d:'Notas al estilo iPhone: agrupadas por fecha, fijar, listas de tareas y notas bloqueadas con contraseña.',secs:['notas']},
  {id:'terminal',n:'Terminal',d:'Una terminal al estilo de Windows. Escribe «juegos» para abrir la página de juegos.',secs:['terminal','juegos','snake']},
- {id:'futbol',n:'Fútbol Masculino',d:'Una sección de fútbol masculino.',secs:['futbol']}];
+ {id:'futbol',n:'Fútbol Masculino',d:'Una sección de fútbol masculino.',secs:['futbol']},
+ {id:'pueblo',n:'Pueblo',d:'Construye un pueblo desde cero: cada día que entras llega un vecino nuevo y tus hábitos dan monedas.',secs:['pueblo']}];
 function extOn(id){return (id==='terminal'||id==='futbol')?!!(S.ext&&S.ext[id]):(!S.ext||S.ext[id]!==false);}
 function extOfSec(sec){for(var i=0;i<EXT.length;i++){if(EXT[i].secs.indexOf(sec)>-1)return EXT[i].id;}return '';}
-function defaults(){return {streak:0,best:0,points:0,last:'',hist:[],habits:[],owned:{},reads:[],dl:[],notes:{},ext:{},extOrder:[],freeze:0};}
+function defaults(){return {streak:0,best:0,points:0,last:'',hist:[],habits:[],owned:{},reads:[],dl:[],notes:{},ext:{},extOrder:[],freeze:0,hd:{},ach:{}};}
 var S=defaults();
 function restOn(){return !!(S.rest&&Date.now()<S.rest.until);}
 function restEnd(){var e=new Date(S.rest.until),h=e.toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});return (ds(e)===ds()?'hoy':'mañana')+' a las '+h;}
 function applyRest(){
  if(!restOn())return 0;
  var g=0,dd=S.rest.d=S.rest.d||{};
- if(S.last!==T){S.streak=S.last===Y?S.streak+1:1;S.best=Math.max(S.best,S.streak);S.last=T;if(S.hist.indexOf(T)<0)S.hist.push(T);S.hist=S.hist.slice(-60);var b=bonus();S.points+=b;g+=b;}
- S.habits.forEach(function(h){if(h.done!==T){h.done=T;S.points+=5;g+=5;}});
+ if(S.last!==T){S.streak=S.last===Y?S.streak+1:1;S.best=Math.max(S.best,S.streak);S.last=T;if(S.hist.indexOf(T)<0)S.hist.push(T);S.hist=S.hist.slice(-400);S.tin=(S.tin||0)+1;var b=bonus();S.points+=b;g+=b;}
+ schedToday().forEach(function(h){if(!hDoneOn(h,T)){(h.log=h.log||{})[T]=hGoal(h);h.done=T;S.points+=5;g+=5;if(S.pb)S.pb.coins+=5;}});
  if(!dd[T]){dd[T]=1;
   if(extOn('lectura')){var rt=readToday(),r=Math.max(0,5-Math.floor(rt/2));S.points+=r;g+=r;}
   if(extOn('duolingo')){var dn=S.dl.filter(function(x){return x.date===T;}).reduce(function(a,x){return a+(x.n||1);},0),q=Math.max(0,3-dn)*5;S.points+=q;g+=q;}}
@@ -636,7 +831,6 @@ function cloudFlush(){
 document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')cloudFlush();});
 window.addEventListener('pagehide',function(){cloudFlush();});
 var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');},2400);}
-function doneToday(){return S.habits.filter(function(h){return h.done===T;}).length;}
 function readToday(){return S.reads.filter(function(r){return r.date===T;}).reduce(function(a,r){return a+r.pages;},0);}
 
 var BKL=[];
@@ -646,6 +840,7 @@ function bars(f){var v=[],l=[],sum=0,i,d;for(i=6;i>=0;i--){d=ago(i);v.push(f(ds(
 function render(){
  enforceStyle();
  if(applyRest())save();
+ var pbn=pbDaily();if(pbn){save();setTimeout(function(){toast('Ha llegado '+pbn.p.n+' desde '+pbn.p.c+' al pueblo (+'+pbn.inc+' monedas)');},900);}
  $('restb').hidden=!restOn();if(restOn())$('restt').textContent='Todo cuenta como hecho hasta '+restEnd()+'.';
  $('streak').textContent=S.streak;$('best').textContent=S.best;
  $('points').textContent=S.points;$('tp').textContent=S.points;
@@ -655,10 +850,8 @@ function render(){
  var w='';for(var i=6;i>=0;i--){var d=ago(i),hit=S.hist.indexOf(ds(d))>-1;w+='<div class="'+(hit?'hit':'')+'">'+DAYS[d.getDay()]+'<i>'+(hit?'🔥':'')+'</i></div>';}
  $('week').innerHTML=w;
  // hábitos
- var n=S.habits.length,dn=doneToday();
- $('hsub').textContent=restOn()?'Día de descanso: hoy todo cuenta como hecho.':n?(dn===n?'¡Todo cumplido hoy!':'Llevas '+dn+' de '+n+'. Pulsa el círculo al cumplirlos (+5 puntos).'):'Todavía no tienes hábitos. Añade el primero aquí abajo.';
- $('hring').style.setProperty('--p',n?Math.round(dn/n*100):0);$('hpct').textContent=dn+'/'+n;
- $('hlist').innerHTML=n?S.habits.map(function(h){var d=h.done===T;return '<li class="habit'+(d?' done':'')+'"><button class="sq" data-t="'+h.id+'" aria-label="'+(d?'Desmarcar ':'Completar ')+esc(h.name)+'">'+(d?'✓':'')+'</button><span class="nm">'+esc(h.name)+'</span><button class="x" data-d="'+h.id+'" aria-label="Borrar '+esc(h.name)+'">✕</button></li>';}).join(''):'<li class="empty">Aún no hay hábitos. Escribe el primero arriba o elige una idea.</li>';
+ var hr=renderHabits(),n=hr.n,dn=hr.dn;
+ if(trackDay())save();
  // lectura
  var rt=readToday(),rtot=S.reads.reduce(function(a,r){return a+r.pages;},0);
  $('rtoday').textContent=rt+'/10';$('rring').style.setProperty('--p',Math.min(100,rt*10));
@@ -690,9 +883,12 @@ function render(){
  renderNotes();
  // inicio
  $('ih').textContent=dn+'/'+n;$('ir').textContent=readToday();$('idu').textContent=dd?'✓':'—';$('is').textContent=S.streak;
- $('ihint').textContent=S.last!==T?'Entra hoy para mantener tu racha':!extOn('habitos')?'':n===0?'Añade tu primer hábito para empezar.':dn<n?'Te faltan '+(n-dn)+' hábitos por cumplir hoy.':'¡Hábitos de hoy completados! Canjea algo en la tienda';
+ $('ihint').textContent=S.last!==T?'Entra hoy para mantener tu racha':!extOn('habitos')?'':!S.habits.length?'Añade tu primer hábito para empezar.':n===0?'Hoy no te toca ningún hábito.':dn<n?'Te faltan '+(n-dn)+' hábitos por cumplir hoy.':'¡Hábitos de hoy completados! Canjea algo en la tienda';
  // extensiones
- applyExt();renderFut();
+ applyExt();renderFut();renderPueblo();
+ if(dipCheck())save();
+ if(checkAch())save();renderAch();whyRender();gradRender();retoRender();retoPush();whyCheck();
+ var tl=$('tlog');if(tl)tl.textContent=Object.keys(S.ach||{}).length+' de '+ACH.length+' logros conseguidos · resumen del mes.';
  // tienda
  var shopIt=ITEMS.filter(function(i){return !i.st;}).sort(function(x,y){return x.c-y.c;});
  var nx=shopIt.filter(function(i){return i.c>S.points&&!soldOut(i);})[0];$('tnext').textContent=nx?'Siguiente: '+nx.n+' · te faltan '+(nx.c-S.points)+' puntos':'Puedes canjear cualquier premio';
@@ -709,11 +905,6 @@ function applyExt(){
  $('th').hidden=!extOn('habitos');$('td').hidden=!extOn('duolingo');$('tr').hidden=!extOn('lectura');
  $('xlist').innerHTML=EXT.map(function(x){var on=extOn(x.id);return '<li class="habit'+(on?'':' xoff')+'"><span class="nm"><b>'+x.n+'</b><br><span style="color:var(--mute);font-size:13px">'+x.d+'</span></span><button class="sw" role="switch" aria-checked="'+on+'" data-ex="'+x.id+'" aria-label="'+(on?'Desactivar ':'Activar ')+x.n+'"></button></li>';}).join('');
 }
-function addHabit(name,emoji){
- name=(name||'').trim();if(!name){toast('Escribe el nombre del hábito.');return;}
- S.habits.push({id:Math.random().toString(36).slice(2),name:name,emoji:emoji,done:''});
- save();render();toast('Hábito añadido: '+name);
-}
 document.addEventListener('click',function(e){
  var t=e.target.closest('button');if(!t)return;
  if(t.dataset.ex){S.ext=S.ext||{};S.ext[t.dataset.ex]=!extOn(t.dataset.ex);S.extOrder=(S.extOrder||[]).filter(function(i){return i!==t.dataset.ex;});if(extOn(t.dataset.ex))S.extOrder.push(t.dataset.ex);save();render();var xo=EXT.filter(function(x){return x.id===t.dataset.ex;})[0];toast(xo.n+(extOn(xo.id)?' activado':' desactivado'));return;}
@@ -721,15 +912,14 @@ document.addEventListener('click',function(e){
  if(t.dataset.tm!==undefined){S.team={lg:FUTLG,name:LGS[FUTLG].t[+t.dataset.tm]};save();render();toast('Tu equipo: '+S.team.name);return;}
  if(t.dataset.tq){S.team=null;save();render();return;}
  if(t.dataset.t){var h=S.habits.filter(function(x){return x.id===t.dataset.t;})[0];
-  if(h.done===T){h.done='';S.points=Math.max(0,S.points-5);}else{h.done=T;S.points+=5;toast('¡Cumplido! +5 puntos');}
-  save();render();}
+  if(h){hSet(h,hDoneOn(h,T)?0:hGoal(h));save();render();}}
  else if(t.dataset.d){S.habits=S.habits.filter(function(x){return x.id!==t.dataset.d;});save();render();}
  else if(t.dataset.b){var it=ITEMS.filter(function(x){return x.id===t.dataset.b;})[0];
   if(it&&!soldOut(it)&&S.points>=it.c){S.points-=it.c;if(it.st){PREV='';$('pvbar').hidden=true;}S.owned[it.id]=(S.owned[it.id]||0)+1;if(it.frz)S.freeze=(S.freeze||0)+1;var msg='';
    if(it.rest){S.rest={until:Date.now()+864e5,d:{}};var gg=applyRest();msg='Es tu día de descanso, tómatelo para ti. Durante 24 horas todo cuenta como hecho'+(gg?' y ya has sumado +'+gg+' puntos.':'.');}
    if(it.box){var pz=boxRoll();S.points+=pz;S.boxDay=T;msg='¡Te han tocado '+pz+' puntos!'+(pz>it.c?' Has ganado '+(pz-it.c)+' más de lo que costaba.':pz===it.c?' Recuperas lo que costaba.':' Mañana puedes volver a probar.');}
    if(it.st)setStyle(it.st,true);save();render();celebrate(it,msg);}}
- else if(t.dataset.i){var p=IDEAS[+t.dataset.i];addHabit(p[1],p[0]);}
+ else if(t.dataset.i){var p=IDEAS[+t.dataset.i];addHabit(p[1],p[0],Object.assign({fq:'d',days:[0,1,2,3,4,5,6],wn:3,goal:1,unit:''},p[2]||{}));}
  else if(t.dataset.c){SELD=t.dataset.c;renderCal();}
  else if(t.dataset.rd){var ar=S.notes[SELD]||[];ar.splice(+t.dataset.rd,1);if(!ar.length)delete S.notes[SELD];save();renderCal();}
  else if(t.dataset.rl){var q=S.reads.splice(+t.dataset.rl,1)[0];if(q)S.points=Math.max(0,S.points-Math.floor(q.pages/2));save();render();toast('Registro quitado');}
@@ -793,9 +983,9 @@ function dayState(k){
 var GUEST='anprovilla-v2',SK='anprovilla-session',AK='anprovilla-accts',USER='',UL='',mode='in';
 /* ===== SINCRONIZACIÓN EN LA NUBE (Firebase) =====
    Pega aquí la configuración de tu proyecto de Firebase (Configuración del proyecto > Tus apps > Web). */
-var FBCFG={apiKey:'AIzaSyBEx30zp3PZ1n53NkxNSZFIl8Pcm5hrkzQ',authDomain:'thenewpiece-f80de.firebaseapp.com',projectId:'thenewpiece-f80de',appId:'1:95339495777:web:e61b1835e264c02feb8520',
- /* Pega aquí la URL de tu Realtime Database (Firebase > Realtime Database, arriba del todo) */
- databaseURL:'https://thenewpiece-f80de-default-rtdb.europe-west1.firebasedatabase.app'};
+var FBCFG={apiKey:'AIzaSyBBQfw2vkS6842XZMQoeBLUzf3SDdywkm0',authDomain:'anprovilla-f99da.firebaseapp.com',projectId:'anprovilla-f99da',storageBucket:'anprovilla-f99da.firebasestorage.app',messagingSenderId:'255337287867',appId:'1:255337287867:web:762c73f079809cb5ca599e',
+ /* URL de la Realtime Database (Firebase > Realtime Database, arriba del todo) */
+ databaseURL:'https://anprovilla-f99da-default-rtdb.europe-west1.firebasedatabase.app'};
 var CLOUD=false,fbAuth=null,fbDb=null,unsub=null,CERR='';
 try{
  if(!window.firebase)CERR='no se pudo cargar el SDK de Firebase (sin conexión o bloqueado por una extensión/red)';
@@ -913,9 +1103,9 @@ try{setStyle(localStorage.getItem(STK)||'',false);}catch(e){}
 $('checkin').onclick=function(){
  if(S.last===T)return;
  S.streak=S.last===Y?S.streak+1:1;S.best=Math.max(S.best,S.streak);
- S.last=T;if(S.hist.indexOf(T)<0)S.hist.push(T);S.hist=S.hist.slice(-60);var bn=bonus();S.points+=bn;
+ S.last=T;if(S.hist.indexOf(T)<0)S.hist.push(T);S.hist=S.hist.slice(-400);S.tin=(S.tin||0)+1;var bn=bonus();S.points+=bn;
  save();render();toast(S.streak>1?'¡Racha de '+S.streak+' días! +'+bn+' puntos':'¡Empiezas tu racha! +'+bn+' puntos');};
-$('hadd').onclick=function(){addHabit($('hname').value,'');$('hname').value='';};
+$('hadd').onclick=function(){addHabit($('hname').value,'');};
 $('hname').addEventListener('keydown',function(e){if(e.key==='Enter')$('hadd').click();});
 $('radd').onclick=function(){
  var p=parseInt($('pages').value,10);
@@ -925,7 +1115,7 @@ $('radd').onclick=function(){
  $('pages').value='';save();render();
  toast(before<10&&before+p>=10?'¡Meta de lectura cumplida! +'+pts+' puntos':'Lectura registrada: +'+pts+' puntos');};
 
-$('chips').innerHTML=IDEAS.map(function(p,i){return '<button class="chip" data-i="'+i+'">'+p[1]+'</button>';}).join('');
+$('chips').innerHTML=IDEAS.map(function(p,i){var o=p[2]||{};return '<button class="chip" data-i="'+i+'">'+p[1]+(o.goal?' · '+o.goal+' '+o.unit:o.fq==='w'?' · '+o.wn+' por semana':o.days?' · entre semana':'')+'</button>';}).join('');
 
 document.addEventListener('change',function(e){var f=e.target;if(f.dataset&&f.dataset.cv!==undefined&&f.files&&f.files[0]){var b=BKL[+f.dataset.cv],rd=new FileReader();
  rd.onload=function(){var im=new Image();im.onload=function(){var sc=Math.min(1,240/im.height),c=document.createElement('canvas');c.width=Math.round(im.width*sc);c.height=Math.round(im.height*sc);c.getContext('2d').drawImage(im,0,0,c.width,c.height);S.covers=S.covers||{};S.covers[b]=c.toDataURL('image/jpeg',.8);save();render();toast('Portada guardada');};im.onerror=function(){toast('No se pudo leer la imagen');};im.src=rd.result;};rd.readAsDataURL(f.files[0]);}});
@@ -977,7 +1167,7 @@ function tcmd(raw){tout('C:\\Anprovilla>'+raw);var c=raw.trim();if(!c)return;var
  else if(k==='echo')tout(r);
  else if(k==='puntos')tout(S.points+' puntos');
  else if(k==='racha')tout(S.streak+' días de racha (mejor: '+S.best+')');
- else if(k==='habitos'||k==='hábitos')tout(doneToday()+' de '+S.habits.length+' hábitos cumplidos hoy');
+ else if(k==='habitos'||k==='hábitos')tout(doneToday()+' de '+schedToday().length+' hábitos de hoy cumplidos');
  else if(k==='whoami')tout(UL||USER||'invitado');
  else tout("'"+w[0]+"' no se reconoce como un comando interno o externo, programa o archivo por lotes ejecutable.");
  tout('');}
@@ -1133,13 +1323,887 @@ function ntFlush(){if(ntT){clearTimeout(ntT);ntSave();}}
 window.addEventListener('pagehide',ntFlush);
 document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')ntFlush();});
 ntShowNone();
-var SEC=['inicio','tienda','estilos','habitos','puntos','lectura','duolingo','notas','extensiones','terminal','juegos','snake','futbol'];
+var PB_F={
+'España':['¡Hola! ¿Qué tal?',['La paella nació en Valencia.','Es uno de los países con más lugares Patrimonio de la Humanidad.','La Sagrada Familia de Barcelona lleva en obras desde 1882.']],
+'México':['¿Qué onda?',['El chocolate ya se tomaba allí hace miles de años.','Ciudad de México se construyó sobre un lago.','El maíz se domesticó por primera vez en México.']],
+'Argentina':['¿Qué hacés, che?',['El tango nació en el Río de la Plata.','Allí está el Aconcagua, la montaña más alta de América.','El mate es su bebida más típica.']],
+'Colombia':['¿Qué más, parce?',['Es uno de los mayores productores de café del mundo.','Tiene costa en el Caribe y en el Pacífico.','Es uno de los países con más especies de aves del mundo.']],
+'Francia':['Bonjour !',['Es el país más visitado del mundo.','La Torre Eiffel se construyó para la Exposición Universal de 1889.','Tiene cientos de tipos de queso.']],
+'Italia':['Ciao!',['La pizza margarita nació en Nápoles.','Dentro de Roma está el Vaticano, el país más pequeño del mundo.','Allí vivió Leonardo da Vinci.']],
+'Portugal':['Olá!',['El portugués se habla en cuatro continentes.','Lisboa es una de las capitales más antiguas de Europa.','Los pasteles de nata son su dulce más famoso.']],
+'Alemania':['Hallo!',['Tiene autopistas con tramos sin límite de velocidad.','Allí Gutenberg creó la imprenta moderna.','Tiene más de mil tipos de salchicha.']],
+'Reino Unido':['Hello!',['El fútbol moderno nació allí.','Big Ben es el nombre de la campana, no de la torre.','Allí se toma el té a las cinco.']],
+'Estados Unidos':['Hi there!',['Tiene 50 estados.','El Gran Cañón mide más de 400 km de largo.','Allí se inventaron las hamburguesas tal como las conocemos.']],
+'Brasil':['Olá, tudo bem?',['Ha ganado 5 Mundiales de fútbol.','La Amazonia ocupa gran parte de su territorio.','Su carnaval de Río es famoso en todo el mundo.']],
+'Marruecos':['Salam!',['Tiene costa en el Atlántico y en el Mediterráneo.','Chefchaouen es famosa por sus calles pintadas de azul.','El cuscús es su plato más típico.']],
+'Japón':['Konnichiwa!',['Está formado por miles de islas.','Sus trenes bala son famosos por su puntualidad.','El monte Fuji es su montaña más alta.']],
+'Rumanía':['Bună!',['El castillo de Bran se relaciona con la leyenda de Drácula.','El rumano es una lengua romance, como el español.','Tiene parte de los montes Cárpatos.']],
+'Nigeria':['Hello!',['Es el país más poblado de África.','Su industria del cine se llama Nollywood.','Allí se hablan cientos de lenguas.']],
+'India':['Namaste!',['Es el país más poblado del mundo.','El ajedrez tiene su origen en un juego antiguo de la India.','El Taj Mahal está en la ciudad de Agra.']],
+'Suecia':['Hej!',['Allí nacieron los muebles para montar en casa de IKEA.','En verano, en el norte, el sol casi no se pone.','Tiene casi 100.000 lagos.']],
+'Perú':['¡Hola, causa!',['Machu Picchu es una de las nuevas siete maravillas del mundo.','Tiene miles de variedades de patata.','El ceviche es su plato más famoso.']],
+'Ucrania':['Pryvit!',['Tiene las «tierras negras», de las más fértiles del mundo.','Su capital es Kiev.','El borsch es su plato tradicional.']],
+'China':['Nǐ hǎo!',['La Gran Muralla tiene miles de kilómetros.','Allí se inventaron el papel y la brújula.','El panda gigante solo vive en China.']]};
+var PB_EV=[
+['{n} está intentando matar al alcalde.',['Llamar a la policía',-10,5,'La policía detiene a {n}, que se va del pueblo para siempre.','out'],['Hablar con {n}',0,8,'{n} estaba harto de los baches. El alcalde promete arreglarlos y se dan la mano.']],
+['Hay un incendio en la cocina de {n}.',['Llamar a los bomberos',-20,5,'Lo apagan en minutos. Solo se quemó una tortilla.'],['Apagarlo con cubos',0,-5,'Lo consiguen, pero la casa huele a humo una semana.']],
+['{n} ha encontrado un cofre enterrado en la plaza.',['Repartirlo entre todos',60,10,'¡Había monedas antiguas! Fiesta en el pueblo.'],['Que se lo quede {n}',10,-5,'{n} se compra un sombrero carísimo y paga 10 monedas de impuestos.']],
+['Hay una plaga de ratones en la panadería.',['Contratar a un gato profesional',-15,5,'El gato hace su trabajo y ya es la mascota del pueblo.'],['Ignorarlo',0,-10,'Alguien encuentra un ratón en una barra de pan. Qué asco.']],
+['{n} quiere organizar un concierto en la plaza.',['Apoyarlo',-20,12,'El concierto es un éxito y vienen turistas.'],['Prohibirlo',0,-6,'{n} se enfada y toca la guitarra en casa, muy fuerte.']],
+['Llega un turista perdido buscando la playa.',['Invitarle a quedarse',0,5,'¡Le encanta el pueblo y se queda a vivir!','in'],['Indicarle el camino',5,0,'Te deja 5 monedas de propina.']],
+['{n} se ha quedado atrapado en un árbol intentando rescatar a un gato.',['Llamar a los bomberos',-10,6,'Rescatan a {n} y al gato. Aplausos.'],['Traer una escalera',0,2,'Tarda una hora, pero baja sano y salvo.']],
+['Una tormenta ha tumbado varias farolas.',['Repararlas ya',-30,5,'Las calles vuelven a brillar.'],['Esperar a mañana',0,-8,'Una noche a oscuras. Alguien tropieza con un banco.']],
+['{n} dice haber visto un ovni sobre el ayuntamiento.',['Investigar',-5,6,'Era un globo de cumpleaños, pero fue emocionante.'],['Reírse',0,-3,'{n} se ofende y deja de saludar al alcalde.']],
+['Un circo quiere instalarse en el pueblo.',['Aceptar',40,8,'Pagan alquiler y los niños disfrutan.'],['Rechazar',0,-4,'Los niños lloran toda la tarde.']],
+['{n} propone pintar todo el pueblo de colores.',['Aceptar',-25,10,'El pueblo parece un arcoíris.'],['Rechazar',0,-2,'Todo sigue igual de gris.']],
+['Un ladrón ha robado la caja del ayuntamiento.',['Perseguirle',20,5,'Le alcanzáis y paga 20 monedas de multa.'],['Dejarlo estar',-40,-6,'Se escapa con 40 monedas.']],
+['{n} ha ganado un concurso internacional de cocina.',['Hacer una fiesta',-15,10,'Todo el pueblo prueba su plato estrella.'],['Felicitarle',0,4,'{n} sonríe orgulloso.']],
+['Hay un enjambre de abejas en la escuela.',['Llamar a un apicultor',-10,4,'Se lleva las abejas y os regala miel.'],['Cerrar la escuela un día',0,-5,'Los niños, felices. Los padres, no tanto.']],
+['{n} quiere presentarse a alcalde.',['Convocar elecciones',-20,8,'El alcalde gana por poco. La democracia funciona.'],['Ignorarlo',0,-7,'{n} monta un club de quejas.']],
+['Una vaca se ha escapado y pasea por la calle principal.',['Devolverla al granjero',5,3,'El granjero te da 5 monedas de agradecimiento.'],['Hacerla mascota del pueblo',-5,8,'La vaca Manolita ya es famosa.']],
+['{n} se ha caído de la bici.',['Llevarle al médico',-10,5,'Solo es un rasguño. Ya vuelve a pedalear.'],['Darle una tirita',0,1,'Le duele un poco, pero sobrevive.']],
+['Viene una inspección de Hacienda.',['Enseñar las cuentas en orden',-10,2,'Todo correcto: solo pagáis la tasa.'],['Esconderse',-50,-8,'Os pillan y la multa es de 50 monedas.']],
+['{n} ha encontrado un perrito abandonado.',['Adoptarlo como mascota del pueblo',-5,9,'El perro Bigotes lleva un pañuelo con el escudo del pueblo.'],['Llevarlo a una protectora',0,3,'Encuentra familia en dos días.']],
+['Hay un corte de luz en todo el pueblo.',['Comprar un generador',-35,5,'La luz vuelve enseguida.'],['Hacer una noche de velas',0,3,'Queda bonito, aunque algo oscuro.']],
+['{n} ha escrito un libro sobre el pueblo.',['Presentarlo en la plaza',25,7,'Se venden muchos libros y el pueblo gana 25 monedas.'],['No darle importancia',0,-3,'{n} se siente ignorado.']],
+['Una empresa quiere construir una fábrica junto al río.',['Aceptar',80,-12,'Entra dinero, pero el río huele raro.'],['Rechazar',0,6,'El río sigue limpio y los peces lo agradecen.']],
+['{n} discute con su vecino por una valla.',['Que medie el alcalde',0,6,'Hacen las paces con un café.'],['Que lo resuelvan solos',0,-6,'Ahora hay dos vallas.']],
+['Llega una ola de calor.',['Abrir las fuentes y repartir helados',-20,8,'Nadie se derrite.'],['Recomendar quedarse en casa',0,-4,'Calles vacías y gente agobiada.']],
+['Nieva por primera vez en años.',['Organizar una guerra de bolas de nieve',0,10,'Risas por todas partes.'],['Quitar la nieve rápido',-15,2,'Calles limpias, pero menos diversión.']],
+['{n} quiere abrir una academia de baile.',['Darle una ayuda',-30,8,'Ahora el pueblo baila salsa los jueves.'],['No ayudar',0,-2,'La academia tendrá que esperar.']],
+['Un youtuber famoso visita el pueblo.',['Enseñarle todo',-10,6,'El vídeo se hace viral y llega un vecino nuevo.','in'],['Pasar de él',0,0,'Se va sin grabar nada.']],
+['{n} tiene una idea para ahorrar agua.',['Ponerla en marcha',20,4,'Ahorráis tanto que ganáis 20 monedas este mes.'],['Ignorarla',0,-2,'Se sigue gastando agua de más.']],
+['Hay un bache enorme en la calle principal.',['Arreglarlo',-20,5,'La calle queda lisa como una pista.'],['Poner un cono',0,-5,'Alguien se lleva el cono y el bache sigue.']],
+['{n} se ha perdido en el bosque.',['Organizar una búsqueda',-10,8,'Le encontráis comiendo moras.'],['Esperar',0,-6,'Vuelve solo, de noche y muy enfadado.']],
+['Un mago ambulante ofrece un espectáculo.',['Pagarle',-15,7,'Hace desaparecer el sombrero del alcalde. Aún no aparece.'],['Decir que no',0,-1,'Se va haciendo trucos con cartas.']],
+['{n} ha batido el récord del pueblo corriendo.',['Darle una medalla',-5,6,'{n} la lleva puesta a todas partes.'],['Felicitarle por la radio',0,3,'Todo el pueblo se entera.']],
+['Los niños piden un día sin deberes.',['Aceptar',0,8,'Día de juegos en el parque.'],['Mantener los deberes',0,-4,'Caras largas en la escuela.']],
+['Unas obras han roto una tubería.',['Arreglarla de urgencia',-25,3,'Vuelve el agua a todas las casas.'],['Esperar al lunes',0,-8,'Duchas con cubos durante días.']],
+['{n} ha encontrado un fósil de dinosaurio.',['Montar un pequeño museo',-30,10,'Vienen visitantes de toda la comarca.'],['Venderlo',70,-3,'Un coleccionista paga 70 monedas.']],
+['Una feria medieval pide permiso para venir.',['Dar permiso',30,7,'Caballeros, mercado y buen ambiente. Pagan 30 monedas.'],['Negarlo',0,-3,'Este año no hay espadas de madera.']],
+['{n} quiere plantar un huerto comunitario.',['Ceder un terreno',-10,6,'Tomates gratis para todos.'],['Negarse',0,-3,'{n} planta tomates en macetas por todas partes.']],
+['Llega un autobús lleno de turistas.',['Hacerles una visita guiada',35,3,'Gastan 35 monedas en el pueblo.'],['No atenderles',0,-2,'Se van a otro pueblo.']],
+['{n} ha suspendido el carné de conducir por quinta vez.',['Pagarle clases extra',-15,5,'¡A la sexta va la vencida!'],['Darle ánimos',0,2,'Lo intentará otra vez.']],
+['Un camión de helados se ha averiado en la plaza.',['Comprar todos los helados',-20,9,'Helados gratis para todo el pueblo.'],['Ayudar a arreglarlo',0,3,'El heladero te regala un cucurucho.']],
+['{n} quiere casarse en el ayuntamiento.',['Organizar la boda',-25,12,'Fiesta hasta las tantas.'],['Que lo celebren en privado',0,2,'Boda pequeña, pero bonita.']],
+['Han aparecido pintadas en la fuente.',['Limpiarla',-10,4,'Queda como nueva.'],['Encargar un mural artístico',-25,8,'Ahora es una obra de arte.']],
+['{n} ha montado una banda de rock.',['Dejarles ensayar en el ayuntamiento',0,5,'Suenan... intensos.'],['Mandarles a un garaje',0,-2,'Ensayan igual de fuerte en el garaje.']],
+['Una ardilla le ha robado el bocadillo al alcalde.',['Perseguirla',0,4,'El alcalde corre por todo el parque y el pueblo se ríe.'],['Comprarle otro bocadillo',-3,0,'El alcalde come tranquilo.']],
+['A {n} le ha tocado la lotería.',['Pedirle que done algo',50,4,'Dona 50 monedas para el pueblo.'],['Dejar que lo disfrute',0,2,'{n} invita a churros a todo el pueblo.']],
+['El río se ha desbordado.',['Poner sacos de arena',-30,5,'El agua no llega a las casas.'],['Esperar a que baje',0,-10,'Varias casas se mojan y todo el mundo está de mal humor.']],
+['{n} ha traído recetas típicas de {c}.',['Organizar una cena internacional',-15,10,'Todo el pueblo prueba la comida de {c}.'],['Probarlas en casa',0,3,'Están buenísimas.']],
+['Un inspector de tráfico pide más señales.',['Ponerlas',-20,3,'Calles más seguras.'],['No hacer caso',-30,-3,'Os ponen una multa de 30 monedas.']],
+['Los vecinos piden las fiestas del pueblo.',['Montar las fiestas',-40,15,'Verbena, orquesta y fuegos artificiales.'],['Dejarlo para otro año',0,-8,'Nadie lo entiende.']],
+['{n} quiere irse del pueblo porque se aburre.',['Darle un trabajo nuevo',-10,5,'{n} se queda y está encantado.'],['Dejarle ir',0,-4,'{n} hace las maletas y se va.','out']],
+['Una cigüeña ha hecho un nido en el tejado del ayuntamiento.',['Protegerlo',0,6,'Los niños vigilan el nido cada día.'],['Quitarlo',-5,-6,'Muchos vecinos se enfadan.']],
+['{n} ha inventado una máquina de hacer churros.',['Invertir en ella',30,6,'Funciona y el negocio da 30 monedas de beneficio.'],['No invertir',0,0,'La máquina explota y lo llena todo de masa.']],
+['El pueblo vecino os reta a un partido de fútbol.',['Aceptar el reto',-10,8,'Ganáis 3-2 con gol de {n}.'],['Rechazarlo',0,-3,'Os llaman miedicas.']],
+['Un gato enorme duerme en mitad de la calle.',['Desviar el tráfico',0,3,'El gato duerme feliz.'],['Moverlo con cuidado',0,1,'Bufa, pero se deja.']],
+['{n} se queja de que el alcalde ronca en las reuniones.',['Hacer reuniones más cortas',0,5,'Todos más despiertos.'],['Ignorarlo',0,-3,'El alcalde sigue roncando.']],
+['Han robado las bicis del pueblo.',['Poner cámaras',-25,4,'Recuperáis las bicis.'],['Comprar bicis nuevas',-40,2,'Bicis nuevas y relucientes.']],
+['{n} propone un día sin coches.',['Aceptar',0,7,'Calles llenas de patinetes y paseos.'],['Rechazar',0,-2,'Atasco, como siempre.']],
+['Una cadena de tiendas quiere abrir un local en el pueblo.',['Permitirlo',25,2,'Cobras 25 monedas por la licencia.'],['Proteger a las tiendas del pueblo',0,4,'Los tenderos te lo agradecen.']],
+['{n} dice que ha visto un lobo cerca del pueblo.',['Avisar a los guardas forestales',-10,4,'Era un perro grande y despeinado.'],['Hacer una ronda nocturna',0,2,'Solo veis búhos.']],
+['Se ha roto la campana de la escuela.',['Comprar una nueva',-15,2,'Ding, dong.'],['Usar un silbato',0,-1,'Suena fatal, pero funciona.']],
+['{n} quiere enseñar el idioma de {c} a los vecinos.',['Dejarle un aula de la escuela',0,7,'Clases llenas cada martes.'],['No hay sitio',0,-3,'{n} se queda con las ganas.']],
+['Una nube de mosquitos invade el pueblo.',['Fumigar',-15,3,'Adiós, mosquitos.'],['Repartir repelente',-5,1,'Pican menos, pero pican.']],
+['{n} dejó abierto el corral y hay gallinas por todas partes.',['Organizar la caza de gallinas',0,6,'La tarde más divertida del año.'],['Que se encargue {n}',0,-2,'{n} tarda tres horas y acaba agotado.']],
+['La Diputación envía una carta felicitando al pueblo.',['Enmarcarla en el ayuntamiento',0,5,'Todos pasan a verla.'],['Aprovechar para pedir una ayuda',40,1,'¡Os dan 40 monedas!']],
+['{n} se ha enamorado y quiere declararse en la plaza.',['Ayudarle a decorarla',-10,8,'¡Ha dicho que sí!'],['Dejarle a su aire',0,2,'Se declara por mensaje. También vale.']],
+['Se cae internet en todo el pueblo.',['Contratar una empresa',-20,4,'Vuelve el wifi.'],['Hacer un día sin pantallas',0,5,'La gente juega a las cartas en la plaza.']],
+['{n} olvidó apagar el horno y la panadería está llena de humo.',['Ventilar y ayudar',0,3,'El pan sale un poco tostado, nada más.'],['Cerrar la panadería un día',-10,-3,'Sin pan para desayunar.']],
+['Un chef famoso quiere abrir un restaurante.',['Ofrecerle un local',-20,6,'El restaurante atrae visitantes.'],['Decir que no',0,-1,'Se va a la ciudad.']],
+['{n} ha encontrado una cartera con dinero.',['Devolverla a su dueño',20,8,'El dueño, emocionado, dona 20 monedas al pueblo.'],['Dejarla en el ayuntamiento',0,3,'Nadie la reclama.']],
+['Un concurso de televisión quiere grabar en el pueblo.',['Aceptar',50,6,'Salís en la tele y ganáis 50 monedas.'],['Rechazar',0,-2,'Grabarán en el pueblo de al lado.']],
+['{n} está intentando sobornar al alcalde con un jamón.',['Rechazar el jamón',0,8,'El pueblo admira la honradez del alcalde.'],['Aceptar el jamón',0,-10,'Se entera todo el pueblo. Qué vergüenza.']],
+['Una manifestación pide más zonas verdes.',['Plantar árboles',-20,8,'El pueblo está más verde.'],['Prometerlo para más adelante',0,-4,'Nadie se lo cree.']],
+['{n} ha abierto un canal de recetas.',['Patrocinarlo',-10,4,'Ya tiene miles de seguidores.'],['Verlo en secreto',0,1,'Las recetas son buenas.']],
+['Se ha estropeado el reloj del ayuntamiento.',['Repararlo',-15,2,'Vuelve a dar las horas.'],['Dejarlo parado',0,-2,'Todo el mundo llega tarde.']],
+['{n} propone un mercadillo solidario.',['Organizarlo',0,9,'Se recauda mucho para una buena causa.'],['No hacerlo',0,-2,'Otra vez será.']],
+['Unos jabalíes han destrozado el huerto.',['Poner una valla',-15,3,'Los jabalíes se van a otra parte.'],['Replantar sin más',-5,-2,'Volverán.']],
+['{n} se ha quedado fuera de casa sin llaves.',['Llamar a un cerrajero',-8,3,'Entra en 5 minutos.'],['Que entre por la ventana',0,1,'Lo consigue... con estilo.']],
+['Una banda de música se ofrece a tocar gratis.',['Aceptar',0,7,'Música toda la tarde.'],['Rechazar',0,-2,'Silencio total.']],
+['{n} cree que el alcalde es un robot.',['Demostrar que no',0,4,'El alcalde estornuda. Es humano.'],['Hacer de robot para gastar una broma',0,6,'Todo el pueblo se ríe.']],
+['El alcalde ha perdido las llaves del ayuntamiento.',['Cambiar la cerradura',-15,1,'Llaves nuevas.'],['Buscarlas con {n}',0,4,'Estaban en su bolsillo.']],
+['{n} quiere organizar una carrera solidaria.',['Apoyarla',-10,8,'Corren 50 vecinos con la misma camiseta.'],['No apoyarla',0,-2,'{n} correrá en solitario.']],
+['Cae una granizada sobre el pueblo.',['Reparar los tejados',-25,3,'Todo arreglado.'],['Esperar',0,-6,'Hay goteras en varias casas.']],
+['{n} ha entrenado a una paloma mensajera.',['Usarla para el correo',10,5,'Ahorráis 10 monedas en sellos.'],['Dejarla libre',0,2,'Vuela feliz.']],
+['El pueblo vecino dice que les habéis copiado la fuente.',['Invitarles a comer',-15,6,'Ahora sois amigos.'],['Ignorarlo',0,-1,'Siguen enfadados.']],
+['{n} quiere poner un puesto de limonada.',['Darle permiso',5,4,'La limonada más rica de la comarca. +5 monedas.'],['Negarse',0,-2,'Qué pena.']],
+['El alcalde se ha dormido y no ha abierto el ayuntamiento.',['Pedir perdón en público',0,3,'Los vecinos le perdonan.'],['Culpar al despertador',0,-3,'Nadie se lo cree.']],
+['{n} ha descubierto una cueva cerca del pueblo.',['Prepararla para visitas',-30,8,'Llegan excursionistas.'],['Cerrarla por seguridad',0,1,'Mejor prevenir.']],
+['Un globo aerostático aterriza en la plaza.',['Ayudar a los pasajeros',0,5,'Os invitan a dar un paseo.'],['Cobrarles aparcamiento',15,-2,'Pagan 15 monedas refunfuñando.']],
+['{n} se ofrece a limpiar el parque cada domingo.',['Aceptar y darle las gracias',0,6,'El parque reluce.'],['Pagarle por ello',-10,4,'Contento y con dinero.']],
+['Llega una ola de frío.',['Repartir mantas',-20,6,'Nadie pasa frío.'],['Abrir el ayuntamiento como refugio',0,3,'Noche de chocolate caliente.']],
+['{n} está intentando entrar a escondidas en el despacho del alcalde.',['Pillarle en el acto',0,4,'¡Quería dejarle una tarta sorpresa por su cumpleaños!'],['Cambiar la cerradura',-10,-2,'La tarta se queda en la puerta.']],
+['Hay una ola de gripe en el pueblo.',['Hacer una campaña de vacunación',-20,5,'Todos se recuperan rápido.'],['Recomendar reposo',0,-3,'Medio pueblo en la cama.']],
+['{n} quiere organizar un torneo de videojuegos.',['Prestarle el ayuntamiento',0,6,'Gana el abuelo del pueblo.'],['Decir que no',0,-2,'Juegan cada uno en su casa.']],
+['Una carrera ciclista pasa por el pueblo.',['Animar con pancartas',-5,6,'¡Salís en la tele!'],['Seguir con lo vuestro',0,0,'Pasan en 3 segundos.']],
+['A {n} se le ha escapado su loro, que no para de decir palabrotas.',['Buscarlo',0,4,'Le encontráis insultando a una farola.'],['Dejarlo libre',0,-3,'El loro sigue diciendo palabrotas en el parque.']],
+['Un antiguo vecino deja su herencia al pueblo.',['Invertirla en el pueblo',60,5,'Recibís 60 monedas.'],['Hacerle un homenaje',20,8,'Recibís 20 monedas y el pueblo le recuerda con cariño.']],
+['{n} dice que las fiestas de {c} son mejores que las del pueblo.',['Retarle a organizar una',-20,10,'La fiesta de {c} es un exitazo.'],['Defender las fiestas del pueblo',0,1,'Debate amistoso en el bar.']],
+['Una empresa de patinetes eléctricos quiere instalarse.',['Aceptar',20,3,'Patinetes por todas partes. +20 monedas.'],['Rechazar',0,1,'Las aceras siguen tranquilas.']],
+['{n} quiere abrir una biblioteca en su casa para todos.',['Donarle libros',-10,6,'Ya tiene más de 200 libros.'],['Felicitarle',0,2,'Buena idea.']],
+['El alcalde cumple años.',['Fiesta sorpresa',-20,10,'El alcalde se emociona.'],['Felicitarle',0,3,'Tarta pequeña, pero rica.']]];
+PB_EV=PB_EV.concat([
+['Han pillado a {a} cobrando dos veces el mismo impuesto.',['Devolver el dinero',-20,8,'{a} devuelve las monedas con una sonrisa forzada.'],['Hacer como que no ha pasado',20,-10,'El pueblo murmura. Muchos ya no se fían de {a}.']],
+['{n} quiere pintar un mural de {a} en la plaza.',['Aceptar',-15,5,'{a} sale guapísimo, aunque con algo más de pelo.'],['Pedir un mural de naturaleza',-15,7,'Un bosque precioso decora la plaza.']],
+['Un rebaño de ovejas se ha colado por un agujero de la muralla.',['Tapar el agujero',-20,3,'La muralla queda como nueva.'],['Dejarlas pastar en el parque',0,5,'El césped queda cortado gratis.']],
+['{n} asegura que {a} esconde un cofre de monedas en su despacho.',['Investigar',40,-4,'¡Era verdad! Recuperáis 40 monedas.'],['No hacer caso',0,-3,'Los rumores siguen.']],
+['Un mercader extranjero ofrece especias exóticas.',['Comprarlas',-15,6,'La comida del pueblo nunca supo tan bien.'],['Rechazarlas',0,0,'El mercader sigue su camino.']],
+['{n} ha plantado girasoles por todo el pueblo.',['Darle las gracias',0,6,'Todo el pueblo brilla de amarillo.'],['Recortarlos',-5,-4,'Qué pena de girasoles.']],
+['Los gatos del pueblo han organizado un concierto nocturno.',['Repartir tapones',-5,2,'Por fin se duerme.'],['Unirse al concierto',0,4,'{n} maúlla mejor que los gatos.']],
+['{a} propone subir los impuestos «solo un poquito».',['Aceptar',40,-10,'Entran monedas, pero hay caras largas.'],['Rechazar',0,6,'El pueblo aplaude la decisión.']],
+['{n} ha visto un zorro fuera de la muralla.',['Hacer una excursión para verlo',0,5,'Fotos preciosas del zorro.'],['Ignorarlo',0,0,'El zorro sigue a lo suyo.']],
+['Un camión se ha quedado atascado en la calle principal.',['Contratar una grúa',-15,2,'Calle despejada.'],['Empujar entre todos',0,5,'Lo conseguís entre risas.']],
+['{n} ha abierto una peluquería en su garaje.',['Darle licencia',10,4,'Todo el pueblo con peinado nuevo. +10 monedas.'],['Cerrarla',0,-4,'{n} corta el pelo a escondidas.']],
+['¡Han encontrado oro en el río!',['Buscar más',50,3,'50 monedas en pepitas.'],['Dejar el río tranquilo',0,4,'Los peces lo agradecen.']],
+['{a} quiere comprarse un coche oficial de lujo.',['Prohibírselo',0,8,'{a} irá en bici.'],['Pagárselo',-60,-12,'El pueblo está indignado.']],
+['{n} ha organizado una búsqueda del tesoro para los niños.',['Patrocinarla',-10,8,'Los niños lo pasan en grande.'],['No ayudar',0,-2,'Otra vez será.']],
+['Un vendaval ha llenado las calles de hojas secas.',['Barrer entre todos',0,4,'Pueblo limpio y vecinos en forma.'],['Contratar barrenderos',-15,2,'Todo limpio en una hora.']],
+['{n} dice que en {c} los alcaldes no son tan estafadores.',['Darle la razón',0,3,'{a} hace como que no lo ha oído.'],['Defender a {a}',0,-3,'Nadie se lo cree.']],
+['Una familia de patos cruza la calle.',['Cortar el tráfico',0,6,'Todos aplauden a los patitos.'],['Seguir como si nada',0,-4,'Casi pasa algo. Qué susto.']],
+['{n} quiere montar una granja de caracoles.',['Ayudarle',-10,3,'Va despacio, pero va.'],['Decir que no',0,-1,'{n} los cría en su balcón.']],
+['Os invitan a una feria de pueblos de la comarca.',['Participar',20,8,'¡Ganáis el premio al pueblo más bonito!'],['No ir',0,-2,'Ganan otros.']],
+['{a} ha «perdido» el dinero de las fiestas.',['Exigir explicaciones',30,4,'Aparece en un cajón de {a}. Qué casualidad.'],['Hacer las fiestas sin dinero',0,-5,'Fiestas tristes.']],
+['{n} ha construido una casa en un árbol.',['Permitirla',0,5,'La casa del árbol es la envidia de todos.'],['Quitarla',0,-4,'{n} se queda sin su refugio.']],
+['Una plaga de pulgones ataca los huertos.',['Soltar mariquitas',-10,4,'Las mariquitas se dan un festín.'],['Usar productos químicos',-15,-3,'Funciona, pero las abejas se van.']],
+['{n} ha enseñado a hablar a un loro.',['Llevarlo a la tele',20,4,'El loro dice «{a} estafador» en directo. +20 monedas.'],['Dejarlo en casa',0,1,'El loro repite chistes malos.']],
+['Un turista dice que este es el mejor pueblo del mundo.',['Nombrarle ciudadano de honor',0,8,'¡Se queda a vivir!','in'],['Darle las gracias',0,3,'Se va con una sonrisa.']],
+['{n} ha roto sin querer una ventana del ayuntamiento con un balón.',['Que la pague',10,-2,'{n} paga 10 monedas.'],['Perdonarle',-10,4,'Los accidentes pasan.']],
+['Las vacas de fuera de la muralla no dan leche.',['Ponerles música',0,4,'Con música clásica dan el doble.'],['Llamar al veterinario',-10,2,'Solo tenían frío.']],
+['{a} quiere poner su cara en las monedas del pueblo.',['Negarse',0,7,'Las monedas siguen con un árbol.'],['Aceptar',-10,-8,'Nadie quiere esas monedas.']],
+['{n} ha encontrado una llave misteriosa.',['Buscar qué abre',25,5,'¡Abre un baúl con 25 monedas!'],['Guardarla',0,0,'Sigue siendo un misterio.']],
+['Miles de luciérnagas iluminan el parque.',['Organizar un paseo nocturno',0,7,'Noche mágica.'],['Seguir durmiendo',0,0,'Os lo perdéis.']],
+['{n} quiere ser alcalde en lugar de {a}.',['Hacer un debate en la plaza',0,6,'{a} gana por poco tras prometer churros.'],['Ignorarlo',0,-5,'{n} pone carteles por todo el pueblo.']],
+['Ha llegado un circo de pulgas.',['Ir a verlo',-5,5,'Las pulgas hacen acrobacias. Increíble.'],['Echarlo',0,-1,'Qué picor.']],
+['{n} ha inventado un plato nuevo con comida de {c}.',['Ponerlo en el menú de la escuela',0,6,'Los niños repiten.'],['Probarlo en casa',0,2,'Está buenísimo.']],
+['Una tormenta eléctrica ha fundido el transformador.',['Repararlo ya',-30,4,'Vuelve la luz.'],['Esperar al técnico',0,-6,'Dos días sin luz.']],
+['{a} ha contratado a su primo para todo.',['Despedir al primo',0,8,'El primo vuelve a su pueblo.'],['Dejarlo',-20,-8,'El primo cobra mucho y trabaja poco.']],
+['{n} ha recogido un cachorro de zorro herido.',['Llevarlo a un centro de fauna',-5,6,'Se recupera y vuelve al bosque.'],['Dejarlo en el bosque',0,-3,'Ojalá esté bien.']],
+['Los niños quieren un tobogán gigante.',['Construirlo',-25,9,'Colas de niños todo el día.'],['Decir que no',0,-4,'Los niños se aburren.']],
+['{n} se ha disfrazado de {a} y nadie nota la diferencia.',['Reírse',0,6,'El pueblo entero se parte.'],['Multarle',5,-4,'{n} paga 5 monedas refunfuñando.']],
+['Una periodista quiere hacer un reportaje sobre {a}.',['Darle acceso a todo',0,5,'El reportaje revela que {a} se lleva los bolis del ayuntamiento.'],['Esconder los papeles',-10,-6,'Muy sospechoso...']],
+['{n} ha aprendido a hacer malabares.',['Que actúe en la plaza',0,5,'Aplausos y monedas en el sombrero.'],['Que practique en casa',0,-1,'Se le rompe un jarrón.']],
+['Unas cabras se han escapado y han subido al tejado del ayuntamiento.',['Bajarlas',-5,4,'Operación cabra completada.'],['Dejarlas',0,3,'Ahora el ayuntamiento tiene cabras vigilantes.']],
+['{a} vende trozos del parque a escondidas.',['Anular la venta',0,8,'El parque se queda como estaba.'],['Quedarse el dinero',50,-14,'El pueblo está muy enfadado.']],
+['{n} ha batido el récord de comer churros.',['Celebrarlo',-5,5,'{n} no quiere ver un churro en un mes.'],['Darle una manzanilla',0,1,'Le duele la tripa.']],
+['Una niebla espesa cubre el pueblo.',['Encender todas las farolas',-5,3,'Se ve el camino.'],['Quedarse en casa',0,-1,'Día de pijama.']],
+['{n} quiere un huerto en el tejado de su casa.',['Darle semillas',-5,4,'Tomates con vistas.'],['Prohibirlo',0,-2,'{n} se queda con las ganas.']],
+['Ha llegado un caballo perdido.',['Adoptarlo',-10,7,'El caballo Relámpago ya es del pueblo.'],['Buscar a su dueño',10,3,'El dueño os da 10 monedas.']],
+['{a} ha prometido un aeropuerto para el pueblo.',['Pedir pruebas',0,4,'No hay aeropuerto. Era otra promesa.'],['Creérselo',0,-6,'Os quedáis esperando el avión.']],
+['{n} ha descubierto que el agua del pozo está buenísima.',['Embotellarla',30,3,'Agua del pueblo a la venta. +30 monedas.'],['Compartirla gratis',0,6,'Agua fresca para todos.']],
+['Un grupo de ciclistas pide un carril bici.',['Pintarlo',-20,6,'Bicis por todas partes.'],['Rechazarlo',0,-3,'Siguen yendo por la acera.']],
+['{n} cree que hay un fantasma en la biblioteca.',['Investigar de noche',0,5,'Era una corriente de aire, pero fue emocionante.'],['Cerrar la biblioteca',0,-4,'Sin libros por culpa de un fantasma.']],
+['{a} quiere cobrar entrada por pasear por la plaza.',['Prohibírselo',0,7,'La plaza es de todos.'],['Aceptar',30,-12,'Paseos de pago. Qué disparate.']],
+['Llegan turistas a ver los animales de fuera de la muralla.',['Hacer rutas guiadas',30,3,'+30 monedas.'],['Que vayan por su cuenta',0,0,'Alguno se pierde, pero vuelve.']],
+['{n} ha cocinado una tortilla gigante.',['Repartirla en la plaza',0,8,'La mejor tortilla de la comarca.'],['Venderla',15,1,'Se vende en 10 minutos.']],
+['Un rayo ha partido un árbol.',['Plantar uno nuevo',-5,3,'Un árbol nuevo empieza a crecer.'],['Hacer leña',5,0,'Leña para el invierno.']],
+['{n} pide clases de baile para mayores.',['Organizarlas',-10,7,'Los abuelos bailan mejor que nadie.'],['Decir que no',0,-2,'Los abuelos protestan.']],
+['{a} se ha ido de vacaciones con el dinero del pueblo.',['Ir a buscarle',40,4,'Le encontráis en la playa y devuelve 40 monedas.'],['Esperar a que vuelva',-30,-8,'Vuelve moreno y sin el dinero.']],
+['Ha salido un arcoíris doble.',['Salir todos a verlo',0,6,'Foto de todo el pueblo.'],['Seguir trabajando',5,0,'Más productividad.']],
+['{n} quiere organizar un concurso de disfraces.',['Apoyarlo',-10,8,'Gana alguien disfrazado de farola.'],['Decir que no',0,-2,'Sin disfraces este año.']],
+['Unos topos han llenado el campo de agujeros.',['Rellenarlos',-10,2,'Campo liso otra vez.'],['Dejarlos',0,-3,'Más de uno tropieza.']],
+['{n} ha montado una radio del pueblo.',['Escucharla',0,5,'Noticias, música y cotilleos.'],['Pedir que baje el volumen',0,-1,'Ahora no se oye nada.']],
+['{a} quiere una estatua suya de oro macizo.',['Negarse',0,8,'Ni hablar.'],['Aceptar',-80,-15,'El pueblo no da crédito.']],
+['Un grupo de cigüeñas ha llegado a la torre.',['Hacerles nidos',-5,5,'Las cigüeñas se quedan.'],['Espantarlas',0,-4,'Las cigüeñas se van ofendidas.']],
+['{n} quiere aprender a tocar la gaita.',['Regalarle una',-10,3,'Suena... con entusiasmo.'],['Recomendarle la flauta',0,1,'Más bajito, menos mal.']],
+['Se ha estropeado la fuente de la plaza.',['Arreglarla',-15,3,'El agua vuelve a correr.'],['Convertirla en jardín',-5,4,'Ahora tiene flores.']],
+['{n} ha visto a {a} contando monedas a escondidas.',['Pedir una auditoría',25,5,'Aparecen 25 monedas «olvidadas».'],['No decir nada',0,-4,'{a} sigue contando.']],
+['Aparece un tractor antiguo en un granero.',['Restaurarlo',-20,5,'El tractor desfila en las fiestas.'],['Venderlo',30,0,'Un coleccionista paga 30 monedas.']],
+['{n} quiere poner columpios para adultos.',['Ponerlos',-15,6,'Todo el mundo vuelve a ser niño.'],['Decir que no',0,-1,'Los adultos miran con envidia.']],
+['Llega una carta anónima: «{a} es un estafador».',['Investigar',20,3,'Era cierto: recuperáis 20 monedas.'],['Tirarla',0,-2,'La carta aparece pegada en la plaza.']],
+['Hay ratas en el mercado.',['Llamar a una empresa',-15,3,'Mercado limpio.'],['Traer gatos',-5,4,'Los gatos están encantados.']],
+['{n} ha ganado un concurso de pintura en {c}.',['Exponer el cuadro',0,6,'Todo el pueblo va a verlo.'],['Felicitarle',0,2,'{n} está muy orgulloso.']],
+['Un niño se ha perdido en el mercado.',['Avisar por megafonía',0,5,'Aparece comiéndose una manzana.'],['Buscar entre todos',0,4,'Le encontráis enseguida.']],
+['{a} propone vender la muralla por trozos.',['Negarse en redondo',0,7,'La muralla se queda.'],['Aceptar',50,-12,'Queda un agujero enorme y entran los animales.']],
+['{n} hace pan con una receta de {c}.',['Venderlo en la panadería',10,4,'Se agota en una mañana.'],['Probarlo en casa',0,2,'Delicioso.']],
+['Unas abejas han hecho un panal en el buzón.',['Llamar al apicultor',-5,3,'Miel gratis para el cartero.'],['Usar otro buzón',0,-1,'Las cartas llegan tarde.']],
+['{n} quiere organizar un día del reciclaje.',['Apoyarlo',0,7,'Calles limpísimas.'],['Decir que no',0,-2,'Se acumula la basura.']],
+['{a} ha cambiado las normas del pueblo sin avisar.',['Votarlas en asamblea',0,7,'Nuevas normas aprobadas entre todos.'],['Aceptarlas',0,-6,'Nadie entiende nada.']],
+['Unos ciervos se acercan a la muralla.',['Darles de comer',-5,5,'Ahora vienen todos los días.'],['Dejarlos tranquilos',0,1,'Siguen paseando.']],
+['{n} ha olvidado el cumpleaños de su vecino.',['Organizar una fiesta sorpresa',-10,7,'El vecino llora de alegría.'],['Comprar una tarta',-5,3,'Mejor tarde que nunca.']],
+['La escuela necesita ordenadores nuevos.',['Comprarlos',-30,6,'Los niños aprenden a programar.'],['Usar los viejos',0,-3,'Tardan diez minutos en encenderse.']],
+['{a} quiere subirse el sueldo.',['Negarse',0,8,'El pueblo celebra la decisión.'],['Aceptar',-30,-10,'Indignación general.']],
+['{n} ha encontrado una moneda romana.',['Donarla al museo',0,5,'El museo se llena de visitas.'],['Venderla',25,0,'25 monedas.']],
+['El calor ha secado el estanque.',['Rellenarlo',-15,4,'Los patos vuelven a nadar.'],['Esperar a que llueva',0,-4,'Patos tristes.']],
+['{n} ha montado un club de lectura.',['Dejarle la biblioteca',0,6,'Ya van por el tercer libro.'],['Decir que no',0,-2,'Leen en el parque.']],
+['Un vendedor ofrece «agua mágica» que da suerte.',['Rechazarla',0,3,'Era agua del grifo.'],['Comprarla',-20,-3,'Era agua del grifo, y encima cara.']],
+['{a} promete arreglar la muralla «mañana».',['Exigir una fecha',0,4,'{a} se pone a trabajar por primera vez.'],['Esperar',0,-3,'Mañana nunca llega.']],
+['{n} quiere celebrar una fiesta típica de {c}.',['Apoyarla',-15,9,'El pueblo descubre las tradiciones de {c}.'],['Decir que no',0,-3,'{n} lo celebra en su casa.']],
+['Un panadero de otro pueblo ofrece pan más barato.',['Aceptar',10,-3,'El pan es peor.'],['Apoyar la panadería del pueblo',0,5,'Pan de calidad.']],
+['{n} ha descubierto una fuente termal fuera de la muralla.',['Construir un balneario',-40,10,'Turistas relajados por todas partes.'],['Dejarla natural',0,3,'Baños gratis para los valientes.']],
+['{a} ha dado puestos de trabajo a sus amigos.',['Quitarles el puesto',0,7,'Los puestos son para quien se los merece.'],['Dejarlo',-15,-8,'Todo funciona peor.']],
+['Ha nevado tanto que no se puede salir de casa.',['Contratar quitanieves',-20,4,'Calles libres.'],['Hacer muñecos de nieve',0,6,'El pueblo se llena de muñecos.']],
+['{n} se ha caído al estanque persiguiendo a un pato.',['Ayudarle a salir',0,4,'Sale empapado, pero riéndose.'],['Grabarlo en vídeo',0,2,'Es lo más visto del pueblo.']],
+['Una astrónoma quiere montar un observatorio.',['Cederle un terreno',-10,6,'Noches de estrellas para todos.'],['Decir que no',0,-1,'Se va a otro pueblo.']],
+['{a} dice que la culpa de todo es de los patos.',['Defender a los patos',0,6,'Los patos son inocentes.'],['Darle la razón',0,-5,'Los patos se ofenden.']],
+['{n} quiere organizar un mercadillo de segunda mano.',['Apoyarlo',10,5,'Todo el mundo encuentra un tesoro.'],['Decir que no',0,-2,'Los trastos siguen en los garajes.']],
+['Una tormenta ha derribado parte de la muralla.',['Repararla',-30,3,'La muralla vuelve a estar entera.'],['Esperar',0,-6,'Las vacas de fuera se cuelan en el pueblo.']],
+['{n} ha escrito una canción sobre el pueblo.',['Hacerla himno oficial',0,8,'Todos la cantan en las fiestas.'],['Felicitarle',0,2,'Es muy pegadiza.']],
+['{a} ha intentado venderle la fuente a un turista.',['Parar la venta',0,6,'El turista se ríe y se va.'],['Dejarlo',40,-12,'El turista se lleva la fuente en un camión.']],
+['Llega una feria de atracciones.',['Dejar que se instale',30,8,'Coches de choque y algodón de azúcar.'],['Rechazarla',0,-4,'Los niños no os lo perdonan.']],
+['{n} quiere enseñar a cocinar recetas de {c}.',['Hacer un taller',-5,6,'Todo el pueblo aprende.'],['Decir que no',0,-2,'Otra vez será.']],
+['Las ovejas de fuera de la muralla se han escapado.',['Reunirlas con {n}',0,5,'{n} resulta ser un gran pastor.'],['Dejarlas',0,-3,'Hay ovejas en el supermercado.']],
+['Hoy es el aniversario del pueblo.',['Gran fiesta',-30,12,'Fuegos artificiales y tarta gigante.'],['Celebración sencilla',0,4,'Un brindis en la plaza.']]]);
+/* ===== PUEBLO ===== */
+var PB_W=1966,PB_H=1060;
+var PB_P=[{id:'vox',n:'VOX',c:'#5bb030'},{id:'psoe',n:'PSOE',c:'#e0242a'},{id:'pp',n:'PP',c:'#1f6fd1'},{id:'salf',n:'Se Acabó La Fiesta',c:'#3d4250'},{id:'podemos',n:'Podemos',c:'#6c2d82'}];
+var PB_CAT=[['viv','Viviendas'],['deco','Decoración'],['nat','Naturaleza'],['com','Comercio'],['ser','Servicios'],['ocio','Ocio'],['mon','Monumentos']];
+var PB_B=[
+ {t:'cabana',k:'viv',n:'Cabaña',c:30,cap:2,inc:1,d:'Para 2 vecinos. +1 moneda al día.'},
+ {t:'casa',k:'viv',n:'Casa',c:50,cap:4,inc:2,d:'Para 4 vecinos. +2 monedas al día.'},
+ {t:'chalet',k:'viv',n:'Chalet',c:120,cap:6,inc:4,d:'Para 6 vecinos. +4 monedas al día.'},
+ {t:'pisos',k:'viv',n:'Edificio de pisos',c:220,cap:12,inc:8,d:'Para 12 vecinos. +8 monedas al día.'},
+ {t:'mansion',k:'viv',n:'Mansión',c:400,cap:8,inc:12,d:'Para 8 vecinos con mucho estilo. +12 al día.'},
+ {t:'valla',k:'deco',n:'Valla',c:5,fe:1,d:'+1 de felicidad.'},
+ {t:'papelera',k:'deco',n:'Papelera',c:6,fe:1,d:'Un pueblo limpio. +1 de felicidad.'},
+ {t:'maceta',k:'deco',n:'Macetero',c:8,fe:1,d:'Flores en la calle. +1 de felicidad.'},
+ {t:'buzon',k:'deco',n:'Buzón',c:12,fe:1,d:'Para las cartas. +1 de felicidad.'},
+ {t:'banco',k:'deco',n:'Banco',c:15,fe:2,d:'Para descansar. +2 de felicidad.'},
+ {t:'bandera',k:'deco',n:'Bandera',c:18,fe:2,d:'Con los colores de tu partido. +2 de felicidad.'},
+ {t:'farola',k:'deco',n:'Farola',c:20,fe:2,d:'Ilumina las calles. +2 de felicidad.'},
+ {t:'fuente',k:'deco',n:'Fuente',c:25,fe:3,d:'Agua fresca. +3 de felicidad.'},
+ {t:'kiosco',k:'deco',n:'Kiosco de prensa',c:35,inc:1,fe:2,d:'+1 moneda al día y +2 de felicidad.'},
+ {t:'arcoflor',k:'deco',n:'Arco de flores',c:45,fe:4,d:'Precioso para fotos. +4 de felicidad.'},
+ {t:'reloj',k:'deco',n:'Reloj de plaza',c:60,fe:4,d:'Marca la hora real. +4 de felicidad.'},
+ {t:'arbusto',k:'nat',n:'Arbusto',c:6,fe:1,d:'+1 de felicidad.'},
+ {t:'arbol',k:'nat',n:'Árbol',c:10,fe:2,d:'Da sombra. +2 de felicidad.'},
+ {t:'pino',k:'nat',n:'Pino',c:12,fe:2,d:'Huele a bosque. +2 de felicidad.'},
+ {t:'palmera',k:'nat',n:'Palmera',c:20,fe:3,d:'Ambiente de playa. +3 de felicidad.'},
+ {t:'manzano',k:'nat',n:'Manzano',c:25,inc:1,fe:2,d:'+1 moneda al día y +2 de felicidad.'},
+ {t:'flores',k:'nat',n:'Jardín de flores',c:30,fe:4,d:'+4 de felicidad.'},
+ {t:'colmena',k:'nat',n:'Colmena',c:35,inc:2,d:'Miel del pueblo. +2 monedas al día.'},
+ {t:'huerto',k:'nat',n:'Huerto',c:40,inc:3,d:'+3 monedas al día.'},
+ {t:'estanque',k:'nat',n:'Estanque con patos',c:55,fe:5,d:'+5 de felicidad.'},
+ {t:'granja',k:'nat',n:'Granja',c:120,inc:8,d:'+8 monedas al día.'},
+ {t:'molino',k:'nat',n:'Molino de viento',c:140,inc:9,fe:2,d:'+9 monedas al día y +2 de felicidad.'},
+ {t:'heladeria',k:'com',n:'Heladería',c:70,inc:4,fe:2,d:'+4 monedas al día y +2 de felicidad.'},
+ {t:'panaderia',k:'com',n:'Panadería',c:75,inc:6,d:'Pan recién hecho. +6 monedas al día.'},
+ {t:'cafeteria',k:'com',n:'Cafetería',c:90,inc:6,fe:1,d:'+6 monedas al día y +1 de felicidad.'},
+ {t:'farmacia',k:'com',n:'Farmacia',c:100,inc:5,fe:2,d:'+5 monedas al día y +2 de felicidad.'},
+ {t:'pizzeria',k:'com',n:'Pizzería',c:110,inc:7,fe:2,d:'+7 monedas al día y +2 de felicidad.'},
+ {t:'mercado',k:'com',n:'Mercado',c:130,inc:8,d:'Puestos de fruta y verdura. +8 al día.'},
+ {t:'gasolinera',k:'com',n:'Gasolinera',c:160,inc:9,d:'+9 monedas al día.'},
+ {t:'super',k:'com',n:'Supermercado',c:180,inc:12,fe:2,d:'Para la compra de todo el pueblo. +12 al día.'},
+ {t:'bancof',k:'com',n:'Banco (oficina)',c:250,inc:15,d:'Guarda el dinero del pueblo. +15 al día.'},
+ {t:'correos',k:'ser',n:'Oficina de correos',c:80,inc:4,d:'+4 monedas al día.'},
+ {t:'ayto',k:'ser',n:'Ayuntamiento',c:100,inc:10,one:1,fe:5,d:'Donde trabaja el alcalde. +10 al día. Solo uno.'},
+ {t:'biblioteca',k:'ser',n:'Biblioteca',c:120,inc:5,fe:4,d:'+5 monedas al día y +4 de felicidad.'},
+ {t:'escuela',k:'ser',n:'Escuela',c:150,inc:8,fe:3,d:'+8 monedas al día y +3 de felicidad.'},
+ {t:'bomberos',k:'ser',n:'Parque de bomberos',c:170,inc:5,fe:4,d:'+5 monedas al día y +4 de felicidad.'},
+ {t:'comisaria',k:'ser',n:'Comisaría',c:180,inc:5,fe:4,d:'+5 monedas al día y +4 de felicidad.'},
+ {t:'hospital',k:'ser',n:'Hospital',c:200,inc:10,fe:5,d:'+10 monedas al día y +5 de felicidad.'},
+ {t:'estacion',k:'ser',n:'Estación de tren',c:300,inc:15,one:1,d:'Con tren de verdad. +15 al día. Solo una.'},
+ {t:'universidad',k:'ser',n:'Universidad',c:450,inc:20,one:1,fe:5,d:'+20 monedas al día. Solo una.'},
+ {t:'parque',k:'ocio',n:'Parque infantil',c:60,inc:1,fe:5,d:'Con columpio. +5 de felicidad.'},
+ {t:'campo',k:'ocio',n:'Campo de fútbol',c:150,inc:6,fe:6,d:'+6 monedas al día y +6 de felicidad.'},
+ {t:'piscina',k:'ocio',n:'Piscina',c:180,inc:7,fe:6,d:'+7 monedas al día y +6 de felicidad.'},
+ {t:'cine',k:'ocio',n:'Cine',c:200,inc:9,fe:6,d:'+9 monedas al día y +6 de felicidad.'},
+ {t:'polideportivo',k:'ocio',n:'Polideportivo',c:240,inc:9,fe:6,d:'+9 monedas al día y +6 de felicidad.'},
+ {t:'teatro',k:'ocio',n:'Teatro',c:260,inc:10,fe:7,d:'+10 monedas al día y +7 de felicidad.'},
+ {t:'noria',k:'ocio',n:'Noria',c:350,inc:12,fe:8,one:1,d:'Gira de verdad. +12 al día. Solo una.'},
+ {t:'faro',k:'mon',n:'Faro',c:280,inc:6,fe:6,one:1,d:'Su luz gira. +6 al día. Solo uno.'},
+ {t:'estatua',k:'mon',n:'Estatua del alcalde',c:300,fe:8,one:1,d:'El orgullo del pueblo. Solo una.'},
+ {t:'torre',k:'mon',n:'Torre del reloj',c:320,inc:5,fe:8,one:1,d:'+5 al día y +8 de felicidad. Solo una.'},
+ {t:'arco',k:'mon',n:'Arco del triunfo',c:500,inc:8,fe:10,one:1,d:'+8 al día y +10 de felicidad. Solo uno.'},
+ {t:'castillo',k:'mon',n:'Castillo',c:600,inc:10,fe:12,one:1,d:'+10 al día y +12 de felicidad. Solo uno.'},
+ {t:'catedral',k:'mon',n:'Catedral',c:700,inc:12,fe:12,one:1,d:'+12 al día y +12 de felicidad. Solo una.'}];
+var PB_J=[['Panadero','Panadera','panaderia'],['Agricultor','Agricultora','huerto'],['Profesor','Profesora','escuela'],['Médico','Médica','hospital'],['Funcionario','Funcionaria','ayto'],['Jardinero','Jardinera','flores'],['Carpintero','Carpintera','casa'],['Cartero','Cartera','correos'],['Músico','Música','teatro'],['Cocinero','Cocinera','pizzeria'],['Programador','Programadora','bancof'],['Pintor','Pintora','estatua'],['Bombero','Bombera','bomberos'],['Cajero','Cajera','super'],['Policía','Policía','comisaria'],['Camarero','Camarera','cafeteria'],['Farmacéutico','Farmacéutica','farmacia'],['Bibliotecario','Bibliotecaria','biblioteca'],['Granjero','Granjera','granja'],['Maquinista','Maquinista','estacion'],['Entrenador','Entrenadora','campo'],['Socorrista','Socorrista','piscina'],['Heladero','Heladera','heladeria'],['Investigador','Investigadora','universidad'],['Frutero','Frutera','mercado']];
+var PB_C=[
+ ['España',['Lucía','Sofía','Carmen','Marta'],['Hugo','Pablo','Javier','Mateo'],['García','López','Martín','Sánchez','Romero']],
+ ['México',['Ximena','Valeria','Fernanda'],['Santiago','Diego','Emiliano'],['Hernández','Ramírez','Torres']],
+ ['Argentina',['Martina','Catalina','Abril'],['Thiago','Bautista','Joaquín'],['González','Fernández','Pérez']],
+ ['Colombia',['Isabella','Mariana','Daniela'],['Samuel','Alejandro','Sebastián'],['Restrepo','Gómez','Muñoz']],
+ ['Francia',['Camille','Léa','Chloé'],['Louis','Gabriel','Arthur'],['Martin','Bernard','Dubois']],
+ ['Italia',['Giulia','Chiara','Francesca'],['Lorenzo','Matteo','Leonardo'],['Rossi','Russo','Ferrari']],
+ ['Portugal',['Beatriz','Leonor','Inês'],['João','Tiago','Rodrigo'],['Silva','Santos','Ferreira']],
+ ['Alemania',['Emma','Hannah','Mia'],['Lukas','Felix','Jonas'],['Müller','Schmidt','Weber']],
+ ['Reino Unido',['Olivia','Amelia','Grace'],['Oliver','Harry','George'],['Smith','Jones','Taylor']],
+ ['Estados Unidos',['Ava','Emily','Madison'],['Liam','Noah','Ethan'],['Johnson','Miller','Davis']],
+ ['Brasil',['Ana','Júlia','Larissa'],['Miguel','Arthur','Heitor'],['Oliveira','Souza','Lima']],
+ ['Marruecos',['Fátima','Salma','Aya'],['Youssef','Adam','Amine'],['Alaoui','Benali','Idrissi']],
+ ['Japón',['Yui','Sakura','Hana'],['Haruto','Sota','Ren'],['Sato','Suzuki','Takahashi']],
+ ['Rumanía',['Ioana','Elena','Maria'],['Andrei','Ștefan','Mihai'],['Popescu','Ionescu','Stan']],
+ ['Nigeria',['Chiamaka','Ngozi','Amara'],['Chinedu','Emeka','Tunde'],['Okafor','Adeyemi','Eze']],
+ ['India',['Ananya','Priya','Diya'],['Arjun','Rohan','Vihaan'],['Sharma','Patel','Gupta']],
+ ['Suecia',['Ebba','Alice','Maja'],['William','Elias','Hugo'],['Andersson','Johansson','Nilsson']],
+ ['Perú',['Camila','Valentina','Luciana'],['Gael','Adrián','Matías'],['Quispe','Flores','Rojas']],
+ ['Ucrania',['Sofiia','Anna','Daryna'],['Maksym','Artem','Denys'],['Kovalenko','Bondarenko','Shevchenko']],
+ ['China',['Mei','Xiu','Lan'],['Wei','Jun','Hao'],['Wang','Li','Zhang']]];
+var PB_SK=['#f6d3b3','#eabf98','#d29f73','#a8744d','#7b4f32','#5a3825'],PB_HR=['#2b1d14','#5b3a1e','#a0622d','#e2b45a','#1a1a1a','#8a8a8a','#b8452e'],PB_SH=['#e4572e','#29a19c','#f2c14e','#4c6ef5','#9b5de5','#f15bb5','#00a676','#ff8c42','#3d5a80','#ef476f'],PB_PA=['#2f3e46','#3d405b','#6b4f3a','#22333b','#1d3557','#4a4e69'];
+var PB_TIPS=['Cada día que entres llegará un vecino nuevo.','Cada hábito cumplido da +5 monedas al pueblo.','Toca una casa para ver quién vive en ella.','Pasa el ratón por un vecino para ver de dónde es.','Un pueblo feliz da más monedas cada día.','La decoración sube la felicidad del pueblo.','¡Vamos a por el mejor pueblo del mundo!','Arrastra el mapa para recorrer todo el pueblo.'];
+var PB_EX0=-300,PB_EY0=-300,PB_EX1=1966+300,PB_EY1=1060+300,PB_WL={x0:-60,y0:-66,x1:2026,y1:1120,t:24};
+var PB_AK=[['oveja','Oveja',.9],['vaca','Vaca',1.15],['conejo','Conejo',1],['ciervo','Ciervo',1.1],['zorro','Zorro',1],['caballo','Caballo',1.25],['gallina','Gallina',1],['cerdo','Cerdo',1]];
+var PB_XV=[14,494,983,1472,1952],PB_YH=[110,250,390,530,670,810,950];
+function pk(a){return a[Math.floor(Math.random()*a.length)];}
+function pbDef(t){for(var i=0;i<PB_B.length;i++)if(PB_B[i].t===t)return PB_B[i];return null;}
+function pbParty(){var id=S.pb&&S.pb.party;for(var i=0;i<PB_P.length;i++)if(PB_P[i].id===id)return PB_P[i];return PB_P[0];}
+function pbPlot(i){var c=i%16,r=Math.floor(i/16);return {x:30+Math.floor(c/4)*489+(c%4)*113,y:Math.floor(r/2)*280+12+(r%2)*106,w:100,h:90};}
+function pbAt(i){var b=S.pb.b;for(var k=0;k<b.length;k++)if(b[k].p===i)return k;return -1;}
+function pbMig(){var pb=S.pb;if(!pb||pb.v===2)return;pb.b.forEach(function(b){var c=b.p%8,r=Math.floor(b.p/8);b.p=(r+2)*16+c+4;});if(pb.fel===undefined)pb.fel=70;pb.v=2;}
+function pbFel(){return S.pb.fel===undefined?70:S.pb.fel;}
+function pbParts(){var bl=0;S.pb.b.forEach(function(b){var d=pbDef(b.t);if(d&&d.inc)bl+=d.inc;});return {base:5,tax:S.pb.people.length,bld:bl,fel:Math.round((pbFel()-50)/10)};}
+function pbIncome(){var q=pbParts();return Math.max(1,q.base+q.tax+q.bld+q.fel);}
+function pbMayor(){return (S.pb&&S.pb.mayor)||'Paco';}
+function pbValue(){var s=S.pb.people.length*10+pbFel()*2;S.pb.b.forEach(function(b){var d=pbDef(b.t);if(d)s+=d.c;});return s;}
+function pbNewPerson(){var c=pk(PB_C),f=Math.random()<.5,j=pk(PB_J);
+ return {n:pk(f?c[1]:c[2])+' '+pk(c[3]),c:c[0],j:f?j[1]:j[0],jb:j[2],f:f,sk:pk(PB_SK),hr:pk(PB_HR),hs:f?pk([1,1,0,3]):pk([0,0,2,3]),sh:pk(PB_SH),pa:pk(PB_PA),cap:pk(PB_SH),d:T};}
+function pbNewEvent(){
+ var h=S.pb.evh||[],k,tries=0;do{k=Math.floor(Math.random()*PB_EV.length);tries++;}while(h.indexOf(k)>-1&&tries<40);
+ h.push(k);S.pb.evh=h.slice(-40);var pi=Math.floor(Math.random()*S.pb.people.length),p=S.pb.people[pi];
+ S.pb.ev={k:k,n:p.n,c:p.c,j:p.j,pi:pi,d:T};S.pb.evr=null;}
+function pbDaily(){
+ if(!S.pb)return null;pbMig();if(S.pb.last===T)return null;
+ var inc=pbIncome(),p=pbNewPerson();S.pb.coins+=inc;S.pb.people.push(p);S.pb.last=T;PBNEW=S.pb.people.length-1;pbNewEvent();return {p:p,inc:inc};}
+function pbFill(s,e){return s.replace(/\{a\}/g,pbMayor()).replace(/\{n\}/g,e.n).replace(/\{c\}/g,e.c).replace(/\{j\}/g,e.j);}
+function pbResolve(o){
+ var e=S.pb.ev;if(!e)return;var op=PB_EV[e.k][o+1],m=op[1],f=op[2],x=op[4],extra='';
+ S.pb.coins=Math.max(0,S.pb.coins+m);S.pb.fel=Math.max(0,Math.min(100,pbFel()+f));
+ if(x==='out'){var ix=-1;S.pb.people.forEach(function(p,i){if(ix<0&&p.n===e.n)ix=i;});if(ix>-1&&S.pb.people.length>1){S.pb.people.splice(ix,1);PBREF=null;extra=' ('+e.n+' ya no vive en el pueblo)';}}
+ if(x==='in'){var np=pbNewPerson();S.pb.people.push(np);PBNEW=S.pb.people.length-1;extra=' Ha llegado '+np.n+' desde '+np.c+'.';}
+ S.pb.evr={t:pbFill(op[3],e)+extra,m:m,f:f,q:pbFill(PB_EV[e.k][0],e)};
+ S.pb.log=(S.pb.log||[]).concat([{d:T,t:pbFill(PB_EV[e.k][0],e),r:pbFill(op[3],e)}]).slice(-8);
+ S.pb.ev=null;save();render();}
+function pbAssign(){
+ var A={home:{},work:{},res:{},wk:{}},slots=[];
+ S.pb.b.forEach(function(b,ix){var d=pbDef(b.t);if(d&&d.cap)for(var k=0;k<d.cap;k++)slots.push(ix);});
+ S.pb.people.forEach(function(p,i){if(i<slots.length){A.home[i]=slots[i];(A.res[slots[i]]=A.res[slots[i]]||[]).push(i);}});
+ var cnt={};S.pb.people.forEach(function(p,i){if(!p.jb)return;var bs=[];S.pb.b.forEach(function(b,ix){if(b.t===p.jb)bs.push(ix);});if(!bs.length)return;cnt[p.jb]=(cnt[p.jb]||0)+1;var w=bs[cnt[p.jb]%bs.length];A.work[i]=w;(A.wk[w]=A.wk[w]||[]).push(i);});
+ return A;}
+function rr(g,x,y,w,h,r){g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath();}
+function lbl(g,t,cx,y,bg,fg){g.font='bold 8px system-ui,sans-serif';g.textAlign='center';var w=g.measureText(t).width+8;g.fillStyle=bg;rr(g,cx-w/2,y-7,w,11,3);g.fill();g.fillStyle=fg||'#fff';g.fillText(t,cx,y+2);}
+function wnd(g,x,y,w,h,on){g.fillStyle=on?'#ffd774':'#9ed2f0';g.fillRect(x,y,w,h);g.strokeStyle='rgba(255,255,255,.85)';g.lineWidth=1;g.strokeRect(x,y,w,h);}
+function tri(g,a,b,c,d,e,f,col){g.fillStyle=col;g.beginPath();g.moveTo(a,b);g.lineTo(c,d);g.lineTo(e,f);g.closePath();g.fill();}
+function flag(g,x,y,col,tm,s){s=s||1;g.fillStyle='#555';g.fillRect(x-1,y,2,30*s);g.fillStyle=col;g.beginPath();g.moveTo(x+1,y);for(var q=0;q<=8;q++)g.lineTo(x+1+q*3*s,y+Math.sin(tm*5+q*.8)*1.6);for(var q2=8;q2>=0;q2--)g.lineTo(x+1+q2*3*s,y+12*s+Math.sin(tm*5+q2*.8)*1.6);g.closePath();g.fill();}
+function shop(g,x,y,w,a1,a2,txt,lb){g.fillStyle=w;g.fillRect(x+8,y+34,84,56);g.fillStyle='#4a4a4a';g.fillRect(x+5,y+30,90,6);for(var k=0;k<7;k++){g.fillStyle=k%2?a1:a2;g.fillRect(x+8+k*12,y+46,12,8);g.beginPath();g.arc(x+14+k*12,y+54,6,0,Math.PI);g.fill();}wnd(g,x+14,y+62,40,22,false);g.fillStyle='#6b4226';g.fillRect(x+62,y+62,18,28);lbl(g,txt,x+50,y+41,lb||a1);}
+function civic(g,x,y,w,rf,txt,lb,cols){g.fillStyle=w;g.fillRect(x+6,y+36,88,54);tri(g,x+2,y+38,x+50,y+16,x+98,y+38,rf);if(cols){g.fillStyle='rgba(255,255,255,.85)';for(var k=0;k<4;k++)g.fillRect(x+16+k*20,y+46,6,38);}g.fillStyle='#6b4226';g.fillRect(x+43,y+68,14,22);lbl(g,txt,x+50,y+30,lb);}
+var DR={
+ arbol:function(g,x,y,tm,ix){var s=Math.sin(tm*1.4+ix)*1.6,cx=x+50;g.fillStyle='#7a4b2a';g.fillRect(cx-5,y+52,10,38);g.fillStyle='#2f8f46';g.beginPath();g.arc(cx-15+s*.5,y+52,18,0,7);g.arc(cx+15+s*.5,y+52,18,0,7);g.fill();g.fillStyle='#38a852';g.beginPath();g.arc(cx+s,y+38,24,0,7);g.fill();g.fillStyle='rgba(255,255,255,.18)';g.beginPath();g.arc(cx-7+s,y+30,8,0,7);g.fill();},
+ manzano:function(g,x,y,tm,ix){DR.arbol(g,x,y,tm,ix);var s=Math.sin(tm*1.4+ix)*1.6;g.fillStyle='#e23b3b';[[-14,48],[10,32],[16,52],[-4,26],[-20,36],[4,46]].forEach(function(a){g.beginPath();g.arc(x+50+a[0]+s,y+a[1],3.2,0,7);g.fill();});},
+ pino:function(g,x,y,tm,ix){var cx=x+50,s=Math.sin(tm*1.2+ix);g.fillStyle='#6b4226';g.fillRect(cx-4,y+70,8,20);[[74,30],[54,25],[34,19]].forEach(function(a,i){tri(g,cx-a[1]+s*i*.4,y+a[0],cx+s*i*.7,y+a[0]-28,cx+a[1]+s*i*.4,y+a[0],i%2?'#2c7a3f':'#25683a');});},
+ arbusto:function(g,x,y){g.fillStyle='#2f8f46';g.beginPath();g.arc(x+36,y+78,13,0,7);g.arc(x+64,y+78,13,0,7);g.fill();g.fillStyle='#3faa56';g.beginPath();g.arc(x+50,y+72,15,0,7);g.fill();g.fillStyle='#f06292';g.beginPath();g.arc(x+44,y+68,2.5,0,7);g.arc(x+60,y+76,2.5,0,7);g.fill();},
+ palmera:function(g,x,y,tm,ix){var s=Math.sin(tm*1.3+ix)*3,cx=x+50;g.strokeStyle='#9c6b3c';g.lineWidth=7;g.beginPath();g.moveTo(cx-6,y+90);g.quadraticCurveTo(cx+10,y+55,cx+2+s*.3,y+24);g.stroke();g.strokeStyle='#2f9e4f';g.lineWidth=4;g.lineCap='round';[[-30,10],[30,8],[-22,-8],[24,-10],[0,-16]].forEach(function(a){g.beginPath();g.moveTo(cx+2+s*.3,y+24);g.quadraticCurveTo(cx+a[0]*.6+s,y+18+a[1]*.5-8,cx+a[0]+s,y+24+a[1]);g.stroke();});g.fillStyle='#6b4226';g.beginPath();g.arc(cx-2,y+28,3,0,7);g.arc(cx+5,y+29,3,0,7);g.fill();},
+ flores:function(g,x,y,tm){g.fillStyle='#7b5233';rr(g,x+8,y+56,84,32,8);g.fill();var cs=['#ef476f','#ffd166','#c77dff','#fff','#ff8c42'];for(var r=0;r<3;r++)for(var c=0;c<7;c++){var fx=x+16+c*11,fy=y+62+r*9+Math.sin(tm*2+c)*.6;g.strokeStyle='#3faa56';g.lineWidth=1.5;g.beginPath();g.moveTo(fx,fy+5);g.lineTo(fx,fy);g.stroke();g.fillStyle=cs[(r*7+c)%5];g.beginPath();g.arc(fx,fy,3,0,7);g.fill();}},
+ estanque:function(g,x,y,tm){var cx=x+50;g.fillStyle='#8d9aa6';g.beginPath();g.ellipse(cx,y+66,46,22,0,0,7);g.fill();g.fillStyle='#4fb3e8';g.beginPath();g.ellipse(cx,y+65,41,18,0,0,7);g.fill();for(var i=0;i<2;i++){var a=(tm*.6+i/2)%1;g.strokeStyle='rgba(255,255,255,'+(0.6-a*.6)+')';g.lineWidth=1;g.beginPath();g.ellipse(cx-14+i*24,y+64,4+a*12,2+a*5,0,0,7);g.stroke();}g.fillStyle='#3faa56';g.beginPath();g.ellipse(cx+22,y+72,6,3,0,0,7);g.fill();var dx=cx+Math.cos(tm*.5)*26,dy=y+64+Math.sin(tm*.5)*9;g.fillStyle='#fff';g.beginPath();g.ellipse(dx,dy,5,3.5,0,0,7);g.fill();g.beginPath();g.arc(dx+(Math.sin(tm*.5)>0?-4:4),dy-4,2.6,0,7);g.fill();g.fillStyle='#ffb020';g.fillRect(dx+(Math.sin(tm*.5)>0?-8:6),dy-4.5,2.5,1.5);},
+ colmena:function(g,x,y,tm){var cx=x+50;g.fillStyle='#6b4226';g.fillRect(cx-16,y+80,4,10);g.fillRect(cx+12,y+80,4,10);g.fillStyle='#e2a93b';g.fillRect(cx-18,y+56,36,24);g.fillStyle='#c98d1e';g.fillRect(cx-20,y+52,40,6);g.fillRect(cx-18,y+66,36,3);g.fillStyle='#333';g.fillRect(cx-4,y+74,8,3);for(var i=0;i<5;i++){var a=tm*2.4+i*1.3;g.fillStyle='#ffd400';g.beginPath();g.arc(cx+Math.cos(a)*(18+i*3),y+56+Math.sin(a*1.3)*12,2,0,7);g.fill();}},
+ huerto:function(g,x,y,tm){g.fillStyle='#7b5233';rr(g,x+8,y+40,84,48,6);g.fill();for(var r=0;r<3;r++)for(var c=0;c<6;c++){g.fillStyle=(r+c)%3?'#3fae4f':'#e35d4f';g.beginPath();g.arc(x+18+c*13,y+52+r*14+Math.sin(tm*2+c+r)*.6,4,0,7);g.fill();}g.strokeStyle='#c9a26b';g.lineWidth=2;g.strokeRect(x+5,y+37,90,54);},
+ granja:function(g,x,y,tm){g.fillStyle='#b23a30';g.fillRect(x+12,y+40,62,50);g.beginPath();g.moveTo(x+8,y+42);g.lineTo(x+22,y+22);g.lineTo(x+64,y+22);g.lineTo(x+78,y+42);g.closePath();g.fillStyle='#7d2620';g.fill();g.fillStyle='#fff';g.fillRect(x+32,y+60,22,30);g.strokeStyle='#b23a30';g.lineWidth=2;g.beginPath();g.moveTo(x+32,y+60);g.lineTo(x+54,y+90);g.moveTo(x+54,y+60);g.lineTo(x+32,y+90);g.stroke();g.fillStyle='#cfd6dd';g.fillRect(x+78,y+28,16,62);g.beginPath();g.arc(x+86,y+28,8,Math.PI,0);g.fill();},
+ molino:function(g,x,y,tm){var cx=x+50;g.fillStyle='#f1ece2';g.beginPath();g.moveTo(cx-14,y+90);g.lineTo(cx-9,y+34);g.lineTo(cx+9,y+34);g.lineTo(cx+14,y+90);g.closePath();g.fill();tri(g,cx-12,y+36,cx,y+20,cx+12,y+36,'#6d4c41');g.fillStyle='#6b4226';g.fillRect(cx-4,y+74,8,16);g.save();g.translate(cx,y+32);g.rotate(tm*1.2);for(var i=0;i<4;i++){g.rotate(Math.PI/2);g.fillStyle='#d9cbb0';g.fillRect(2,-3,34,6);g.strokeStyle='#8a7a5c';g.lineWidth=1;g.strokeRect(2,-3,34,6);}g.restore();g.fillStyle='#555';g.beginPath();g.arc(cx,y+32,3,0,7);g.fill();},
+ banco:function(g,x,y){g.fillStyle='#4a3626';g.fillRect(x+24,y+66,4,22);g.fillRect(x+72,y+66,4,22);g.fillStyle='#a8703f';g.fillRect(x+18,y+50,64,5);g.fillRect(x+18,y+58,64,5);g.fillRect(x+16,y+66,68,6);},
+ farola:function(g,x,y,tm,ix){var cx=x+50,gl=.55+Math.sin(tm*3+ix)*.08,rg=g.createRadialGradient(cx,y+24,2,cx,y+24,40);rg.addColorStop(0,'rgba(255,214,120,'+gl+')');rg.addColorStop(1,'rgba(255,214,120,0)');g.fillStyle=rg;g.beginPath();g.arc(cx,y+24,40,0,7);g.fill();g.fillStyle='#2b2f38';g.fillRect(cx-2.5,y+26,5,62);g.fillRect(cx-9,y+84,18,5);g.fillStyle='#ffe3a1';g.fillRect(cx-7,y+16,14,12);tri(g,cx-10,y+17,cx,y+8,cx+10,y+17,'#2b2f38');},
+ fuente:function(g,x,y,tm){var cx=x+50;g.fillStyle='#9aa3ad';g.beginPath();g.ellipse(cx,y+72,42,15,0,0,7);g.fill();g.fillStyle='#4fb3e8';g.beginPath();g.ellipse(cx,y+70,35,10,0,0,7);g.fill();g.fillStyle='#b8c0c9';g.fillRect(cx-4,y+40,8,30);g.beginPath();g.ellipse(cx,y+42,14,5,0,0,7);g.fill();g.fillStyle='rgba(120,200,255,.9)';for(var i=0;i<8;i++){var a=(tm*1.6+i/8)%1,dxx=(i%2?1:-1)*(4+a*22),dyy=-14+a*a*44-a*30;g.beginPath();g.arc(cx+dxx,y+40+dyy+a*24,2,0,7);g.fill();}},
+ valla:function(g,x,y){g.fillStyle='#fff';for(var k=0;k<9;k++){g.fillRect(x+8+k*10,y+64,6,24);tri(g,x+8+k*10,y+64,x+11+k*10,y+59,x+14+k*10,y+64,'#fff');}g.fillRect(x+6,y+70,88,3);g.fillRect(x+6,y+80,88,3);},
+ papelera:function(g,x,y){var cx=x+50;g.fillStyle='#2e7d32';rr(g,cx-9,y+62,18,26,3);g.fill();g.fillStyle='#1b5e20';g.fillRect(cx-11,y+59,22,5);g.fillStyle='rgba(255,255,255,.3)';g.fillRect(cx-5,y+66,2,18);},
+ maceta:function(g,x,y,tm){var cx=x+50;g.fillStyle='#c0623b';g.beginPath();g.moveTo(cx-16,y+66);g.lineTo(cx+16,y+66);g.lineTo(cx+11,y+90);g.lineTo(cx-11,y+90);g.closePath();g.fill();g.fillStyle='#3faa56';g.beginPath();g.arc(cx-8,y+62,8,0,7);g.arc(cx+8,y+62,8,0,7);g.arc(cx,y+56,9,0,7);g.fill();['#ef476f','#ffd166','#c77dff','#fff'].forEach(function(c,i){g.fillStyle=c;g.beginPath();g.arc(cx-10+i*7,y+54+(i%2)*6+Math.sin(tm*2+i),3,0,7);g.fill();});},
+ buzon:function(g,x,y){var cx=x+50;g.fillStyle='#777';g.fillRect(cx-2,y+62,4,28);g.fillStyle='#f5c400';rr(g,cx-11,y+44,22,20,4);g.fill();g.fillStyle='#333';g.fillRect(cx-6,y+50,12,2.5);},
+ bandera:function(g,x,y,tm){flag(g,x+44,y+14,pbParty().c,tm,1.8);g.fillStyle='#777';g.fillRect(x+40,y+86,10,4);},
+ kiosco:function(g,x,y){g.fillStyle='#2e7d5b';g.fillRect(x+28,y+50,44,40);for(var k=0;k<6;k++){g.fillStyle=k%2?'#fff':'#2e7d5b';g.fillRect(x+24+k*9,y+42,9,9);}wnd(g,x+34,y+58,32,14,false);g.fillStyle='#f2c14e';g.fillRect(x+36,y+76,8,10);g.fillStyle='#ef476f';g.fillRect(x+48,y+76,8,10);lbl(g,'PRENSA',x+50,y+36,'#2e7d5b');},
+ arcoflor:function(g,x,y,tm){var cx=x+50;g.strokeStyle='#2f8f46';g.lineWidth=9;g.beginPath();g.arc(cx,y+88,32,Math.PI,0);g.stroke();for(var i=0;i<=10;i++){var a=Math.PI+i*Math.PI/10;g.fillStyle=['#ef476f','#ffd166','#fff','#c77dff'][i%4];g.beginPath();g.arc(cx+Math.cos(a)*32,y+88+Math.sin(a)*32,3.2+Math.sin(tm*2+i)*.4,0,7);g.fill();}},
+ reloj:function(g,x,y){var cx=x+50,d=new Date(),h=d.getHours()%12+d.getMinutes()/60,m=d.getMinutes()+d.getSeconds()/60;g.fillStyle='#2b2f38';g.fillRect(cx-3,y+38,6,50);g.fillRect(cx-10,y+86,20,4);g.fillStyle='#fff';g.beginPath();g.arc(cx,y+28,13,0,7);g.fill();g.strokeStyle='#2b2f38';g.lineWidth=2.5;g.stroke();g.lineWidth=2;g.beginPath();g.moveTo(cx,y+28);g.lineTo(cx+Math.sin(h/12*6.283)*6,y+28-Math.cos(h/12*6.283)*6);g.moveTo(cx,y+28);g.lineTo(cx+Math.sin(m/60*6.283)*9.5,y+28-Math.cos(m/60*6.283)*9.5);g.stroke();},
+ cabana:function(g,x,y){var cx=x+50;g.fillStyle='#a0703f';g.fillRect(x+24,y+54,52,36);g.strokeStyle='#7d5530';g.lineWidth=1.5;for(var k=0;k<5;k++){g.beginPath();g.moveTo(x+24,y+60+k*7);g.lineTo(x+76,y+60+k*7);g.stroke();}tri(g,x+16,y+58,cx,y+30,x+84,y+58,'#5b3a1e');g.fillStyle='#4a2f17';g.fillRect(cx-7,y+70,14,20);wnd(g,x+30,y+62,10,9,true);},
+ casa:function(g,x,y,tm,ix,pan){var cx=x+50,wc=pan?'#f6e6cf':['#f3e3c3','#f7d6c4','#dfe8d3','#e9dcf2'][ix%4];g.fillStyle='#8b8b8b';g.fillRect(x+64,y+14,10,24);var sm=(tm*.5)%1;g.fillStyle='rgba(220,220,220,'+(0.6-sm*.6)+')';g.beginPath();g.arc(x+69+sm*6,y+10-sm*22,4+sm*6,0,7);g.fill();g.fillStyle=wc;g.fillRect(x+14,y+40,72,50);tri(g,x+6,y+44,cx,y+12,x+94,y+44,pan?'#8a5a2b':'#b5473a');g.fillStyle='#6b4226';g.fillRect(cx-8,y+64,16,26);wnd(g,x+22,y+52,16,14,true);wnd(g,x+62,y+52,16,14,true);
+  if(pan){for(var k=0;k<6;k++){g.fillStyle=k%2?'#fff':'#d9534f';g.fillRect(x+14+k*12,y+44,12,7);}lbl(g,'PAN',cx,y+32,'#5a3a1a');}},
+ panaderia:function(g,x,y,tm,ix){DR.casa(g,x,y,tm,ix,true);},
+ chalet:function(g,x,y,tm,ix){var cx=x+50;g.fillStyle='#f1ece2';g.fillRect(x+8,y+34,84,56);tri(g,x+2,y+38,cx,y+6,x+98,y+38,'#3f4a5a');[[16,42],[36,42],[58,42],[78,42],[16,62],[78,62]].forEach(function(a,i){wnd(g,x+a[0]-2,y+a[1],12,12,(i+ix)%3!==0);});g.fillStyle='#6b4226';g.fillRect(cx-8,y+64,16,26);g.fillStyle='#2f8f46';g.fillRect(x+4,y+84,24,6);g.fillRect(x+72,y+84,24,6);},
+ pisos:function(g,x,y,tm,ix){g.fillStyle='#c9b8a6';g.fillRect(x+16,y-14,68,104);g.fillStyle='#8d7b69';g.fillRect(x+13,y-18,74,6);for(var r=0;r<7;r++)for(var c=0;c<4;c++){if(r===6&&(c===1||c===2))continue;wnd(g,x+22+c*15,y-6+r*13,9,8,((r*7+c*3+ix)%5)<2);}g.fillStyle='#6b4226';g.fillRect(x+40,y+74,20,16);},
+ mansion:function(g,x,y,tm,ix){var cx=x+50;g.fillStyle='#efe6d2';g.fillRect(x+2,y+42,96,48);tri(g,x-2,y+46,x+22,y+28,x+46,y+46,'#6d4c41');tri(g,x+54,y+46,x+78,y+28,x+102,y+46,'#6d4c41');g.fillStyle='#f7f0de';g.fillRect(x+30,y+28,40,62);tri(g,x+26,y+30,cx,y+8,x+74,y+30,'#5a3e35');g.fillStyle='#fff';for(var k=0;k<4;k++)g.fillRect(x+33+k*10,y+40,4,40);[[8,52],[20,52],[74,52],[86,52],[8,70],[86,70]].forEach(function(a,i){wnd(g,x+a[0],y+a[1],8,10,(i+ix)%2===0);});g.fillStyle='#6b4226';g.fillRect(cx-6,y+72,12,18);g.fillStyle='#d4af37';g.beginPath();g.arc(cx,y+20,3,0,7);g.fill();},
+ heladeria:function(g,x,y){shop(g,x,y,'#fde2ef','#f06292','#fff','HELADOS');g.fillStyle='#e0a96d';tri(g,x+86,y+82,x+92,y+66,x+98,y+82,'#e0a96d');g.fillStyle='#ffd1e8';g.beginPath();g.arc(x+92,y+64,6,0,7);g.fill();},
+ cafeteria:function(g,x,y){shop(g,x,y,'#ead7b8','#6b3e26','#f3e1c6','CAFÉ');},
+ pizzeria:function(g,x,y){shop(g,x,y,'#fff3e0','#c62828','#2e7d32','PIZZA');},
+ farmacia:function(g,x,y,tm){shop(g,x,y,'#f5f5f5','#2e9e5b','#fff','FARMACIA');var on=Math.sin(tm*3)>0;g.fillStyle=on?'#22c55e':'#15803d';g.fillRect(x+84,y+12,6,18);g.fillRect(x+78,y+18,18,6);},
+ mercado:function(g,x,y){var cs=[['#e4572e','#fff'],['#29a19c','#fff'],['#f2c14e','#fff']];for(var i=0;i<3;i++){var sx=x+4+i*32;g.fillStyle='#8a5a2b';g.fillRect(sx+2,y+60,2,30);g.fillRect(sx+26,y+60,2,30);for(var k=0;k<3;k++){g.fillStyle=cs[i][k%2];g.fillRect(sx+k*10,y+52,10,10);}g.fillStyle='#a8703f';g.fillRect(sx,y+72,30,8);['#e23b3b','#ff8c42','#3fae4f','#ffd166'].forEach(function(c,j){g.fillStyle=c;g.beginPath();g.arc(sx+5+j*7,y+70,3,0,7);g.fill();});}lbl(g,'MERCADO',x+50,y+44,'#8a5a2b');},
+ gasolinera:function(g,x,y){g.fillStyle='#e8e8e8';g.fillRect(x+4,y+34,92,8);g.fillStyle='#d32f2f';g.fillRect(x+4,y+40,92,4);g.fillStyle='#999';g.fillRect(x+10,y+44,4,46);g.fillRect(x+86,y+44,4,46);[30,58].forEach(function(px){g.fillStyle='#2e7d32';rr(g,x+px,y+64,12,26,2);g.fill();g.fillStyle='#fff';g.fillRect(x+px+2,y+68,8,6);});lbl(g,'GASOLINERA',x+50,y+30,'#d32f2f');},
+ super:function(g,x,y){g.fillStyle='#f4f4f4';g.fillRect(x+2,y+32,96,58);g.fillStyle='#2e9e5b';g.fillRect(x,y+28,100,10);g.fillStyle='#ff8c42';g.fillRect(x,y+38,100,4);wnd(g,x+8,y+50,52,26,false);g.fillStyle='#9ed2f0';g.fillRect(x+66,y+52,26,38);g.strokeStyle='#fff';g.lineWidth=1;g.beginPath();g.moveTo(x+79,y+52);g.lineTo(x+79,y+90);g.stroke();lbl(g,'SUPERMERCADO',x+50,y+33,'#2e9e5b');g.strokeStyle='#555';g.lineWidth=1.2;g.strokeRect(x+14,y+80,10,6);g.beginPath();g.arc(x+16,y+88,1.5,0,7);g.arc(x+22,y+88,1.5,0,7);g.stroke();},
+ bancof:function(g,x,y){civic(g,x,y,'#e6e1d6','#b9b1a0','BANCO','#1d3557',true);g.fillStyle='#d4af37';g.font='bold 12px system-ui';g.textAlign='center';g.fillText('€',x+50,y+33);},
+ correos:function(g,x,y){g.fillStyle='#ffd23f';g.fillRect(x+8,y+34,84,56);g.fillStyle='#1d3557';g.fillRect(x+5,y+30,90,6);wnd(g,x+16,y+46,22,16,false);wnd(g,x+62,y+46,22,16,false);g.fillStyle='#1d3557';g.fillRect(x+42,y+64,16,26);lbl(g,'CORREOS',x+50,y+24,'#1d3557');},
+ ayto:function(g,x,y,tm){var cx=x+50;g.fillStyle='#e9e2d0';g.fillRect(x+4,y+38,92,52);tri(g,x,y+40,cx,y+18,x+100,y+40,'#cfc5ad');g.fillStyle='#fff';for(var k=0;k<4;k++)g.fillRect(x+14+k*22,y+44,7,40);g.fillStyle='#6b4226';g.fillRect(cx-7,y+68,14,22);g.fillStyle='#fff';g.beginPath();g.arc(cx,y+30,6,0,7);g.fill();g.strokeStyle='#333';g.lineWidth=1.2;g.beginPath();g.moveTo(cx,y+30);g.lineTo(cx+Math.cos(tm*.3)*4.5,y+30+Math.sin(tm*.3)*4.5);g.moveTo(cx,y+30);g.lineTo(cx,y+26);g.stroke();flag(g,cx,y-6,pbParty().c,tm);g.fillStyle='#333';g.font='bold 8px system-ui';g.textAlign='center';g.fillText('AYUNTAMIENTO',cx,y+62);},
+ biblioteca:function(g,x,y){civic(g,x,y,'#e8dcc6','#8d6e63','BIBLIOTECA','#5d4037',true);},
+ escuela:function(g,x,y,tm){var cx=x+50;g.fillStyle='#f2c76e';g.fillRect(x+8,y+42,84,48);g.fillStyle='#b5473a';g.fillRect(x+4,y+36,92,8);g.fillStyle='#f2c76e';g.fillRect(cx-10,y+14,20,24);tri(g,cx-13,y+16,cx,y+4,cx+13,y+16,'#b5473a');g.fillStyle='#8a6d1a';g.beginPath();g.arc(cx+Math.sin(tm*4)*1.5,y+26,4,0,7);g.fill();for(var k=0;k<3;k++)wnd(g,x+16+k*26,y+50,14,12,false);g.fillStyle='#6b4226';g.fillRect(cx-7,y+70,14,20);g.fillStyle='#333';g.font='bold 8px system-ui';g.textAlign='center';g.fillText('ESCUELA',cx,y+68);},
+ bomberos:function(g,x,y,tm){g.fillStyle='#c62828';g.fillRect(x+6,y+34,88,56);g.fillStyle='#8e1c1c';g.fillRect(x+3,y+30,94,6);[12,54].forEach(function(px){g.fillStyle='#eee';g.fillRect(x+px,y+52,34,38);g.strokeStyle='#bbb';g.lineWidth=1;for(var k=1;k<5;k++){g.beginPath();g.moveTo(x+px,y+52+k*7.5);g.lineTo(x+px+34,y+52+k*7.5);g.stroke();}});lbl(g,'BOMBEROS',x+50,y+44,'#8e1c1c');g.fillStyle=Math.sin(tm*6)>0?'#ff5252':'#ffd166';g.beginPath();g.arc(x+92,y+28,3,0,7);g.fill();},
+ comisaria:function(g,x,y,tm){g.fillStyle='#e3eaf5';g.fillRect(x+6,y+34,88,56);g.fillStyle='#1d4ed8';g.fillRect(x+3,y+30,94,7);for(var k=0;k<3;k++)wnd(g,x+14+k*26,y+48,16,14,false);g.fillStyle='#1e3a8a';g.fillRect(x+42,y+68,16,22);lbl(g,'POLICÍA',x+50,y+24,'#1d4ed8');var b=Math.sin(tm*6)>0;g.fillStyle=b?'#3b82f6':'#ef4444';g.fillRect(x+80,y+24,8,6);},
+ hospital:function(g,x,y){var cx=x+50;g.fillStyle='#f4f7fa';g.fillRect(x+6,y+22,88,68);g.strokeStyle='#cdd6df';g.lineWidth=1;g.strokeRect(x+6,y+22,88,68);g.fillStyle='#e23b3b';g.fillRect(cx-4,y+28,8,22);g.fillRect(cx-11,y+35,22,8);for(var k=0;k<4;k++)wnd(g,x+12+k*21,y+56,12,10,false);g.fillStyle='#7fb3d5';g.fillRect(cx-9,y+72,18,18);},
+ estacion:function(g,x,y,tm){g.fillStyle='#d7ccc8';g.fillRect(x+14,y+28,72,40);tri(g,x+8,y+30,x+50,y+12,x+92,y+30,'#6d4c41');wnd(g,x+22,y+38,14,14,false);wnd(g,x+64,y+38,14,14,false);g.fillStyle='#6b4226';g.fillRect(x+44,y+46,12,22);lbl(g,'ESTACIÓN',x+50,y+24,'#6d4c41');g.fillStyle='#9e9e9e';g.fillRect(x,y+70,100,5);g.fillStyle='#5d4037';for(var k=0;k<10;k++)g.fillRect(x+k*10+2,y+78,6,10);g.fillStyle='#777';g.fillRect(x,y+80,100,2);g.fillRect(x,y+86,100,2);var tx=x-60+((tm*30)%220);g.save();g.beginPath();g.rect(x,y+60,100,30);g.clip();g.fillStyle='#d32f2f';rr(g,tx,y+66,40,16,4);g.fill();g.fillStyle='#1d3557';rr(g,tx-36,y+66,34,16,4);g.fill();g.fillStyle='#9ed2f0';g.fillRect(tx+6,y+69,8,6);g.fillRect(tx+20,y+69,8,6);g.fillRect(tx-30,y+69,8,6);g.fillRect(tx-18,y+69,8,6);g.restore();},
+ universidad:function(g,x,y){var cx=x+50;g.fillStyle='#e8dcc6';g.fillRect(x+2,y+40,96,50);g.fillStyle='#d7c7a8';g.beginPath();g.arc(cx,y+40,22,Math.PI,0);g.fill();g.fillStyle='#b08d57';g.fillRect(cx-1,y+10,2,10);g.fillStyle='#fff';for(var k=0;k<6;k++)g.fillRect(x+10+k*15,y+48,5,36);g.fillStyle='#6b4226';g.fillRect(cx-6,y+72,12,18);lbl(g,'UNIVERSIDAD',cx,y+44,'#8d6e63');},
+ parque:function(g,x,y,tm){g.fillStyle='#e9c46a';rr(g,x+6,y+60,88,28,8);g.fill();g.strokeStyle='#d62828';g.lineWidth=3;g.beginPath();g.moveTo(x+14,y+86);g.lineTo(x+22,y+40);g.lineTo(x+30,y+86);g.moveTo(x+46,y+86);g.lineTo(x+54,y+40);g.lineTo(x+62,y+86);g.moveTo(x+22,y+40);g.lineTo(x+54,y+40);g.stroke();var a=Math.sin(tm*2.2)*.6;g.save();g.translate(x+38,y+40);g.rotate(a);g.strokeStyle='#555';g.lineWidth=1.2;g.beginPath();g.moveTo(-5,0);g.lineTo(-5,30);g.moveTo(5,0);g.lineTo(5,30);g.stroke();g.fillStyle='#1d3557';g.fillRect(-7,29,14,4);g.restore();g.fillStyle='#4c6ef5';g.beginPath();g.moveTo(x+70,y+50);g.lineTo(x+76,y+50);g.lineTo(x+94,y+86);g.lineTo(x+86,y+86);g.closePath();g.fill();g.fillStyle='#555';g.fillRect(x+68,y+50,3,36);},
+ campo:function(g,x,y,tm){g.fillStyle='#3a9d4a';g.fillRect(x+2,y+30,96,60);g.fillStyle='#45ad55';for(var k=0;k<6;k++)if(k%2)g.fillRect(x+2+k*16,y+30,16,60);g.strokeStyle='#fff';g.lineWidth=1.5;g.strokeRect(x+6,y+34,88,52);g.beginPath();g.moveTo(x+50,y+34);g.lineTo(x+50,y+86);g.stroke();g.beginPath();g.arc(x+50,y+60,9,0,7);g.stroke();g.strokeRect(x+6,y+50,8,20);g.strokeRect(x+86,y+50,8,20);var bx=x+50+Math.sin(tm*.9)*34,by=y+60+Math.sin(tm*1.7)*16;g.fillStyle='#fff';g.beginPath();g.arc(bx,by,2.6,0,7);g.fill();},
+ piscina:function(g,x,y,tm){g.fillStyle='#e0e0e0';rr(g,x+4,y+40,92,50,6);g.fill();g.fillStyle='#29b6f6';rr(g,x+10,y+46,80,38,4);g.fill();g.strokeStyle='rgba(255,255,255,.6)';g.lineWidth=1.2;for(var k=0;k<3;k++){g.beginPath();for(var q=0;q<=16;q++)g.lineTo(x+12+q*4.8,y+56+k*10+Math.sin(tm*3+q*.7+k)*1.4);g.stroke();}g.strokeStyle='#999';g.lineWidth=1.5;g.beginPath();g.moveTo(x+82,y+40);g.lineTo(x+82,y+54);g.moveTo(x+88,y+40);g.lineTo(x+88,y+54);g.stroke();},
+ cine:function(g,x,y,tm){g.fillStyle='#2b2d42';g.fillRect(x+6,y+30,88,60);g.fillStyle='#ef233c';g.fillRect(x+12,y+38,76,18);g.fillStyle='#fff';g.font='bold 12px system-ui';g.textAlign='center';g.fillText('CINE',x+50,y+51);for(var k=0;k<13;k++){g.fillStyle=((k+Math.floor(tm*4))%2)?'#ffd166':'#7a6a3a';g.beginPath();g.arc(x+12+k*6.3,y+35,1.6,0,7);g.arc(x+12+k*6.3,y+59,1.6,0,7);g.fill();}g.fillStyle='#8d99ae';g.fillRect(x+38,y+66,24,24);},
+ polideportivo:function(g,x,y){g.fillStyle='#90a4ae';g.fillRect(x+4,y+50,92,40);g.fillStyle='#546e7a';g.beginPath();g.moveTo(x+2,y+52);g.quadraticCurveTo(x+50,y+14,x+98,y+52);g.closePath();g.fill();for(var k=0;k<4;k++)wnd(g,x+12+k*21,y+58,12,8,false);g.fillStyle='#37474f';g.fillRect(x+42,y+70,16,20);lbl(g,'DEPORTES',x+50,y+44,'#37474f');},
+ teatro:function(g,x,y){g.fillStyle='#7b1e2b';g.fillRect(x+6,y+30,88,60);tri(g,x+2,y+32,x+50,y+12,x+98,y+32,'#5a1420');g.fillStyle='#b71c1c';g.beginPath();g.moveTo(x+16,y+44);g.quadraticCurveTo(x+30,y+70,x+22,y+90);g.lineTo(x+16,y+90);g.fill();g.beginPath();g.moveTo(x+84,y+44);g.quadraticCurveTo(x+70,y+70,x+78,y+90);g.lineTo(x+84,y+90);g.fill();g.fillStyle='#d4af37';g.fillRect(x+16,y+42,68,3);g.fillStyle='#2b1a10';g.fillRect(x+40,y+66,20,24);lbl(g,'TEATRO',x+50,y+38,'#d4af37','#3a1a00');},
+ noria:function(g,x,y,tm){var cx=x+50,cy=y+38;g.strokeStyle='#555';g.lineWidth=3;g.beginPath();g.moveTo(cx-18,y+90);g.lineTo(cx,cy);g.lineTo(cx+18,y+90);g.stroke();g.strokeStyle='#90a4ae';g.lineWidth=2;g.beginPath();g.arc(cx,cy,32,0,7);g.stroke();var cs=['#ef476f','#ffd166','#06d6a0','#118ab2','#9b5de5','#ff8c42','#f15bb5','#00a676'];for(var i=0;i<8;i++){var a=tm*.4+i*Math.PI/4,px=cx+Math.cos(a)*32,py=cy+Math.sin(a)*32;g.strokeStyle='#b0bec5';g.lineWidth=1;g.beginPath();g.moveTo(cx,cy);g.lineTo(px,py);g.stroke();g.fillStyle=cs[i];rr(g,px-5,py,10,8,2);g.fill();}g.fillStyle='#555';g.beginPath();g.arc(cx,cy,3,0,7);g.fill();},
+ faro:function(g,x,y,tm){var cx=x+50;g.save();g.globalAlpha=.28;g.fillStyle='#fff6b0';var a=tm*1.2;g.beginPath();g.moveTo(cx,y+4);g.lineTo(cx+Math.cos(a-.18)*90,y+4+Math.sin(a-.18)*30);g.lineTo(cx+Math.cos(a+.18)*90,y+4+Math.sin(a+.18)*30);g.closePath();g.fill();g.restore();for(var k=0;k<5;k++){g.fillStyle=k%2?'#fff':'#d62828';var w0=16-k*1.6;g.fillRect(cx-w0,y+76-k*14,w0*2,14);}g.fillStyle='#ffe082';g.fillRect(cx-7,y-2,14,10);tri(g,cx-10,y-2,cx,y-12,cx+10,y-2,'#333');g.fillStyle='#795548';g.fillRect(cx-20,y+86,40,4);},
+ estatua:function(g,x,y,tm){var cx=x+50;g.fillStyle='#9aa3ad';g.fillRect(x+30,y+64,40,26);g.fillStyle='#b8c0c9';g.fillRect(x+26,y+60,48,6);g.save();g.translate(cx,y+60);g.scale(1.7,1.7);g.fillStyle='#d4af37';g.fillRect(-5,-24,10,14);g.beginPath();g.arc(0,-28,5.5,0,7);g.fill();g.fillRect(-3.5,-11,3,11);g.fillRect(.5,-11,3,11);g.fillRect(4,-26,2.5,10);g.fillRect(-5,-40,10,8);g.fillRect(-7,-33,14,2);g.restore();var sh=(Math.sin(tm*2)+1)/2;g.fillStyle='rgba(255,255,255,'+(sh*.7)+')';g.beginPath();g.arc(cx+8,y+16,2,0,7);g.fill();},
+ torre:function(g,x,y,tm){var cx=x+50,d=new Date(),h=d.getHours()%12+d.getMinutes()/60,m=d.getMinutes();g.fillStyle='#c8b89a';g.fillRect(cx-16,y+6,32,84);tri(g,cx-20,y+8,cx,y-22,cx+20,y+8,'#6d4c41');g.fillStyle='#fff';g.beginPath();g.arc(cx,y+22,11,0,7);g.fill();g.strokeStyle='#333';g.lineWidth=2;g.beginPath();g.moveTo(cx,y+22);g.lineTo(cx+Math.sin(h/12*6.283)*6,y+22-Math.cos(h/12*6.283)*6);g.moveTo(cx,y+22);g.lineTo(cx+Math.sin(m/60*6.283)*9,y+22-Math.cos(m/60*6.283)*9);g.stroke();wnd(g,cx-5,y+44,10,14,false);g.fillStyle='#6b4226';g.fillRect(cx-7,y+72,14,18);},
+ arco:function(g,x,y){g.fillStyle='#d8cbb0';g.fillRect(x+8,y+24,84,66);g.fillStyle='#c3b493';g.fillRect(x+4,y+18,92,10);g.fillStyle='#6dbb52';g.beginPath();g.moveTo(x+34,y+90);g.lineTo(x+34,y+58);g.arc(x+50,y+58,16,Math.PI,0);g.lineTo(x+66,y+90);g.closePath();g.fill();g.fillStyle='#b8a782';for(var k=0;k<2;k++){g.fillRect(x+14+k*58,y+34,14,4);g.fillRect(x+14+k*58,y+62,14,4);}g.fillStyle='#d4af37';g.fillRect(x+40,y+30,20,6);},
+ castillo:function(g,x,y,tm){var st='#a1887f',dk='#8d6e63';g.fillStyle=st;g.fillRect(x+14,y+44,72,46);for(var k=0;k<7;k++)g.fillRect(x+14+k*11,y+38,7,7);[[2,22],[74,22]].forEach(function(a){g.fillStyle=dk;g.fillRect(x+a[0],y+a[1],24,68);for(var k=0;k<3;k++)g.fillRect(x+a[0]+k*9,y+a[1]-6,6,7);tri(g,x+a[0]-2,y+a[1]-6,x+a[0]+12,y+a[1]-26,x+a[0]+26,y+a[1]-6,'#5d4037');});g.fillStyle='#3e2723';g.beginPath();g.moveTo(x+40,y+90);g.lineTo(x+40,y+70);g.arc(x+50,y+70,10,Math.PI,0);g.lineTo(x+60,y+90);g.fill();wnd(g,x+10,y+46,6,10,true);wnd(g,x+84,y+46,6,10,true);flag(g,x+14,y-26,pbParty().c,tm,.8);},
+ catedral:function(g,x,y){var cx=x+50;g.fillStyle='#d7ccc8';g.fillRect(x+20,y+30,60,60);[[4,10],[76,10]].forEach(function(a){g.fillStyle='#c5b5ae';g.fillRect(x+a[0],y+a[1],20,80);tri(g,x+a[0]-2,y+a[1],x+a[0]+10,y+a[1]-30,x+a[0]+22,y+a[1],'#795548');});tri(g,x+18,y+32,cx,y+8,x+82,y+32,'#8d6e63');g.fillStyle='#6a4c93';g.beginPath();g.arc(cx,y+44,9,0,7);g.fill();g.strokeStyle='#ffd166';g.lineWidth=1;for(var k=0;k<6;k++){g.beginPath();g.moveTo(cx,y+44);g.lineTo(cx+Math.cos(k*1.047)*9,y+44+Math.sin(k*1.047)*9);g.stroke();}g.fillStyle='#4e342e';g.beginPath();g.moveTo(cx-9,y+90);g.lineTo(cx-9,y+70);g.arc(cx,y+70,9,Math.PI,0);g.lineTo(cx+9,y+90);g.fill();wnd(g,x+10,y+40,8,14,true);wnd(g,x+82,y+40,8,14,true);}};
+function pbBuild(g,t,x,y,ix,tm){var f=DR[t];if(f)f(g,x,y,tm,ix);}
+var PBNEW=-1,PBNPC=[],PBREF=null,PBRAF=0,PBLT=0,PBMODE='',PBSEL=null,PBBUB={t:'',u:0},PBNEXT=0,PBMAY=null,PBGROUND=null,PBCAT='viv',PBHOV=-1,PBCAMSET=false,CAM={x:0,y:0,z:1},PTR={},PBDRAG=null;
+function pbMkNpc(i,edge){var y0=pk([250,530,810]);return {i:i,x:edge?-14:pk(PB_XV),y:edge?530:y0,dir:1,ph:Math.random()*6,st:'i',wait:Math.random()*2,sp:28+Math.random()*24,seed:Math.random()*9,path:[],off:(Math.random()-.5)*14,look:0};}
+function pbSync(){
+ if(PBREF!==S.pb){PBREF=S.pb;PBNPC=[];PBSEL=null;PBMODE='';}
+ if(!S.pb)return;
+ while(PBNPC.length<S.pb.people.length){var i=PBNPC.length,e=(i===PBNEW);var n=pbMkNpc(i,e);if(e){n.st='w';n.path=[{x:300+Math.random()*200,y:530+n.off}];}PBNPC.push(n);}
+ if(PBNPC.length>S.pb.people.length)PBNPC.length=S.pb.people.length;}
+function near(a,v){var b=a[0];a.forEach(function(q){if(Math.abs(q-v)<Math.abs(b-v))b=q;});return b;}
+function pbRoute(n,tx,ty){
+ var P=[],x=n.x,y=n.y,o=n.off,yhP=near(PB_YH,y),yhT=near(PB_YH,ty),xs=near(PB_XV,tx);
+ if(Math.abs(y-yhP)>8){P.push({x:x,y:yhP+o*.4});y=yhP;}
+ if(yhP!==yhT){var xs2=near(PB_XV,(x+tx)/2);if(Math.random()<.5)xs2=xs;P.push({x:xs2+o,y:y+o*.4});P.push({x:xs2+o,y:yhT+o*.4});}
+ if(Math.random()<.35&&Math.abs(tx-x)>200){var mid=x+(tx-x)*(.3+Math.random()*.4);P.push({x:mid,y:yhT+o*.4});P.push({x:mid,y:yhT+o*.4,w:1+Math.random()*2});}
+ P.push({x:tx,y:yhT+o*.4});P.push({x:tx,y:ty});
+ n.path=P;n.st='w';}
+function pbTarget(n){
+ var A=PBA,p=S.pb&&S.pb.people[n.i],r=Math.random(),k=-1;
+ if(p&&A){if(r<.35&&A.work[n.i]!==undefined)k=A.work[n.i];else if(r<.6&&A.home[n.i]!==undefined)k=A.home[n.i];else if(r<.75&&S.pb.b.length)k=Math.floor(Math.random()*S.pb.b.length);}
+ if(k>-1&&S.pb.b[k]){var pl=pbPlot(S.pb.b[k].p);pbRoute(n,pl.x+15+Math.random()*70,pl.y+pl.h+5+Math.random()*6);return;}
+ pbRoute(n,20+Math.random()*1920,pk(PB_YH)+(Math.random()-.5)*14);}
+function pbStep(n,dt){
+ if(n.st==='i'){n.wait-=dt;n.ph+=dt*2;n.look-=dt;if(n.look<=0){n.look=.6+Math.random()*1.2;if(Math.random()<.5)n.dir=-n.dir;}if(n.wait<=0){if(n.may)pbMayTarget(n);else pbTarget(n);}return;}
+ var w=n.path[0];if(!w){n.st='i';n.wait=1.5+Math.random()*4;return;}
+ var dx=w.x-n.x,dy=w.y-n.y,d=Math.hypot(dx,dy);
+ if(d<1.5){n.path.shift();if(w.w){n.st='i';n.wait=w.w;}return;}
+ var v=Math.min(n.sp*dt,d);n.x+=dx/d*v;n.y+=dy/d*v;if(Math.abs(dx)>.3)n.dir=dx<0?-1:1;n.ph+=dt*n.sp*.32;}
+function pbMayBase(){var k=-1;if(S.pb)S.pb.b.forEach(function(b,i){if(b.t==='ayto'&&k<0)k=i;});if(k>-1){var pl=pbPlot(S.pb.b[k].p);return {a:pl.x-14,b:pl.x+pl.w+14,y:pl.y+pl.h+10};}return {a:840,b:1120,y:530};}
+function pbMayTarget(n){var bs=pbMayBase();n.side=!n.side;n.path=[{x:n.side?bs.b:bs.a,y:bs.y}];n.st='w';}
+function pbPerson(g,n,p,t,may){
+ var moving=n.st==='w',sw=moving?Math.sin(n.ph)*5:0,bob=moving?-Math.abs(Math.sin(n.ph))*1.6:Math.sin(t*2.2+n.seed)*.6,sc=may?1.75:1.4;
+ g.save();g.translate(n.x,n.y);g.scale(sc*n.dir,sc);
+ g.fillStyle='rgba(0,0,0,.22)';g.beginPath();g.ellipse(0,0,8,3,0,0,7);g.fill();
+ g.lineCap='round';g.strokeStyle=may?'#1f2430':p.pa;g.lineWidth=3.4;
+ g.beginPath();g.moveTo(-2,-12+bob);g.lineTo(-2+sw,-1);g.moveTo(2,-12+bob);g.lineTo(2-sw,-1);g.stroke();
+ g.fillStyle='#222';g.beginPath();g.ellipse(-1+sw,-1,2.4,1.3,0,0,7);g.ellipse(3-sw,-1,2.4,1.3,0,0,7);g.fill();
+ g.strokeStyle=p.sk;g.lineWidth=2.8;g.beginPath();g.moveTo(-5,-21+bob);g.lineTo(-6-sw*.7,-13+bob);g.moveTo(5,-21+bob);g.lineTo(6+sw*.7,-13+bob);g.stroke();
+ g.fillStyle=may?'#1f2430':p.sh;rr(g,-6,-24+bob,12,13,3);g.fill();
+ if(may){g.strokeStyle=pbParty().c;g.lineWidth=3;g.beginPath();g.moveTo(-6,-23+bob);g.lineTo(6,-12+bob);g.stroke();g.fillStyle='#fff';g.beginPath();g.moveTo(-1.5,-24+bob);g.lineTo(0,-20+bob);g.lineTo(1.5,-24+bob);g.fill();}
+ if(p.hs===1){g.fillStyle=p.hr;rr(g,-6.5,-33+bob,13,13,4);g.fill();}
+ g.fillStyle=p.sk;g.beginPath();g.arc(0,-29+bob,6,0,7);g.fill();
+ g.fillStyle=p.hr;
+ if(p.hs===0||p.hs===1){g.beginPath();g.arc(0,-30+bob,6.4,Math.PI*1.02,Math.PI*1.98);g.fill();g.fillRect(-6.4,-31+bob,3,4);}
+ else if(p.hs===3){g.fillStyle=p.cap;g.beginPath();g.arc(0,-30+bob,6.4,Math.PI,0);g.fill();g.fillRect(0,-31.5+bob,9,2.2);}
+ if(may){g.fillStyle='#16181f';g.fillRect(-6,-37+bob,12,3);g.fillRect(-4,-45+bob,8,9);g.fillStyle=pbParty().c;g.fillRect(-4,-39+bob,8,2);}
+ g.fillStyle='#1a1a1a';g.beginPath();g.arc(2.6,-29.5+bob,.95,0,7);g.fill();
+ if(!moving&&Math.sin(t*1.3+n.seed)>.985){g.fillStyle=p.sk;g.fillRect(1.6,-30.4+bob,2,1.4);}
+ g.restore();}
+function pbGround(){
+ var Z=1.25,EW=PB_EX1-PB_EX0,EH=PB_EY1-PB_EY0,c=document.createElement('canvas');c.width=Math.round(EW*Z);c.height=Math.round(EH*Z);var g=c.getContext('2d');g.scale(Z,Z);g.translate(-PB_EX0,-PB_EY0);
+ var sd=11;function rnd(){sd=(sd*9301+49297)%233280;return sd/233280;}
+ g.fillStyle='#5fa847';g.fillRect(PB_EX0,PB_EY0,EW,EH);
+ for(var i=0;i<70;i++){var x=PB_EX0+rnd()*EW,y=PB_EY0+rnd()*EH,r=60+rnd()*120,rg=g.createRadialGradient(x,y,0,x,y,r);rg.addColorStop(0,rnd()<.5?'rgba(120,190,80,.35)':'rgba(60,130,50,.3)');rg.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=rg;g.fillRect(x-r,y-r,r*2,r*2);}
+ var W=PB_WL;var gr=g.createLinearGradient(0,W.y0,0,W.y1);gr.addColorStop(0,'#93d26d');gr.addColorStop(1,'#78c25a');g.fillStyle=gr;g.fillRect(W.x0,W.y0,W.x1-W.x0,W.y1-W.y0);
+ for(var i2=0;i2<40;i2++){var x2=rnd()*PB_W,y2=rnd()*PB_H,r2=50+rnd()*90,rg2=g.createRadialGradient(x2,y2,0,x2,y2,r2);rg2.addColorStop(0,rnd()<.5?'rgba(180,225,130,.22)':'rgba(90,160,70,.08)');rg2.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=rg2;g.fillRect(x2-r2,y2-r2,r2*2,r2*2);}
+ for(var k=0;k<2600;k++){var gx=PB_EX0+rnd()*EW,gy=PB_EY0+rnd()*EH;g.strokeStyle=rnd()<.5?'rgba(40,110,40,.28)':'rgba(255,255,255,.14)';g.lineWidth=1;g.beginPath();g.moveTo(gx,gy);g.lineTo(gx+(rnd()-.5)*2,gy-3-rnd()*3);g.stroke();}
+ for(var j=0;j<220;j++){g.fillStyle=['#fff','#ffd166','#ef476f','#c77dff','#8ecae6'][j%5];g.beginPath();g.arc(PB_EX0+rnd()*EW,PB_EY0+rnd()*EH,1.8,0,7);g.fill();}
+ function road(x,y,w,h,hor){g.fillStyle='#ebe3d0';g.fillRect(x,y,w,h);var s=8;g.fillStyle='#d6c49c';if(hor)g.fillRect(x,y+s,w,h-2*s);else g.fillRect(x+s,y,w-2*s,h);g.fillStyle='#b9a47a';if(hor){g.fillRect(x,y+s-1.5,w,1.5);g.fillRect(x,y+h-s,w,1.5);}else{g.fillRect(x+s-1.5,y,1.5,h);g.fillRect(x+w-s,y,1.5,h);}
+  for(var q=0;q<(w*h)/220;q++){g.fillStyle=rnd()<.5?'rgba(150,120,70,.18)':'rgba(255,255,255,.22)';var px=hor?x+rnd()*w:x+s+rnd()*(w-2*s),py=hor?y+s+rnd()*(h-2*s):y+rnd()*h;g.fillRect(px,py,3,2);}}
+ for(var b2=0;b2<3;b2++)road(0,b2*280+220,PB_W,60,true);
+ PB_XV.forEach(function(xv,ix){if(ix>0&&ix<4)road(xv-25,0,50,PB_H,false);});
+ for(var b3=0;b3<3;b3++){var cy=b3*280+220;[494,983,1472].forEach(function(xv){g.fillStyle='#d6c49c';g.fillRect(xv-17,cy+8,34,44);g.fillStyle='rgba(255,255,255,.8)';for(var s2=0;s2<4;s2++){g.fillRect(xv-34,cy+11+s2*11,8,6);g.fillRect(xv+26,cy+11+s2*11,8,6);}});}
+ for(var b4=0;b4<3;b4++){var ry=b4*280+249;g.fillStyle='rgba(255,255,255,.55)';for(var m=10;m<PB_W;m+=56)if(![494,983,1472].some(function(v){return Math.abs(m+12-v)<40;}))g.fillRect(m,ry,24,2.5);}
+ [494,983,1472].forEach(function(xv){g.fillStyle='rgba(255,255,255,.55)';for(var m2=10;m2<PB_H;m2+=56){if([0,1,2].some(function(b){return m2+12>b*280+214&&m2<b*280+286;}))continue;g.fillRect(xv-1.2,m2,2.5,24);}});
+ function tree(x,y,s){g.fillStyle='rgba(0,0,0,.15)';g.beginPath();g.ellipse(x+4,y+4,16*s,6*s,0,0,7);g.fill();g.fillStyle='#6b4226';g.fillRect(x-3*s,y-14*s,6*s,14*s);g.fillStyle=rnd()<.5?'#2f7d3c':'#3a8f45';g.beginPath();g.arc(x,y-24*s,15*s,0,7);g.arc(x-10*s,y-16*s,11*s,0,7);g.arc(x+10*s,y-16*s,11*s,0,7);g.fill();g.fillStyle='rgba(255,255,255,.12)';g.beginPath();g.arc(x-4*s,y-30*s,5*s,0,7);g.fill();}
+ function pine(x,y,s){g.fillStyle='#5a3a1e';g.fillRect(x-2*s,y-10*s,4*s,10*s);[0,1,2].forEach(function(i){var w=(18-i*4)*s,yy=y-8*s-i*11*s;g.fillStyle=i%2?'#24603a':'#2d7346';g.beginPath();g.moveTo(x-w,yy);g.lineTo(x,yy-18*s);g.lineTo(x+w,yy);g.closePath();g.fill();});}
+ var pts=[];for(var t=0;t<260;t++){var side=Math.floor(rnd()*4),tx,ty;if(side===0){tx=PB_EX0+rnd()*EW;ty=PB_EY0+10+rnd()*55;}else if(side===1){tx=PB_EX0+rnd()*EW;ty=PB_EY1-rnd()*45;}else if(side===2){tx=PB_EX0+10+rnd()*45;ty=PB_EY0+rnd()*EH;}else{tx=PB_EX1-10-rnd()*45;ty=PB_EY0+rnd()*EH;}pts.push([tx,ty]);}
+ for(var t2=0;t2<22;t2++){var a=rnd();pts.push(a<.25?[PB_EX0+80+rnd()*(EW-160),PB_EY0+80+rnd()*100]:a<.5?[PB_EX0+80+rnd()*(EW-160),PB_EY1-60-rnd()*100]:a<.75?[PB_EX0+80+rnd()*110,PB_EY0+80+rnd()*(EH-160)]:[PB_EX1-80-rnd()*110,PB_EY0+80+rnd()*(EH-160)]);}
+ pts.sort(function(p,q){return p[1]-q[1];}).forEach(function(p){if(rnd()<.45)pine(p[0],p[1],.9+rnd()*.5);else tree(p[0],p[1],.9+rnd()*.5);});
+ [[PB_EX0+150,PB_EY0+150,60,26],[PB_EX1-160,PB_EY1-150,70,28],[PB_EX1-150,PB_EY0+520,50,22]].forEach(function(o){g.fillStyle='#7f8c99';g.beginPath();g.ellipse(o[0],o[1],o[2]+5,o[3]+4,0,0,7);g.fill();g.fillStyle='#4fb3e8';g.beginPath();g.ellipse(o[0],o[1],o[2],o[3],0,0,7);g.fill();g.fillStyle='rgba(255,255,255,.4)';g.beginPath();g.ellipse(o[0]-o[2]*.3,o[1]-o[3]*.3,o[2]*.3,o[3]*.2,0,0,7);g.fill();});
+ for(var r3=0;r3<30;r3++){var rx=rnd()<.5?PB_EX0+80+rnd()*150:PB_EX1-80-rnd()*150,ry2=PB_EY0+80+rnd()*(EH-160);g.fillStyle='#9aa3ad';g.beginPath();g.ellipse(rx,ry2,7+rnd()*6,5+rnd()*3,0,0,7);g.fill();g.fillStyle='rgba(255,255,255,.3)';g.beginPath();g.ellipse(rx-2,ry2-2,3,2,0,0,7);g.fill();}
+ pbWall(g);
+ return c;}
+function pbWall(g){
+ var W=PB_WL,t=W.t;
+ function seg(x,y,w,h){g.fillStyle='rgba(0,0,0,.18)';g.fillRect(x+4,y+6,w,h);g.fillStyle='#b8a888';g.fillRect(x,y,w,h);g.strokeStyle='rgba(90,75,55,.35)';g.lineWidth=1;if(w>h){for(var r=0;r<3;r++){g.beginPath();g.moveTo(x,y+r*8+8);g.lineTo(x+w,y+r*8+8);g.stroke();for(var k=(r%2)*9;k<w;k+=18){g.beginPath();g.moveTo(x+k,y+r*8);g.lineTo(x+k,y+r*8+8);g.stroke();}}g.fillStyle='#cbbd9e';for(var m=0;m<w;m+=16)g.fillRect(x+m,y-7,9,8);g.fillStyle='#d8cbaf';g.fillRect(x,y-1,w,3);}
+  else{for(var r2=0;r2<3;r2++){g.beginPath();g.moveTo(x+r2*8+8,y);g.lineTo(x+r2*8+8,y+h);g.stroke();for(var k2=(r2%2)*9;k2<h;k2+=18){g.beginPath();g.moveTo(x+r2*8,y+k2);g.lineTo(x+r2*8+8,y+k2);g.stroke();}}g.fillStyle='#cbbd9e';for(var m2=0;m2<h;m2+=16)g.fillRect(x-7,y+m2,8,9);g.fillStyle='#d8cbaf';g.fillRect(x-1,y,3,h);}}
+ seg(W.x0,W.y0,W.x1-W.x0,t);seg(W.x0,W.y1-t,W.x1-W.x0,t);seg(W.x0,W.y0,t,W.y1-W.y0);seg(W.x1-t,W.y0,t,W.y1-W.y0);
+ function tower(cx,cy){g.fillStyle='rgba(0,0,0,.22)';g.beginPath();g.ellipse(cx+5,cy+8,26,12,0,0,7);g.fill();g.fillStyle='#a8977a';g.fillRect(cx-22,cy-22,44,44);g.fillStyle='#bfae8e';g.fillRect(cx-18,cy-18,36,36);g.fillStyle='#968566';for(var i=0;i<4;i++){g.fillRect(cx-22+i*12,cy-28,8,8);}g.fillStyle='#7b6a50';g.fillRect(cx-4,cy-4,8,8);g.fillStyle='#c0392b';g.beginPath();g.moveTo(cx,cy-46);g.lineTo(cx+14,cy-40);g.lineTo(cx,cy-34);g.fill();g.fillStyle='#555';g.fillRect(cx-1,cy-46,2,22);}
+ var xs=[],ys=[];for(var x=W.x0+t/2;x<=W.x1;x+=(W.x1-W.x0-t)/7)xs.push(x);for(var y=W.y0+t/2;y<=W.y1;y+=(W.y1-W.y0-t)/4)ys.push(y);
+ xs.forEach(function(x){tower(x,W.y0+t/2);tower(x,W.y1-t/2);});ys.forEach(function(y,i){if(i>0&&i<ys.length-1){tower(W.x0+t/2,y);tower(W.x1-t/2,y);}});}
+function pbInWall(x,y){var W=PB_WL,o=W.x0-10<=x&&x<=W.x1+10&&W.y0-14<=y&&y<=W.y1+10,inn=W.x0+W.t+6<x&&x<W.x1-W.t-6&&W.y0+W.t+6<y&&y<W.y1-W.t-6;return o&&!inn;}
+var PBAN=[];
+function pbBand(s){var W=PB_WL;return s===0?{x0:PB_EX0+70,x1:PB_EX1-70,y0:PB_EY0+80,y1:W.y0-40}:s===1?{x0:PB_EX0+70,x1:PB_EX1-70,y0:W.y1+40,y1:PB_EY1-55}:s===2?{x0:PB_EX0+65,x1:W.x0-40,y0:PB_EY0+80,y1:PB_EY1-55}:{x0:W.x1+40,x1:PB_EX1-65,y0:PB_EY0+80,y1:PB_EY1-55};}
+function pbInitAnimals(){if(PBAN.length)return;var herd=[['oveja',6],['vaca',4],['conejo',6],['ciervo',3],['zorro',2],['caballo',3],['gallina',6],['cerdo',3]];herd.forEach(function(h){var s=Math.floor(Math.random()*4),B=pbBand(s),cx=B.x0+Math.random()*(B.x1-B.x0),cy=B.y0+Math.random()*(B.y1-B.y0);for(var i=0;i<h[1];i++){var k=PB_AK.filter(function(a){return a[0]===h[0];})[0];PBAN.push({k:h[0],nm:k[1],sc:k[2],s:s,x:Math.max(B.x0,Math.min(B.x1,cx+(Math.random()-.5)*90)),y:Math.max(B.y0,Math.min(B.y1,cy+(Math.random()-.5)*60)),dir:Math.random()<.5?-1:1,ph:Math.random()*6,st:'i',wait:Math.random()*4,sp:{conejo:40,zorro:34,caballo:30,ciervo:30,gallina:18,cerdo:16,vaca:12,oveja:14}[h[0]]*(0.8+Math.random()*.4),tx:0,ty:0});}});}
+function pbAnStep(a,dt){if(a.st==='i'){a.wait-=dt;a.ph+=dt*3;if(a.wait<=0){var B=pbBand(a.s);a.tx=Math.max(B.x0,Math.min(B.x1,a.x+(Math.random()-.5)*360));a.ty=Math.max(B.y0,Math.min(B.y1,a.y+(Math.random()-.5)*160));a.st='w';}return;}
+ var dx=a.tx-a.x,dy=a.ty-a.y,d=Math.hypot(dx,dy);if(d<1.5){a.st='i';a.wait=2+Math.random()*6;return;}var v=Math.min(a.sp*dt,d);a.x+=dx/d*v;a.y+=dy/d*v;if(Math.abs(dx)>.3)a.dir=dx<0?-1:1;a.ph+=dt*a.sp*.35;}
+function pbAnimal(g,a,t){
+ var mv=a.st==='w',sw=mv?Math.sin(a.ph)*2.4:0,gz=!mv&&Math.sin(t*.8+a.ph)>.2;
+ g.save();g.translate(a.x,a.y);g.scale(a.dir*a.sc,a.sc);
+ g.fillStyle='rgba(0,0,0,.2)';g.beginPath();g.ellipse(0,0,a.k==='gallina'||a.k==='conejo'?7:13,3.5,0,0,7);g.fill();
+ g.lineCap='round';
+ function legs(col,top,xs,w){g.strokeStyle=col;g.lineWidth=w||2.2;xs.forEach(function(lx,i){var s=(i%2?1:-1)*sw;g.beginPath();g.moveTo(lx,top);g.lineTo(lx+s,0);g.stroke();});}
+ if(a.k==='oveja'){legs('#2b2b2b',-6,[-6,-2,3,7]);g.fillStyle='#f4f1ea';[[-6,-12,6],[0,-14,7],[6,-12,6],[-2,-9,6],[4,-9,6]].forEach(function(c){g.beginPath();g.arc(c[0],c[1],c[2],0,7);g.fill();});g.fillStyle='#2b2b2b';g.beginPath();g.ellipse(11,gz?-8:-14,4,3.4,0,0,7);g.fill();g.beginPath();g.ellipse(9,gz?-10:-16,2,1.2,-.6,0,7);g.fill();}
+ else if(a.k==='vaca'){legs('#eee',-9,[-10,-5,6,11],3);g.fillStyle='#f7f7f7';rr(g,-14,-22,28,14,6);g.fill();g.fillStyle='#222';g.beginPath();g.ellipse(-6,-17,5,3.5,0,0,7);g.ellipse(6,-12,4,3,0,0,7);g.fill();g.fillStyle='#f7f7f7';g.beginPath();g.ellipse(16,gz?-10:-20,5,4.5,0,0,7);g.fill();g.fillStyle='#f2a7b0';g.beginPath();g.ellipse(20,gz?-8:-18,2.6,2.2,0,0,7);g.fill();g.strokeStyle='#d9c9a5';g.lineWidth=1.6;g.beginPath();g.moveTo(14,gz?-14:-24);g.lineTo(13,gz?-17:-27);g.stroke();g.strokeStyle='#999';g.lineWidth=1.4;g.beginPath();g.moveTo(-14,-18);g.quadraticCurveTo(-18,-12,-17,-6+Math.sin(t*3)*1.5);g.stroke();}
+ else if(a.k==='conejo'){var hop=mv?-Math.abs(Math.sin(a.ph))*7:0;g.translate(0,hop);g.fillStyle='#b59b82';g.beginPath();g.ellipse(0,-6,7,5,0,0,7);g.fill();g.beginPath();g.arc(6,-10,4,0,7);g.fill();g.beginPath();g.ellipse(5,-17,1.6,5,-.15,0,7);g.ellipse(8,-17,1.6,5,.2,0,7);g.fill();g.fillStyle='#fff';g.beginPath();g.arc(-7,-7,2.4,0,7);g.fill();g.fillStyle='#222';g.beginPath();g.arc(7.5,-10.5,.9,0,7);g.fill();}
+ else if(a.k==='ciervo'||a.k==='caballo'){var cb=a.k==='ciervo'?'#a0683c':'#5b3a24';legs(cb,-12,[-9,-5,6,10],2.4);g.fillStyle=cb;g.beginPath();g.ellipse(0,-17,12,6.5,0,0,7);g.fill();g.strokeStyle=cb;g.lineWidth=5;g.beginPath();g.moveTo(9,-19);g.lineTo(gz?16:14,gz?-10:-29);g.stroke();g.beginPath();g.ellipse(gz?18:16,gz?-8:-30,5,3,gz?.8:.3,0,7);g.fill();
+  if(a.k==='ciervo'){g.fillStyle='#fff';g.beginPath();g.arc(-11,-18,2.4,0,7);g.fill();if(!gz){g.strokeStyle='#d9c3a0';g.lineWidth=1.4;g.beginPath();g.moveTo(14,-32);g.lineTo(11,-40);g.lineTo(8,-43);g.moveTo(11,-40);g.lineTo(14,-44);g.moveTo(16,-32);g.lineTo(19,-39);g.lineTo(22,-41);g.stroke();}}
+  else{g.strokeStyle='#2a1a10';g.lineWidth=2.4;g.beginPath();g.moveTo(-12,-19);g.quadraticCurveTo(-18,-12,-16,-4+Math.sin(t*4)*1.5);g.stroke();if(!gz){g.beginPath();g.moveTo(10,-22);g.lineTo(13,-31);g.stroke();}}}
+ else if(a.k==='zorro'){legs('#2b1a10',-5,[-6,-2,4,8],2);g.fillStyle='#e07b2c';g.beginPath();g.ellipse(0,-8,10,4.6,0,0,7);g.fill();g.beginPath();g.moveTo(-9,-9);g.quadraticCurveTo(-22,-14+Math.sin(t*3)*2,-20,-5);g.quadraticCurveTo(-14,-6,-9,-7);g.fill();g.fillStyle='#fff';g.beginPath();g.arc(-20,-6,2,0,7);g.fill();g.fillStyle='#e07b2c';g.beginPath();g.moveTo(8,-14);g.lineTo(17,-9);g.lineTo(8,-6);g.closePath();g.fill();g.beginPath();g.moveTo(8,-14);g.lineTo(9,-19);g.lineTo(12,-13);g.fill();g.fillStyle='#222';g.beginPath();g.arc(17,-9,1.2,0,7);g.fill();}
+ else if(a.k==='gallina'){var pk2=gz?Math.max(0,Math.sin(t*9+a.ph))*4:0;g.strokeStyle='#e0a030';g.lineWidth=1.6;g.beginPath();g.moveTo(-1,-4);g.lineTo(-1+sw,0);g.moveTo(2,-4);g.lineTo(2-sw,0);g.stroke();g.fillStyle='#fff';g.beginPath();g.ellipse(0,-8,6,5,0,0,7);g.fill();g.beginPath();g.moveTo(-5,-10);g.lineTo(-9,-14);g.lineTo(-6,-7);g.fill();g.beginPath();g.arc(5,-13+pk2,3.2,0,7);g.fill();g.fillStyle='#e23b3b';g.beginPath();g.arc(5,-16.5+pk2,1.6,0,7);g.fill();g.fillStyle='#f0a020';g.beginPath();g.moveTo(8,-13+pk2);g.lineTo(11,-12+pk2);g.lineTo(8,-11+pk2);g.fill();}
+ else if(a.k==='cerdo'){legs('#e79aa5',-5,[-6,-2,4,8],3);g.fillStyle='#f4b6c2';g.beginPath();g.ellipse(0,-9,11,6.5,0,0,7);g.fill();g.beginPath();g.arc(10,gz?-6:-10,5.5,0,7);g.fill();g.fillStyle='#e48b9b';g.beginPath();g.ellipse(15,gz?-5:-9,2.4,2,0,0,7);g.fill();g.beginPath();g.moveTo(8,gz?-11:-15);g.lineTo(10,gz?-15:-19);g.lineTo(12,gz?-11:-15);g.fill();g.strokeStyle='#e48b9b';g.lineWidth=1.3;g.beginPath();g.arc(-12,-11,2.4,0,5);g.stroke();}
+ g.restore();}
+function pbBubble(g,x,y,txt){
+ g.font='600 14px system-ui,sans-serif';var words=txt.split(' '),lines=[],ln='';
+ words.forEach(function(w){var tt=ln?ln+' '+w:w;if(g.measureText(tt).width>250&&ln){lines.push(ln);ln=w;}else ln=tt;});if(ln)lines.push(ln);
+ var w=0;lines.forEach(function(l){w=Math.max(w,g.measureText(l).width);});w+=24;var h=lines.length*19+16,v=pbView(),bx=Math.max(8,Math.min(v.w-w-8,x-w/2)),by=Math.max(6,y-h-14),tx=Math.max(bx+14,Math.min(bx+w-14,x));
+ g.fillStyle='rgba(0,0,0,.18)';rr(g,bx+2,by+3,w,h,12);g.fill();g.fillStyle='#fff';rr(g,bx,by,w,h,12);g.fill();
+ g.beginPath();g.moveTo(tx-7,by+h-1);g.lineTo(tx,by+h+10);g.lineTo(tx+7,by+h-1);g.fill();
+ g.fillStyle='#1b1d2e';g.textAlign='left';lines.forEach(function(l,i){g.fillText(l,bx+12,by+24+i*19);});}
+function pbTip(g,x,y,a,b){g.font='700 13px system-ui,sans-serif';var w=Math.max(g.measureText(a).width,(g.font='12px system-ui,sans-serif',g.measureText(b).width))+20,v=pbView(),bx=Math.max(6,Math.min(v.w-w-6,x-w/2)),by=Math.max(6,y-50);g.fillStyle='rgba(20,22,40,.92)';rr(g,bx,by,w,40,10);g.fill();g.textAlign='left';g.fillStyle='#fff';g.font='700 13px system-ui,sans-serif';g.fillText(a,bx+10,by+17);g.fillStyle='#cfd3ea';g.font='12px system-ui,sans-serif';g.fillText(b,bx+10,by+33);}
+function pbView(){var cv=$('pbcv');return {w:cv.clientWidth||800,h:cv.clientHeight||500};}
+function pbZmin(){var v=pbView();return Math.min(v.w/(PB_EX1-PB_EX0),v.h/(PB_EY1-PB_EY0));}
+function pbClamp(){var v=pbView(),vw=v.w/CAM.z,vh=v.h/CAM.z,EW=PB_EX1-PB_EX0,EH=PB_EY1-PB_EY0;CAM.x=vw>=EW?PB_EX0+(EW-vw)/2:Math.max(PB_EX0,Math.min(PB_EX1-vw,CAM.x));CAM.y=vh>=EH?PB_EY0+(EH-vh)/2:Math.max(PB_EY0,Math.min(PB_EY1-vh,CAM.y));}
+function pbCenter(x,y){var v=pbView();CAM.x=x-v.w/CAM.z/2;CAM.y=y-v.h/CAM.z/2;pbClamp();}
+function pbZoom(f,sx,sy){var v=pbView();if(sx===undefined){sx=v.w/2;sy=v.h/2;}var wx=CAM.x+sx/CAM.z,wy=CAM.y+sy/CAM.z;CAM.z=Math.max(pbZmin(),Math.min(2.6,CAM.z*f));CAM.x=wx-sx/CAM.z;CAM.y=wy-sy/CAM.z;pbClamp();}
+function pbWP(e){var r=$('pbcv').getBoundingClientRect(),sx=e.clientX-r.left,sy=e.clientY-r.top;return {sx:sx,sy:sy,x:CAM.x+sx/CAM.z,y:CAM.y+sy/CAM.z};}
+function pbHitM(x,y){return PBMAY&&Math.abs(x-PBMAY.x)<20&&y<PBMAY.y+10&&y>PBMAY.y-80;}
+function pbHitA(x,y){var best=-1,bd=1e9;PBAN.forEach(function(a,i){var dx=Math.abs(x-a.x),dy=y-a.y;if(dx<20*a.sc&&dy<8&&dy>-34*a.sc){var dd=dx+Math.abs(dy+10);if(dd<bd){bd=dd;best=i;}}});return best;}
+function pbHitP(x,y){var best=-1,bd=1e9;PBNPC.forEach(function(n){var dx=Math.abs(x-n.x),dy=y-n.y;if(dx<14&&dy<8&&dy>-50){var dd=dx+Math.abs(dy+22)*.5;if(dd<bd){bd=dd;best=n.i;}}});return best;}
+var PBA=null;
+function pbFrame(ts){
+ var sec=$('s-pueblo');if(!sec||!sec.classList.contains('on')||document.hidden){PBRAF=0;return;}
+ PBRAF=requestAnimationFrame(pbFrame);
+ var dt=Math.min(.05,PBLT?(ts-PBLT)/1000:0);PBLT=ts;var tm=ts/1000;
+ pbSync();if(S.pb)PBA=pbAssign();
+ var cv=$('pbcv'),g=cv.getContext('2d'),r=window.devicePixelRatio||1,v=pbView();
+ if(cv.width!==Math.round(v.w*r)||cv.height!==Math.round(v.h*r)){cv.width=Math.round(v.w*r);cv.height=Math.round(v.h*r);pbClamp();}
+ if(!PBCAMSET){CAM.z=Math.max(pbZmin(),Math.min(1,v.w/760));var mb=pbMayBase();pbCenter((mb.a+mb.b)/2,mb.y-80);PBCAMSET=true;}
+ if(!PBGROUND)PBGROUND=pbGround();
+ g.setTransform(1,0,0,1,0,0);g.fillStyle='#5fa847';g.fillRect(0,0,cv.width,cv.height);
+ g.setTransform(r*CAM.z,0,0,r*CAM.z,-CAM.x*r*CAM.z,-CAM.y*r*CAM.z);
+ g.drawImage(PBGROUND,PB_EX0,PB_EY0,PB_EX1-PB_EX0,PB_EY1-PB_EY0);pbInitAnimals();
+ var vx0=CAM.x-140,vx1=CAM.x+v.w/CAM.z+140,vy0=CAM.y-140,vy1=CAM.y+v.h/CAM.z+160;
+ if(!PBMAY){PBMAY={x:980,y:530,dir:1,ph:0,st:'i',wait:.5,sp:34,seed:1,may:true,side:false,path:[],look:1};}
+ var mayP={sk:'#eabf98',hr:'#4a4a4a',hs:0,sh:'#1f2430',pa:'#1f2430'},items=[];
+ if(S.pb){
+  if(PBMODE){for(var i=0;i<128;i++){if(pbAt(i)>-1)continue;var pl=pbPlot(i);g.fillStyle='rgba(255,255,255,'+(.18+Math.sin(tm*4)*.08)+')';rr(g,pl.x,pl.y,pl.w,pl.h,10);g.fill();g.setLineDash([6,5]);g.strokeStyle='rgba(255,255,255,.9)';g.lineWidth=2;rr(g,pl.x,pl.y,pl.w,pl.h,10);g.stroke();g.setLineDash([]);}}
+  S.pb.b.forEach(function(b,ix){var pl=pbPlot(b.p);if(pl.x>vx1||pl.x+pl.w<vx0||pl.y>vy1||pl.y+pl.h<vy0)return;items.push({y:pl.y+pl.h,f:function(){g.fillStyle='rgba(30,60,20,.18)';g.beginPath();g.ellipse(pl.x+54,pl.y+pl.h-1,46,7,0,0,7);g.fill();pbBuild(g,b.t,pl.x,pl.y,ix,tm);if(PBSEL&&PBSEL.k==='b'&&PBSEL.i===ix){g.strokeStyle='#ffd166';g.lineWidth=3;rr(g,pl.x-3,pl.y-3,pl.w+6,pl.h+6,10);g.stroke();}}});});
+  PBNPC.forEach(function(n){pbStep(n,dt);if(n.x<vx0||n.x>vx1||n.y<vy0||n.y>vy1)return;var p=S.pb.people[n.i];items.push({y:n.y,f:function(){if(PBSEL&&PBSEL.k==='p'&&PBSEL.i===n.i){g.strokeStyle='#ffd166';g.lineWidth=2.5;g.beginPath();g.ellipse(n.x,n.y,16,6,0,0,7);g.stroke();}pbPerson(g,n,p,tm,false);}});});
+ }
+ PBAN.forEach(function(a){pbAnStep(a,dt);if(a.x<vx0||a.x>vx1||a.y<vy0||a.y>vy1)return;items.push({y:a.y,f:function(){pbAnimal(g,a,tm);}});});
+ pbStep(PBMAY,dt);items.push({y:PBMAY.y,f:function(){pbPerson(g,PBMAY,mayP,tm,true);}});
+ items.sort(function(a,b){return a.y-b.y;}).forEach(function(it){it.f();});
+ for(var cl=0;cl<5;cl++){var ccx=PB_EX0+((cl*620+tm*9)%(PB_EX1-PB_EX0+600))-300,ccy=PB_EY0+120+cl*330;if(ccx<vx0-300||ccx>vx1+300)continue;var crg=g.createRadialGradient(ccx,ccy,0,ccx,ccy,260);crg.addColorStop(0,'rgba(20,40,60,.045)');crg.addColorStop(1,'rgba(20,40,60,0)');g.fillStyle=crg;g.beginPath();g.ellipse(ccx,ccy,260,150,0,0,7);g.fill();}
+ g.setTransform(r,0,0,r,0,0);
+ var vg=g.createRadialGradient(v.w/2,v.h/2,Math.min(v.w,v.h)*.45,v.w/2,v.h/2,Math.max(v.w,v.h)*.8);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(10,20,30,.22)');g.fillStyle=vg;g.fillRect(0,0,v.w,v.h);
+ var bt='';
+ if(!S.pb)bt='¡Hola! Soy el alcalde. Este es un juego que te hace tener más constancia. ¡Consigue el mejor pueblo del mundo! Primero, elige tu partido.';
+ else{if(tm>PBNEXT){PBBUB={t:S.pb.ev?'¡Ha pasado algo en el pueblo! Mira el suceso del día.':pk(PB_TIPS),u:tm+5};PBNEXT=tm+16;}if(PBBUB.u>tm)bt=PBBUB.t;}
+ if(bt)pbBubble(g,(PBMAY.x-CAM.x)*CAM.z,(PBMAY.y-CAM.y)*CAM.z-82*CAM.z,bt);
+ var hv=PBSEL&&PBSEL.k==='p'?PBSEL.i:PBHOV;
+ if(S.pb&&hv>-1&&PBNPC[hv]){var hn=PBNPC[hv],hp=S.pb.people[hv];pbTip(g,(hn.x-CAM.x)*CAM.z,(hn.y-CAM.y)*CAM.z-50*CAM.z,hp.n,hp.c+' · '+hp.j);}
+ if(hv===-2||(PBSEL&&PBSEL.k==='m'))pbTip(g,(PBMAY.x-CAM.x)*CAM.z,(PBMAY.y-CAM.y)*CAM.z-80*CAM.z,pbMayor(),'Alcalde y estafador · '+pbParty().n);
+ if(hv<=-100&&PBAN[-100-hv]){var ha=PBAN[-100-hv];pbTip(g,(ha.x-CAM.x)*CAM.z,(ha.y-CAM.y)*CAM.z-34*CAM.z,ha.nm,'Vive fuera de la muralla');}
+ g.fillStyle='rgba(0,0,0,.45)';rr(g,10,v.h-34,180,24,12);g.fill();g.fillStyle='#fff';g.font='700 13px system-ui';g.textAlign='left';g.fillText((S.pb?S.pb.people.length:0)+' vecinos · '+(S.pb?S.pb.coins:0)+' monedas',20,v.h-17);}
+function pbStart(){if(!PBRAF){PBLT=0;PBRAF=requestAnimationFrame(pbFrame);}}
+function pbClick(e){
+ if(!S.pb){var q0=pbWP(e);if(pbInWall(q0.x,q0.y))toast('DONAL TROP ha puesto una muralla. Próximamente SE EXPANDIRÁ EL PUEBLO.');return;}var q=pbWP(e);
+ if(PBMODE){for(var i=0;i<128;i++){var pl=pbPlot(i);if(q.x>=pl.x&&q.x<=pl.x+pl.w&&q.y>=pl.y&&q.y<=pl.y+pl.h){if(pbAt(i)>-1){toast('Ese sitio ya está ocupado');return;}var d=pbDef(PBMODE);if(S.pb.coins<d.c){toast('Te faltan '+(d.c-S.pb.coins)+' monedas');PBMODE='';renderPueblo();return;}S.pb.coins-=d.c;if(d.fe)S.pb.fel=Math.min(100,pbFel()+d.fe);S.pb.b.push({t:d.t,p:i});PBMODE='';save();render();toast(d.n+' construido');return;}}toast('Toca uno de los huecos marcados');return;}
+ if(pbHitM(q.x,q.y)){PBSEL={k:'m'};renderPueblo(true);return;}
+ var best=pbHitP(q.x,q.y);
+ if(best>-1){PBSEL={k:'p',i:best};renderPueblo(true);return;}
+ var an=pbHitA(q.x,q.y);if(an>-1){toast(PBAN[an].nm+': vive fuera de la muralla');return;}
+ if(pbInWall(q.x,q.y)){PBSEL={k:'w'};renderPueblo(true);toast('DONAL TROP ha puesto una muralla');return;}
+ for(var j=0;j<S.pb.b.length;j++){var p2=pbPlot(S.pb.b[j].p);if(q.x>=p2.x&&q.x<=p2.x+p2.w&&q.y>=p2.y-20&&q.y<=p2.y+p2.h){PBSEL={k:'b',i:j};renderPueblo(true);return;}}
+ PBSEL=null;renderPueblo();}
+function pbFmt(k){return parseInt(k.slice(8),10)+' de '+MES[+k.slice(5,7)-1];}
+function pbWho(i){var p=S.pb.people[i],F=PB_F[p.c],fact=F?F[1][i%F[1].length]:'';return '<li class="habit pbwho"><span class="pbav" style="background:'+p.sh+'"></span><span class="nm"><b>'+esc(p.n)+'</b> · '+esc(p.c)+' · '+esc(p.j)+(F?'<br><span class="pbsay">«'+esc(F[0])+'»</span> <span style="color:var(--mute);font-size:13px">Dato de '+esc(p.c)+': '+esc(fact)+'</span>':'')+'</span><button class="x" data-pbv="'+i+'">Ver</button></li>';}
+function renderPueblo(scroll){
+ if(!$('s-pueblo'))return;
+ pbMig();pbSync();var has=!!S.pb;
+ $('pbparty').hidden=has;$('pbmain').hidden=!has;
+ if(!has){$('pbsub').textContent='El alcalde te espera para fundar tu pueblo desde cero.';$('pbstats').innerHTML='';$('pbev').hidden=true;$('pbpl').innerHTML=PB_P.map(function(p){return '<button class="tm" data-pp="'+p.id+'"><span class="pbdot" style="background:'+p.c+'"></span>'+esc(p.n)+'</button>';}).join('');return;}
+ var pa=pbParty(),A=pbAssign();PBA=A;
+ $('pbsub').innerHTML='Alcalde: <b>'+esc(pbMayor())+'</b> · Gobierna <b style="color:'+pa.c+'">'+esc(pa.n)+'</b> · Pueblo fundado el '+pbFmt(S.pb.since)+'. Cada día que entres llega un vecino nuevo.';
+ var cap=0;S.pb.b.forEach(function(b){var d=pbDef(b.t);if(d&&d.cap)cap+=d.cap;});
+ $('pbstats').innerHTML='<div><b>'+S.pb.coins+'</b><span>monedas</span></div><div><b>'+S.pb.people.length+'</b><span>vecinos</span></div><div><b>'+Math.min(cap,S.pb.people.length)+'/'+cap+'</b><span>con casa</span></div><div><b>'+pbFel()+'%</b><span>felicidad</span></div><div><b>+'+pbIncome()+'</b><span>monedas cada día</span></div><div><b>'+pbValue()+'</b><span>valor del pueblo</span></div>';
+ var ev=S.pb.ev,er=S.pb.evr,eh='';
+ if(ev){var E=PB_EV[ev.k];eh='<small class="pbk">Suceso del día</small><h3>'+esc(pbFill(E[0],ev))+'</h3><div class="pbops">'+[1,2].map(function(o){var op=E[o];return '<button class="btn" data-pbo="'+(o-1)+'">'+esc(pbFill(op[0],ev))+(op[1]<0?' <span class="pbcost">'+op[1]+' monedas</span>':'')+'</button>';}).join('')+'</div>';}
+ else if(er){var ch=function(v,u){return v?'<span class="chip'+(v<0?' neg':'')+'">'+(v>0?'+':'')+v+' '+u+'</span>':'';};eh='<small class="pbk">Suceso del día · resuelto</small><h3>'+esc(er.q)+'</h3><p style="margin:6px 0 10px">'+esc(er.t)+'</p><div class="chips" style="margin:0 0 10px">'+ch(er.m,'monedas')+ch(er.f,'felicidad')+'</div><button class="x" data-pbx="3">Cerrar</button>';}
+ $('pbev').hidden=!eh;$('pbev').innerHTML=eh;
+ $('pbmode').innerHTML=PBMODE?'<span>Toca un hueco libre del mapa para colocar: <b>'+esc(pbDef(PBMODE).n)+'</b></span> <button class="x" data-pbx="1">Cancelar</button>':(function(){var q=pbParts();return 'Cada día ganas <b>+'+pbIncome()+'</b> monedas: '+q.base+' de base + '+q.tax+' de impuestos (1 por vecino) + '+q.bld+' de tus edificios '+(q.fel>=0?'+ ':'− ')+Math.abs(q.fel)+' por la felicidad. Cada hábito cumplido da +5 más.';})();
+ $('pbmode').className='pbmode'+(PBMODE?' on':'');
+ $('pbcat').innerHTML=PB_CAT.map(function(c){var n=PB_B.filter(function(d){return d.k===c[0];}).length;return '<button class="chip'+(PBCAT===c[0]?' act':'')+'" data-pbc="'+c[0]+'">'+c[1]+' · '+n+'</button>';}).join('');
+ var built={};S.pb.b.forEach(function(b){built[b.t]=(built[b.t]||0)+1;});
+ $('pbshop').innerHTML=PB_B.filter(function(d){return d.k===PBCAT;}).map(function(d){var lock=d.one&&built[d.t],can=!lock&&S.pb.coins>=d.c;return '<div class="card pbit'+(PBMODE===d.t?' sel':'')+'"><canvas width="110" height="112" data-pbpv="'+d.t+'"></canvas><b>'+esc(d.n)+'</b><small>'+esc(d.d)+'</small><span class="price">'+d.c+' monedas</span>'+(built[d.t]&&!d.one?'<span class="note">Tienes '+built[d.t]+'</span>':'')+'<button class="buy" data-pbb="'+d.t+'"'+(can?'':' disabled')+'>'+(lock?'Construido':'Construir')+'</button></div>';}).join('');
+ Array.prototype.forEach.call(document.querySelectorAll('[data-pbpv]'),function(c){var g=c.getContext('2d');g.clearRect(0,0,110,112);g.fillStyle='rgba(109,187,82,.35)';rr(g,6,90,98,20,10);g.fill();pbBuild(g,c.dataset.pbpv,5,20,1,1.3);});
+ var inf=$('pbinfo');
+ if(PBSEL&&PBSEL.k==='p'&&S.pb.people[PBSEL.i]){var i=PBSEL.i,p=S.pb.people[i],F=PB_F[p.c],hm=A.home[i],wk=A.work[i];
+  inf.hidden=false;inf.innerHTML='<div class="row" style="align-items:flex-start"><div><small style="color:var(--mute)">Vecino</small><h3>'+esc(p.n)+'</h3><p class="sub" style="margin:4px 0 6px">Viene de <b>'+esc(p.c)+'</b> · Trabaja de <b>'+esc(p.j)+'</b> · Llegó el '+pbFmt(p.d)+'</p><p style="margin:0 0 4px">Vive en: <b>'+(hm!==undefined?esc(pbDef(S.pb.b[hm].t).n):'todavía no tiene casa')+'</b>'+(wk!==undefined?' · Trabaja en: <b>'+esc(pbDef(S.pb.b[wk].t).n)+'</b>':'')+'</p>'+(F?'<p style="margin:0"><span class="pbsay">«'+esc(F[0])+'»</span><br><span style="color:var(--mute)">Te cuenta sobre '+esc(p.c)+': '+esc(F[1].join(' '))+'</span></p>':'')+'</div><button class="x" data-pbx="2" aria-label="Cerrar">✕</button></div>';}
+ else if(PBSEL&&PBSEL.k==='m'){inf.hidden=false;inf.innerHTML='<div class="row" style="align-items:flex-start"><div><small style="color:var(--mute)">Alcalde</small><h3>'+esc(pbMayor())+'</h3><p class="sub" style="margin:4px 0 8px">Trabajo: <b>Alcalde y estafador</b> · Partido: <b style="color:'+pbParty().c+'">'+esc(pbParty().n)+'</b></p><div class="row" style="gap:8px;justify-content:flex-start;flex-wrap:wrap"><input type="text" id="pbmn2" maxlength="24" value="'+esc(pbMayor())+'" aria-label="Nombre del alcalde" style="max-width:220px"><button class="btn" data-pbmn="1">Cambiar nombre</button></div></div><button class="x" data-pbx="2" aria-label="Cerrar">✕</button></div>';}
+ else if(PBSEL&&PBSEL.k==='w'){inf.hidden=false;inf.innerHTML='<div class="row" style="align-items:flex-start"><div><small style="color:var(--mute)">Muralla</small><h3>DONAL TROP ha puesto una muralla</h3><p style="margin:6px 0 0;font-weight:800;color:var(--sun)">Próximamente SE EXPANDIRÁ EL PUEBLO.</p></div><button class="x" data-pbx="2" aria-label="Cerrar">✕</button></div>';}
+ else if(PBSEL&&PBSEL.k==='b'&&S.pb.b[PBSEL.i]){var bi=PBSEL.i,bb=S.pb.b[bi],dd=pbDef(bb.t),rs=A.res[bi]||[],wks=A.wk[bi]||[],h='';
+  if(dd.cap)h+='<h4 class="pbh">Viven aquí ('+rs.length+'/'+dd.cap+')</h4>'+(rs.length?'<ul class="list">'+rs.map(pbWho).join('')+'</ul>':'<p class="sub" style="margin:0">Está vacía. El próximo vecino que llegue vivirá aquí.</p>');
+  if(bb.t==='ayto')h+='<h4 class="pbh">Trabaja aquí</h4><p style="margin:0 0 6px"><b>'+esc(pbMayor())+'</b>, alcalde y estafador, de <b style="color:'+pbParty().c+'">'+esc(pbParty().n)+'</b>.</p>';
+  if(wks.length)h+='<h4 class="pbh">Trabajan aquí</h4><ul class="list">'+wks.map(pbWho).join('')+'</ul>';
+  else if(!dd.cap&&bb.t!=='ayto'&&PB_J.some(function(j){return j[2]===bb.t;}))h+='<p class="sub" style="margin:0">Todavía no trabaja nadie aquí. Llegará alguien con este oficio.</p>';
+  inf.hidden=false;inf.innerHTML='<div class="row" style="align-items:flex-start"><div><small style="color:var(--mute)">Construcción</small><h3>'+esc(dd.n)+'</h3><p class="sub" style="margin:4px 0 8px">'+esc(dd.d)+'</p></div><div class="row" style="gap:6px"><button class="no" data-pbd="'+bi+'">Derribar (+'+Math.floor(dd.c/2)+')</button><button class="x" data-pbx="2" aria-label="Cerrar">✕</button></div></div>'+h;}
+ else inf.hidden=true;
+ if(scroll&&!inf.hidden)inf.scrollIntoView({behavior:'smooth',block:'nearest'});
+ $('pbpeople').innerHTML=S.pb.people.map(function(p,i){return i;}).reverse().map(function(i){var p=S.pb.people[i];return '<li class="habit"><span class="pbav" style="background:'+p.sh+'"></span><span class="nm">'+esc(p.n)+'<br><span style="color:var(--mute);font-size:13px">'+esc(p.c)+' · '+esc(p.j)+' · llegó el '+pbFmt(p.d)+(A.home[i]===undefined?' · sin casa':'')+'</span></span><button class="x" data-pbv="'+i+'">Ver</button></li>';}).join('');}
+(function(){
+ var cv=$('pbcv');if(!cv)return;
+ cv.addEventListener('pointerdown',function(e){try{cv.setPointerCapture(e.pointerId);}catch(x){}PTR[e.pointerId]={x:e.clientX,y:e.clientY,sx:e.clientX,sy:e.clientY};if(!PBDRAG)PBDRAG={moved:false,d0:0};var ids=Object.keys(PTR);if(ids.length===2){var a=PTR[ids[0]],b=PTR[ids[1]];PBDRAG.d0=Math.hypot(a.x-b.x,a.y-b.y);PBDRAG.moved=true;}});
+ cv.addEventListener('pointermove',function(e){var p=PTR[e.pointerId];
+  if(!p){if(e.pointerType==='mouse'){var w=pbWP(e),hp=pbHitP(w.x,w.y),ha;PBHOV=hp>-1?hp:pbHitM(w.x,w.y)?-2:((ha=pbHitA(w.x,w.y))>-1?-100-ha:-1);cv.style.cursor=PBHOV!==-1||pbInWall(w.x,w.y)?'pointer':(PBMODE?'crosshair':'grab');}return;}
+  var ids=Object.keys(PTR);
+  if(ids.length>=2){p.x=e.clientX;p.y=e.clientY;var a0=PTR[ids[0]],b0=PTR[ids[1]],d=Math.hypot(a0.x-b0.x,a0.y-b0.y);if(PBDRAG.d0){var rc=cv.getBoundingClientRect();pbZoom(d/PBDRAG.d0,(a0.x+b0.x)/2-rc.left,(a0.y+b0.y)/2-rc.top);}PBDRAG.d0=d;return;}
+  var dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
+  if(Math.abs(e.clientX-p.sx)+Math.abs(e.clientY-p.sy)>6)PBDRAG.moved=true;
+  if(PBDRAG.moved){CAM.x-=dx/CAM.z;CAM.y-=dy/CAM.z;pbClamp();cv.style.cursor='grabbing';}});
+ function up(e){var p=PTR[e.pointerId];delete PTR[e.pointerId];if(p&&PBDRAG&&!PBDRAG.moved&&!Object.keys(PTR).length)pbClick(e);if(!Object.keys(PTR).length){PBDRAG=null;cv.style.cursor='grab';}}
+ cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',function(e){delete PTR[e.pointerId];if(!Object.keys(PTR).length)PBDRAG=null;});
+ cv.addEventListener('pointerleave',function(){PBHOV=-1;});
+ cv.addEventListener('wheel',function(e){e.preventDefault();var w=pbWP(e);pbZoom(e.deltaY<0?1.12:1/1.12,w.sx,w.sy);},{passive:false});
+ window.addEventListener('resize',function(){if(PBRAF)pbClamp();});
+ $('s-pueblo').addEventListener('click',function(e){
+  var t=e.target.closest('button');if(!t)return;
+  if(t.dataset.pp){var mn=($('pbmn').value||'').trim().slice(0,24);if(!mn){toast('Primero escribe el nombre del alcalde');$('pbmn').focus();return;}S.pb={party:t.dataset.pp,coins:80+(S.pbBank||0),people:[],b:[],last:'',since:T,fel:70,v:2,mayor:mn};S.pbBank=0;var nw=pbDaily();save();render();PBBUB={t:'¡Soy '+mn+', tu alcalde! Ya ha llegado '+nw.p.n+' desde '+nw.p.c+'. Construye la primera casa por 50 monedas.',u:performance.now()/1000+8};PBNEXT=performance.now()/1000+12;toast('Pueblo fundado. Ha llegado '+nw.p.n);return;}
+  if(t.dataset.pbz!==undefined){var z=+t.dataset.pbz;if(z===0){CAM.z=pbZmin();pbClamp();}else pbZoom(z>0?1.3:1/1.3);return;}
+  if(t.dataset.pbc){PBCAT=t.dataset.pbc;renderPueblo();return;}
+  if(t.dataset.pbo!==undefined){pbResolve(+t.dataset.pbo);return;}
+  if(t.dataset.pbb){var d=pbDef(t.dataset.pbb);if(S.pb.coins<d.c){toast('Te faltan '+(d.c-S.pb.coins)+' monedas');return;}PBMODE=d.t;PBSEL=null;CAM.z=Math.max(pbZmin(),Math.min(CAM.z,.7));pbClamp();renderPueblo();$('pbcv').scrollIntoView({behavior:'smooth',block:'center'});return;}
+  if(t.dataset.pbmn){var nv=($('pbmn2').value||'').trim().slice(0,24);if(!nv){toast('Escribe un nombre');return;}S.pb.mayor=nv;save();render();toast('El alcalde ahora se llama '+nv);return;}
+  if(t.dataset.pbx){if(t.dataset.pbx==='1')PBMODE='';else if(t.dataset.pbx==='3'){S.pb.evr=null;save();}else PBSEL=null;renderPueblo();return;}
+  if(t.dataset.pbv!==undefined){var vi=+t.dataset.pbv;PBSEL={k:'p',i:vi};if(PBNPC[vi])pbCenter(PBNPC[vi].x,PBNPC[vi].y);renderPueblo();$('pbcv').scrollIntoView({behavior:'smooth',block:'center'});return;}
+  if(t.dataset.pbd!==undefined){var k=+t.dataset.pbd,b=S.pb.b[k];if(!b)return;var df=pbDef(b.t);if(!confirm('¿Derribar '+df.n+'? Recuperas '+Math.floor(df.c/2)+' monedas.'))return;S.pb.b.splice(k,1);S.pb.coins+=Math.floor(df.c/2);if(df.fe)S.pb.fel=Math.max(0,pbFel()-df.fe);PBSEL=null;save();render();toast(df.n+' derribado');}
+ });
+})();
+
+/* ===== HÁBITOS CON DÍAS Y CANTIDADES ===== */
+var HWD=[[1,'L'],[2,'M'],[3,'X'],[4,'J'],[5,'V'],[6,'S'],[0,'D']],HEDIT='',HFQ='d';
+function hGoal(h){return h.goal||1;}
+function hCnt(h,d){return (h.log&&h.log[d]!==undefined)?h.log[d]:(h.done===d?hGoal(h):0);}
+function hDoneOn(h,d){return hCnt(h,d)>=hGoal(h);}
+function weekKeys(){var d=new Date(),wd=(d.getDay()+6)%7,r=[];for(var i=0;i<7;i++){var x=new Date(d.getFullYear(),d.getMonth(),d.getDate()-wd+i);r.push(ds(x));}return r;}
+function hWeek(h){return weekKeys().filter(function(k){return hDoneOn(h,k);}).length;}
+function hToday(h){if(h.fq==='w')return hWeek(h)<(h.wn||3)||hDoneOn(h,T);var dd=h.days||[0,1,2,3,4,5,6];return dd.indexOf(new Date().getDay())>-1;}
+function schedToday(){return S.habits.filter(hToday);}
+function doneToday(){return schedToday().filter(function(h){return hDoneOn(h,T);}).length;}
+function hSet(h,c){
+ var g=hGoal(h),was=hDoneOn(h,T);c=Math.max(0,Math.min(g*3,c));h.log=h.log||{};h.log[T]=c;
+ var ks=Object.keys(h.log);if(ks.length>420){ks.sort();ks.slice(0,ks.length-420).forEach(function(k){delete h.log[k];});}
+ var now=hDoneOn(h,T);
+ if(now&&!was){h.done=T;S.points+=5;if(S.pb)S.pb.coins+=5;toast(S.pb?'¡Cumplido! +5 puntos y +5 monedas':'¡Cumplido! +5 puntos');}
+ else if(was&&!now){h.done='';S.points=Math.max(0,S.points-5);if(S.pb)S.pb.coins=Math.max(0,S.pb.coins-5);}}
+function hMeta(h){
+ var f=h.fq==='w'?(h.wn||3)+' veces por semana · llevas '+hWeek(h):(function(){var dd=h.days||[0,1,2,3,4,5,6];if(dd.length===7)return 'Todos los días';if(dd.length===5&&dd.indexOf(0)<0&&dd.indexOf(6)<0)return 'De lunes a viernes';return HWD.filter(function(w){return dd.indexOf(w[0])>-1;}).map(function(w){return w[1];}).join(', ');})();
+ var q=hGoal(h)>1?' · '+hGoal(h)+' '+esc(h.unit||'veces')+' al día':'';
+ var wk=weekKeys().map(function(k,i){var sch=h.fq==='w'||(h.days||[0,1,2,3,4,5,6]).indexOf(HWD[i][0])>-1;return '<i class="wd'+(hDoneOn(h,k)?' ok':'')+(sch?'':' off')+(k===T?' td':'')+'" title="'+HWD[i][1]+'">'+HWD[i][1]+'</i>';}).join('');
+ return '<span class="hmeta">'+f+q+'</span><span class="wdots">'+wk+'</span>';}
+function hItem(h,today){
+ var g=hGoal(h),c=hCnt(h,T),d=c>=g,qty=g>1,p=Math.min(100,Math.round(c/g*100));
+ var sq=!today?'<span class="sq off" aria-hidden="true"></span>':qty?'<button class="sq qring'+(d?' full':'')+'" style="--p:'+p+'" data-hp="'+h.id+'" aria-label="Sumar uno a '+esc(h.name)+'"><span>'+(d?'✓':c)+'</span></button>':'<button class="sq" data-t="'+h.id+'" aria-label="'+(d?'Desmarcar ':'Completar ')+esc(h.name)+'">'+(d?'✓':'')+'</button>';
+ var ctl=today&&qty?'<div class="qctl"><button data-hm="'+h.id+'" aria-label="Restar uno">−</button><b>'+c+'/'+g+'<small> '+esc(h.unit||'')+'</small></b><button data-hp="'+h.id+'" aria-label="Sumar uno">+</button></div>':'';
+ return '<li class="habit'+(today&&d?' done':'')+(today?'':' later')+'">'+sq+'<span class="nm">'+esc(h.name)+'<br>'+hMeta(h)+(today?'':'<span class="hmeta"> · Hoy no toca</span>')+'</span>'+ctl+'<button class="x hed" data-he="'+h.id+'" aria-label="Editar '+esc(h.name)+'">Editar</button><button class="x" data-d="'+h.id+'" aria-label="Borrar '+esc(h.name)+'">✕</button></li>';}
+function renderHabits(){
+ var sch=schedToday(),oth=S.habits.filter(function(h){return !hToday(h);}),n=sch.length,dn=doneToday();
+ $('hsub').textContent=restOn()?'Día de descanso: hoy todo cuenta como hecho.':S.habits.length?(n===0?'Hoy no te toca ningún hábito. ¡Disfruta!':dn===n?'¡Todo cumplido hoy!':'Llevas '+dn+' de '+n+' para hoy. Cada hábito cumplido da +5 puntos.'):'Todavía no tienes hábitos. Añade el primero aquí abajo.';
+ $('hring').style.setProperty('--p',n?Math.round(dn/n*100):0);$('hpct').textContent=dn+'/'+n;
+ $('hlist').innerHTML=S.habits.length?(sch.length?'<li class="hgrp">Para hoy</li>'+sch.map(function(h){return hItem(h,true);}).join(''):'')+(oth.length?'<li class="hgrp">Otros días</li>'+oth.map(function(h){return hItem(h,false);}).join(''):''):'<li class="empty">Aún no hay hábitos. Escribe el primero arriba o elige una idea.</li>';
+ return {n:n,dn:dn};}
+function hFormReset(){HEDIT='';HFQ='d';$('hname').value='';$('hgoal').value='1';$('hunit').value='';$('hwn').value='3';hDaysSet([0,1,2,3,4,5,6]);hFqUI();$('hadd').textContent='Añadir';$('hcancel').hidden=true;}
+function hDaysSet(dd){Array.prototype.forEach.call(document.querySelectorAll('[data-hdw]'),function(b){b.classList.toggle('on',dd.indexOf(+b.dataset.hdw)>-1);b.setAttribute('aria-pressed',dd.indexOf(+b.dataset.hdw)>-1);});}
+function hDaysGet(){return Array.prototype.filter.call(document.querySelectorAll('[data-hdw]'),function(b){return b.classList.contains('on');}).map(function(b){return +b.dataset.hdw;});}
+function hFqUI(){Array.prototype.forEach.call(document.querySelectorAll('[data-hf]'),function(b){b.classList.toggle('on',b.dataset.hf===HFQ);});$('hdaysrow').hidden=HFQ!=='d';$('hwrow').hidden=HFQ!=='w';}
+function addHabit(name,emoji,pre){
+ name=(name||'').trim();if(!name){toast('Escribe el nombre del hábito.');return;}
+ var o=pre||{fq:HFQ,days:hDaysGet(),wn:Math.max(1,Math.min(7,parseInt($('hwn').value,10)||3)),goal:Math.max(1,Math.min(100,parseInt($('hgoal').value,10)||1)),unit:$('hunit').value.trim().slice(0,14)};
+ if(o.fq!=='w'&&(!o.days||!o.days.length)){toast('Elige al menos un día.');return;}
+ if(HEDIT&&!pre){var h=S.habits.filter(function(x){return x.id===HEDIT;})[0];if(h){h.name=name;h.fq=o.fq;h.days=o.days;h.wn=o.wn;h.goal=o.goal;h.unit=o.unit;save();render();toast('Hábito actualizado');hFormReset();$('hopt').open=false;return;}}
+ S.habits.push({id:Math.random().toString(36).slice(2),name:name,emoji:emoji||'',done:'',fq:o.fq||'d',days:o.days||[0,1,2,3,4,5,6],wn:o.wn||3,goal:o.goal||1,unit:o.unit||'',log:{}});
+ save();render();toast('Hábito añadido: '+name);if(!pre){hFormReset();$('hopt').open=false;}}
+function trackDay(){
+ var s=schedToday().length,d=doneToday();S.hd=S.hd||{};var o=S.hd[T];
+ if((s||o)&&(!o||o[0]!==d||o[1]!==s)){S.hd[T]=[d,s];var ks=Object.keys(S.hd);if(ks.length>800){ks.sort();delete S.hd[ks[0]];}return true;}return false;}
+(function(){
+ $('s-habitos').addEventListener('click',function(e){
+  var t=e.target.closest('button');if(!t)return;
+  var fh=function(id){return S.habits.filter(function(x){return x.id===id;})[0];};
+  if(t.dataset.hp){var h=fh(t.dataset.hp);hSet(h,hCnt(h,T)+1);save();render();}
+  else if(t.dataset.hm){var h2=fh(t.dataset.hm);hSet(h2,hCnt(h2,T)-1);save();render();}
+  else if(t.dataset.hf){HFQ=t.dataset.hf;hFqUI();}
+  else if(t.dataset.hdw!==undefined){t.classList.toggle('on');t.setAttribute('aria-pressed',t.classList.contains('on'));}
+  else if(t.dataset.he){var h3=fh(t.dataset.he);if(!h3)return;HEDIT=h3.id;HFQ=h3.fq==='w'?'w':'d';$('hname').value=h3.name;$('hgoal').value=hGoal(h3);$('hunit').value=h3.unit||'';$('hwn').value=h3.wn||3;hDaysSet(h3.days||[0,1,2,3,4,5,6]);hFqUI();$('hadd').textContent='Guardar';$('hcancel').hidden=false;$('hopt').open=true;$('hname').focus();window.scrollTo({top:$('s-habitos').offsetTop-80,behavior:'smooth'});}
+  else if(t.id==='hcancel'){hFormReset();$('hopt').open=false;}
+ });
+})();
+/* ===== LOGROS ===== */
+var ACI={racha:'M12 2c1 3 4 5 4 9a4 4 0 0 1-8 0c0-1.5.6-2.7 1.4-3.6C9.5 9 10 10 11 10c0-3-1-5 1-8z',cal:'M5 5h14v15H5zM5 9h14M9 3v4M15 3v4',ok:'M5 12.5l4.5 4.5L19 7.5',star:'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z',book:'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5',lang:'M4 5h9M8.5 3v2M6 5c0 4 3 7 6 8M11 5c0 3-3 7-7 8M13 21l4-10 4 10M14.5 17.5h5',bag:'M6 8h12l-1 12H7zM9 8V6a3 3 0 0 1 6 0v2',home:'M3 11l9-7 9 7M5 10v10h14V10M10 20v-5h4v5',note:'M6 3h9l4 4v14H6zM15 3v4h4M9 12h7M9 16h5',game:'M6 9h12a3 3 0 0 1 3 3v2a3 3 0 0 1-5 2l-1-1H9l-1 1a3 3 0 0 1-5-2v-2a3 3 0 0 1 3-3zM8 11v3M6.5 12.5h3M16 12h.01M18 13.5h.01',cup:'M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 21h8M9 17h6v4H9z',paint:'M12 3a9 9 0 1 0 0 18c1 0 1.5-.8 1.5-1.6 0-1.4 1-2.4 2.4-2.4H18a3 3 0 0 0 3-3c0-6-4-11-9-11zM7.5 11h.01M10 7h.01M15 7.5h.01'};
+var ACH=[
+ ['r3','Buen comienzo','Llega a una racha de 3 días.','racha',1,'best',3],
+ ['r7','Una semana entera','Llega a una racha de 7 días.','racha',2,'best',7],
+ ['r14','Dos semanas sin fallar','Llega a una racha de 14 días.','racha',2,'best',14],
+ ['r30','Un mes imparable','Llega a una racha de 30 días.','racha',3,'best',30],
+ ['r100','Leyenda de la constancia','Llega a una racha de 100 días.','racha',3,'best',100],
+ ['e10','Visitante habitual','Entra 10 días a Anprovilla.','cal',1,'tin',10],
+ ['e50','Como en casa','Entra 50 días a Anprovilla.','cal',2,'tin',50],
+ ['e200','Parte de Anprovilla','Entra 200 días a Anprovilla.','cal',3,'tin',200],
+ ['h1','Primer paso','Cumple tu primer hábito.','ok',1,'hab',1],
+ ['h25','En marcha','Cumple 25 hábitos.','ok',1,'hab',25],
+ ['h100','Centenario','Cumple 100 hábitos.','ok',2,'hab',100],
+ ['h500','Máquina de hábitos','Cumple 500 hábitos.','ok',3,'hab',500],
+ ['p1','Día perfecto','Cumple todos los hábitos de un día.','star',1,'perf',1],
+ ['p7','Siete días perfectos','Consigue 7 días perfectos.','star',2,'perf',7],
+ ['p30','Treinta días perfectos','Consigue 30 días perfectos.','star',3,'perf',30],
+ ['hq','A tu medida','Crea un hábito con días o cantidad.','ok',1,'custom',1],
+ ['l100','Lector','Lee 100 páginas.','book',1,'pag',100],
+ ['l1000','Devorador de libros','Lee 1000 páginas.','book',2,'pag',1000],
+ ['lb5','Biblioteca personal','Registra 5 libros distintos.','book',2,'books',5],
+ ['d10','Políglota en prácticas','Haz 10 lecciones de Duolingo.','lang',1,'les',10],
+ ['d100','Políglota','Haz 100 lecciones de Duolingo.','lang',2,'les',100],
+ ['d365','Diccionario andante','Haz 365 lecciones de Duolingo.','lang',3,'les',365],
+ ['t1','Primer capricho','Canjea tu primer premio.','bag',1,'buys',1],
+ ['t10','Cliente VIP','Canjea 10 premios.','bag',2,'buys',10],
+ ['st3','Con estilo','Desbloquea 3 estilos.','paint',1,'styles',3],
+ ['v10','Pueblo con vida','Llega a 10 vecinos en tu pueblo.','home',1,'vec',10],
+ ['v50','Ciudad','Llega a 50 vecinos en tu pueblo.','home',2,'vec',50],
+ ['b20','Arquitecto','Ten 20 construcciones en tu pueblo.','home',2,'bld',20],
+ ['n5','Ideas apuntadas','Escribe 5 notas.','note',1,'notes',5],
+ ['s20','Serpiente experta','Haz 20 puntos en Snake.','game',1,'snake',20],
+ ['g1','Hábito para siempre','Gradúa tu primer hábito (21 días).','cup',2,'grad',1],
+ ['m10','Coleccionista','Consigue 10 logros.','cup',2,'achs',10],
+ ['m25','Leyenda de Anprovilla','Consigue 25 logros.','cup',3,'achs',25]];
+var TIER=[null,['Bronce',10,'#d08a4c','#8a4f22'],['Plata',25,'#d7dde6','#7c8796'],['Oro',50,'#ffd35c','#b8860b']];
+function achStats(){
+ var hd=S.hd||{},hab=0,perf=0;Object.keys(hd).forEach(function(k){hab+=hd[k][0];if(hd[k][1]>0&&hd[k][0]>=hd[k][1])perf++;});
+ var bk={};S.reads.forEach(function(r){if(r.book)bk[r.book]=1;});var buys=0,styles=0;ITEMS.forEach(function(it){var o=S.owned[it.id]||0;if(it.st){if(o)styles++;}else buys+=o;});
+ return {best:Math.max(S.best||0,S.streak||0),tin:S.tin||0,hab:hab,perf:perf,custom:S.habits.some(function(h){return h.fq==='w'||hGoal(h)>1||(h.days&&h.days.length<7);})?1:0,pag:S.reads.reduce(function(a,r){return a+r.pages;},0),books:Object.keys(bk).length,les:S.dl.reduce(function(a,x){return a+(x.n||1);},0),buys:buys,styles:styles,vec:S.pb?S.pb.people.length:0,bld:S.pb?S.pb.b.length:0,notes:(S.nt||[]).length,snake:S.snakeBest||0,grad:(S.grad||[]).length+S.habits.filter(function(h){return h.g21;}).length,achs:Object.keys(S.ach||{}).length};}
+function achPts(){var p=0;ACH.forEach(function(a){if(S.ach&&S.ach[a[0]])p+=TIER[a[4]][1];});return p;}
+var ACHQ=[];
+function checkAch(){
+ S.ach=S.ach||{};if(S.tin===undefined)S.tin=(S.hist||[]).length;var nw=[],st;
+ for(var pass=0;pass<2;pass++){st=achStats();ACH.forEach(function(a){if(!S.ach[a[0]]&&st[a[5]]>=a[6]){S.ach[a[0]]=T;nw.push(a);}});}
+ if(nw.length){ACHQ=ACHQ.concat(nw);setTimeout(achPop,700);}return nw.length>0;}
+function achPop(){if(!ACHQ.length)return;var list=ACHQ;ACHQ=[];
+ if(list.length===1)toast('¡Logro desbloqueado! '+list[0][1]+' ('+TIER[list[0][4]][0]+')');else toast('¡Has desbloqueado '+list.length+' logros!');
+ try{size();burst(innerWidth/2,innerHeight*.35,list.length>1?90:50);}catch(e){}}
+function medal(a,on,sz){var tr=TIER[a[4]];sz=sz||56;return '<span class="medal'+(on?'':' lock')+'" style="width:'+sz+'px;height:'+sz+'px;--m1:'+tr[2]+';--m2:'+tr[3]+'"><svg viewBox="0 0 24 24" width="'+Math.round(sz*.48)+'" height="'+Math.round(sz*.48)+'" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'+ACI[a[3]]+'"/></svg></span>';}
+function renderAch(){
+ if(!$('achgrid'))return;var st=achStats(),got=Object.keys(S.ach||{}).length;
+ $('achtop').innerHTML='<div><b>'+achPts()+'</b><span>puntuación de logros</span></div><div><b>'+got+'/'+ACH.length+'</b><span>logros conseguidos</span></div><div><b>'+ACH.filter(function(a){return S.ach&&S.ach[a[0]]&&a[4]===3;}).length+'</b><span>de oro</span></div>';
+ $('achbar').style.width=Math.round(got/ACH.length*100)+'%';
+ var ord=ACH.slice().sort(function(x,y){var a=S.ach&&S.ach[x[0]]?1:0,b=S.ach&&S.ach[y[0]]?1:0;if(a!==b)return b-a;return (st[y[5]]/y[6])-(st[x[5]]/x[6]);});
+ $('achgrid').innerHTML=ord.map(function(a){var on=S.ach&&S.ach[a[0]],v=Math.min(st[a[5]],a[6]),tr=TIER[a[4]];return '<div class="card ach'+(on?' on':'')+'">'+medal(a,on)+'<b>'+esc(a[1])+'</b><small>'+esc(a[2])+'</small>'+(on?'<span class="achd">'+tr[0]+' · +'+tr[1]+' · '+parseInt(on.slice(8),10)+' de '+MES[+on.slice(5,7)-1]+'</span>':'<div class="pg"><b style="width:'+Math.round(v/a[6]*100)+'%"></b></div><span class="achd">'+v+' / '+a[6]+' · '+tr[0]+'</span>')+'</div>';}).join('');}
+/* ===== RESUMEN DEL MES ===== */
+var RMY=0,RMM=0,RTAB='l';
+function monthStats(y,m){
+ var pre=y+'-'+String(m+1).padStart(2,'0'),dim=new Date(y,m+1,0).getDate(),hd=S.hd||{},hab=0,perf=0,days={};
+ Object.keys(hd).forEach(function(k){if(k.indexOf(pre)===0){hab+=hd[k][0];if(hd[k][1]>0&&hd[k][0]>=hd[k][1])perf++;}});
+ var ins=S.hist.filter(function(k){return k.indexOf(pre)===0;});ins.forEach(function(k){days[+k.slice(8)]=Math.max(days[+k.slice(8)]||0,.35);});
+ Object.keys(hd).forEach(function(k){if(k.indexOf(pre)===0&&hd[k][1]>0)days[+k.slice(8)]=Math.max(days[+k.slice(8)]||0,Math.max(.35,hd[k][0]/hd[k][1]));});
+ var br=0,cur=0;for(var d=1;d<=dim;d++){var kk=pre+'-'+String(d).padStart(2,'0');if(S.hist.indexOf(kk)>-1){cur++;br=Math.max(br,cur);}else cur=0;}
+ var rd=S.reads.filter(function(r){return r.date.indexOf(pre)===0;}),bk={};rd.forEach(function(r){if(r.book)bk[r.book]=1;});
+ return {pre:pre,dim:dim,ins:ins.length,hab:hab,perf:perf,br:br,pag:rd.reduce(function(a,r){return a+r.pages;},0),books:Object.keys(bk).length,les:S.dl.filter(function(x){return x.date.indexOf(pre)===0;}).reduce(function(a,x){return a+(x.n||1);},0),ach:Object.keys(S.ach||{}).filter(function(k){return S.ach[k].indexOf(pre)===0;}).length,vec:S.pb?S.pb.people.filter(function(p){return p.d&&p.d.indexOf(pre)===0;}).length:0,days:days,lead:(new Date(y,m,1).getDay()+6)%7};}
+function rTiles(st){var t=[[st.hab,'hábitos cumplidos'],[st.perf,'días perfectos'],[st.br,'mejor racha del mes']];
+ if(extOn('lectura'))t.push([st.pag,'páginas leídas']);if(extOn('duolingo'))t.push([st.les,'lecciones de Duolingo']);t.push([st.ach,'logros nuevos']);if(S.pb&&extOn('pueblo'))t.push([st.vec,'vecinos nuevos']);return t.slice(0,6);}
+function rText(st){var mn=MES[RMM];return 'Mi '+mn+' en Anprovilla: '+st.ins+' días entrando, '+st.hab+' hábitos cumplidos, '+st.perf+' días perfectos y una racha de '+st.br+' días. ¿Te apuntas? https://anprovilla.github.io/The_new_piece/';}
+function drawSummary(){
+ var cv=$('rcv');if(!cv)return;var g=cv.getContext('2d'),W=1080,H=1350,st=monthStats(RMY,RMM),F='"Bricolage Grotesque",system-ui,sans-serif';
+ var bg=g.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#1a1450');bg.addColorStop(.55,'#3b2bb8');bg.addColorStop(1,'#5b4bf5');g.fillStyle=bg;g.fillRect(0,0,W,H);
+ [[880,180,320,'rgba(255,176,32,.35)'],[120,1150,380,'rgba(22,182,115,.28)'],[980,1100,260,'rgba(255,92,138,.25)']].forEach(function(c){var r=g.createRadialGradient(c[0],c[1],0,c[0],c[1],c[2]);r.addColorStop(0,c[3]);r.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=r;g.fillRect(0,0,W,H);});
+ g.textAlign='left';g.fillStyle='rgba(255,255,255,.7)';g.font='700 30px '+F;g.fillText('A N P R O V I L L A',80,110);
+ g.fillStyle='#fff';g.font='800 96px '+F;g.fillText('Mi '+MES[RMM],80,220);g.fillStyle='rgba(255,255,255,.65)';g.font='600 44px '+F;g.fillText(String(RMY),80,280);
+ g.fillStyle='#ffb020';g.font='800 180px '+F;g.fillText(String(st.ins),80,450);var w0=g.measureText(String(st.ins)).width;g.fillStyle='#fff';g.font='700 46px '+F;g.fillText(st.ins===1?'día entrando':'días entrando',100+w0,392);g.fillStyle='rgba(255,255,255,.6)';g.font='600 34px '+F;g.fillText('de '+st.dim+' días del mes',100+w0,440);
+ var tl=rTiles(st);tl.forEach(function(t,i){var x=80+(i%3)*313,y=495+Math.floor(i/3)*166;g.fillStyle='rgba(255,255,255,.12)';rr(g,x,y,293,150,28);g.fill();g.strokeStyle='rgba(255,255,255,.18)';g.lineWidth=2;rr(g,x,y,293,150,28);g.stroke();g.fillStyle='#fff';g.font='800 64px '+F;g.fillText(String(t[0]),x+26,y+78);g.fillStyle='rgba(255,255,255,.75)';g.font='600 26px '+F;var words=t[1].split(' '),l1='',l2='';words.forEach(function(w){if(g.measureText(l1+' '+w).width<240&&!l2)l1=(l1?l1+' ':'')+w;else l2=(l2?l2+' ':'')+w;});g.fillText(l1,x+26,y+112);if(l2)g.fillText(l2,x+26,y+140);});
+ var cy0=tl.length>3?870:704;g.fillStyle='#fff';g.font='700 32px '+F;g.fillText('Mis días',80,cy0);var cs=38,gap=9,x0=80,y0=cy0+16;
+ ['L','M','X','J','V','S','D'].forEach(function(d,i){g.fillStyle='rgba(255,255,255,.55)';g.font='700 22px '+F;g.textAlign='center';g.fillText(d,x0+i*(cs+gap)+cs/2,y0+20);});
+ for(var d=1;d<=st.dim;d++){var ix=st.lead+d-1,cx=x0+(ix%7)*(cs+gap),cy=y0+36+Math.floor(ix/7)*(cs+gap),v=st.days[d]||0;g.fillStyle=v?'rgba(255,176,32,'+(0.25+v*.75)+')':'rgba(255,255,255,.08)';rr(g,cx,cy,cs,cs,12);g.fill();g.fillStyle=v>.6?'#2b1a00':'rgba(255,255,255,.75)';g.font='700 17px '+F;g.fillText(String(d),cx+cs/2,cy+cs/2+6);}
+ g.textAlign='left';var bx=x0+7*(cs+gap)+40,by=y0+36;g.fillStyle='rgba(255,255,255,.12)';rr(g,bx,by,W-80-bx,230,28);g.fill();g.fillStyle='rgba(255,255,255,.7)';g.font='600 28px '+F;g.fillText('Racha actual',bx+30,by+56);g.fillStyle='#fff';g.font='800 90px '+F;g.fillText(String(S.streak),bx+30,by+150);g.fillStyle='rgba(255,255,255,.7)';g.font='600 28px '+F;g.fillText('días · récord '+Math.max(S.best||0,S.streak),bx+30,by+196);
+ g.fillStyle='rgba(255,255,255,.14)';g.fillRect(80,H-128,W-160,2);g.fillStyle='#fff';g.font='700 34px '+F;g.fillText('Construye hábitos que se quedan',80,H-76);g.fillStyle='#ffb020';g.font='700 30px '+F;g.fillText('anprovilla.github.io/The_new_piece',80,H-34);
+ $('rtxt').textContent=rText(st);$('rtit').textContent=MES[RMM].charAt(0).toUpperCase()+MES[RMM].slice(1)+' de '+RMY;}
+function renderSummary(){var go=function(){drawSummary();};if(document.fonts&&document.fonts.load)Promise.all([document.fonts.load('800 80px "Bricolage Grotesque"'),document.fonts.load('600 30px "Bricolage Grotesque"')]).then(go,go);else go();}
+function achTab(t){RTAB=t;$('achl').hidden=t!=='l';$('achr').hidden=t!=='r';$('tabl').classList.toggle('on',t==='l');$('tabr').classList.toggle('on',t==='r');if(t==='r')renderSummary();}
+(function(){
+ var n=new Date();RMY=n.getFullYear();RMM=n.getMonth();
+ $('tabl').onclick=function(){achTab('l');};$('tabr').onclick=function(){achTab('r');};
+ $('rprev').onclick=function(){RMM--;if(RMM<0){RMM=11;RMY--;}renderSummary();};
+ $('rnext').onclick=function(){var n2=new Date();if(RMY===n2.getFullYear()&&RMM===n2.getMonth())return;RMM++;if(RMM>11){RMM=0;RMY++;}renderSummary();};
+ function blob(cb){$('rcv').toBlob(function(b){cb(b);},'image/png');}
+ var fname=function(){return 'anprovilla-'+MES[RMM]+'-'+RMY+'.png';};
+ $('rdl').onclick=function(){blob(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fname();document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1500);toast('Imagen descargada');});};
+ $('rcopy').onclick=function(){var t=$('rtxt').textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){toast('Texto copiado');},function(){toast('No se pudo copiar. Selecciona el texto de abajo.');});};
+ $('rshare').onclick=function(){blob(function(b){var f;try{f=new File([b],fname(),{type:'image/png'});}catch(e){}var txt=$('rtxt').textContent;
+  if(f&&navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:'Mi mes en Anprovilla',text:txt}).catch(function(){});}
+  else if(navigator.share){navigator.share({title:'Mi mes en Anprovilla',text:txt,url:'https://anprovilla.github.io/The_new_piece/'}).catch(function(){});}
+  else{$('rdl').click();toast('Tu navegador no permite compartir: se ha descargado la imagen.');}});};
+})();
+
+/* ===== MI PORQUÉ ===== */
+var WHYASK=false;
+function whyCheck(){
+ if(!$('pledge').hidden){if(S.why)$('whybox').hidden=true;return;}
+ if(!S.why&&!WHYASK){WHYASK=true;$('whybox').hidden=false;$('pledge').hidden=false;$('whyin').focus();}}
+function whyRender(){var e=$('mywhy');if(!e)return;e.innerHTML=S.why?'<p class="whyq">«'+esc(S.why)+'»</p><div class="row" style="gap:8px;justify-content:flex-start"><button class="x" id="whyedit">Editar</button><button class="x" id="whysee">Ver el recordatorio</button></div>':'<p class="sub" style="margin:0">Todavía no has escrito por qué empezaste.</p>';}
+function whyMonday(force){
+ if(!S.why)return;if(!force&&(new Date().getDay()!==1||S.whyMon===T))return;
+ if(!force){S.whyMon=T;save();}
+ var el=$('whytxt'),txt='«'+S.why+'»',i=0;el.textContent='';$('whyrem').hidden=false;
+ (function type(){if($('whyrem').hidden)return;el.textContent=txt.slice(0,++i);if(i<txt.length)setTimeout(type,i<2?300:38);})();
+ try{size();setTimeout(function(){burst(innerWidth/2,innerHeight*.3,70);},600);}catch(e){}}
+/* ===== DIPLOMA A LOS 21 DÍAS ===== */
+var DIPQ=[],DIPH=null;
+function hDays(h){var n=0,g=hGoal(h),lg=h.log||{};Object.keys(lg).forEach(function(k){if(lg[k]>=g)n++;});if(h.done&&lg[h.done]===undefined)n++;return n;}
+function grad21(h){h.g21=T;var c=250;if(S.pb)S.pb.coins+=c;else S.pbBank=(S.pbBank||0)+c;DIPQ.push({id:h.id,n:h.name,d:T,isNew:1});setTimeout(dipShow,900);}
+function dipCheck(){var ch=false;S.habits.forEach(function(h){if(!h.g21&&hDays(h)>=21){grad21(h);ch=true;}});return ch;}
+function dipShow(){
+ if(!$('dipl').hidden||!DIPQ.length)return;var o=DIPQ.shift();DIPH=o;
+ $('dipn').textContent=o.n;$('dipd').textContent=parseInt(o.d.slice(8),10)+' de '+MES[+o.d.slice(5,7)-1]+' de '+o.d.slice(0,4);
+ $('dipmsg').textContent=o.isNew?'Me alegro de que sigas con nosotros, por lo cual te vamos a dar 250 monedas'+(S.pb?' para tu pueblo.':'. Te esperan en el Pueblo cuando lo fundes.'):'Este hábito ya forma parte de ti.';
+ $('dipbtns').hidden=!o.isNew;$('dipok').hidden=!!o.isNew;$('dipl').hidden=false;
+ try{size();burst(innerWidth/2,innerHeight*.4,120);setTimeout(function(){burst(innerWidth*.2,innerHeight*.7,60);burst(innerWidth*.8,innerHeight*.7,60);},300);chime();}catch(e){}}
+function gradRender(){var e=$('hgrad');if(!e)return;var gs=S.grad||[];e.hidden=!gs.length;$('hgradl').innerHTML=gs.map(function(g,i){return '<button class="gradc" data-gv="'+i+'"><span class="gseal">21</span><b>'+esc(g.n)+'</b><small>Graduado el '+parseInt(g.d.slice(8),10)+' de '+MES[+g.d.slice(5,7)-1]+'</small></button>';}).join('');}
+(function(){
+ $('dipgrad').onclick=function(){var h=S.habits.filter(function(x){return x.id===DIPH.id;})[0];if(h){S.habits=S.habits.filter(function(x){return x.id!==h.id;});S.grad=(S.grad||[]).concat([{n:h.name,d:T}]);}$('dipl').hidden=true;save();render();toast('Hábito graduado. ¡Hay sitio para uno nuevo!');setTimeout(dipShow,400);};
+ $('dipkeep').onclick=function(){$('dipl').hidden=true;toast('Seguimos con él. ¡A por más!');setTimeout(dipShow,400);};
+ $('dipok').onclick=function(){$('dipl').hidden=true;};
+ $('hgrad').addEventListener('click',function(e){var b=e.target.closest('[data-gv]');if(!b)return;var g=(S.grad||[])[+b.dataset.gv];if(g){DIPQ.unshift({n:g.n,d:g.d});dipShow();}});
+ $('whyclose').onclick=function(){$('whyrem').hidden=true;};
+ document.addEventListener('click',function(e){var t=e.target;if(!t||!t.id)return;
+  if(t.id==='whysee')whyMonday(true);
+  if(t.id==='whyedit'){$('mywhy').innerHTML='<textarea id="whyed" maxlength="200" rows="3" style="width:100%">'+esc(S.why||'')+'</textarea><div class="row" style="gap:8px;justify-content:flex-start;margin-top:8px"><button class="btn" id="whysave">Guardar</button><button class="x" id="whycan">Cancelar</button></div>';$('whyed').focus();}
+  if(t.id==='whysave'){var v=$('whyed').value.trim();if(v.length<3){toast('Escribe tu porqué (mínimo 3 letras)');return;}S.why=v.slice(0,200);save();whyRender();toast('Porqué guardado');}
+  if(t.id==='whycan')whyRender();});
+})();
+/* ===== RETO SEMANAL ===== */
+var RETOS=[['Mil hábitos','Entre todos los usuarios, cumplid 1.000 hábitos esta semana.','hab',1000,'hábitos'],['Montaña de páginas','Entre todos, leed 5.000 páginas esta semana.','pag',5000,'páginas'],['Torre de Babel','Entre todos, haced 500 lecciones de Duolingo esta semana.','les',500,'lecciones'],['Todos a una','Entre todos, sumad 300 entradas diarias esta semana.','ins',300,'entradas']];
+var RWK='',RLIVE=null,RREF=null,RPUSH=0,RLAST='';
+function retoWeek(){return weekKeys()[0];}
+function retoIdx(wk){var d=new Date(+wk.slice(0,4),+wk.slice(5,7)-1,+wk.slice(8,10));return Math.floor(d.getTime()/6048e5)%RETOS.length;}
+function retoMine(m){var ks=weekKeys(),hd=S.hd||{};
+ if(m==='hab')return ks.reduce(function(a,k){return a+(hd[k]?hd[k][0]:0);},0);
+ if(m==='pag')return S.reads.filter(function(r){return ks.indexOf(r.date)>-1;}).reduce(function(a,r){return a+r.pages;},0);
+ if(m==='les')return S.dl.filter(function(x){return ks.indexOf(x.date)>-1;}).reduce(function(a,x){return a+(x.n||1);},0);
+ return S.hist.filter(function(k){return ks.indexOf(k)>-1;}).length;}
+function retoListen(){
+ var wk=retoWeek();if(!(CLOUD&&USER&&fbDb)){RLIVE=null;return;}
+ if(RREF&&RWK===wk)return;if(RREF)RREF.off();RWK=wk;RREF=fbDb.ref('retos/'+wk+'/u');
+ RREF.on('value',function(sn){var v=sn.val()||{},tot=0,n=0;Object.keys(v).forEach(function(k){var x=+((v[k]||{}).v)||0;if(x>0){tot+=x;n++;}});RLIVE={tot:tot,n:n};retoRender();},function(){RLIVE=false;RREF=null;retoRender();});}
+function retoPush(){
+ if(!(CLOUD&&USER&&fbDb&&cloudOK))return;var wk=retoWeek(),R=RETOS[retoIdx(wk)],mine=retoMine(R[2]),key=wk+':'+mine;if(key===RLAST)return;RLAST=key;
+ clearTimeout(RPUSH);RPUSH=setTimeout(function(){fbDb.ref('retos/'+wk+'/u/'+USER).set({v:mine,t:Date.now()}).catch(function(){RLIVE=false;retoRender();});},1500);}
+function retoRender(){
+ if(!$('retob'))return;var wk=retoWeek(),R=RETOS[retoIdx(wk)],mine=retoMine(R[2]),ex=wk==='2026-11-23',live=RLIVE&&RLIVE.n>0;
+ var tot=live?RLIVE.tot:612+mine,n=live?RLIVE.n:41,pct=Math.min(100,Math.round(tot/R[3]*100)),ks=weekKeys(),fin=ks[6];
+ var done=live&&tot>=R[3],cl=(S.retoC||{})[wk];
+ $('retob').innerHTML='<div class="retotag">'+(ex?'<span class="rtag">EJEMPLO</span>':'')+'<span>Semana del '+parseInt(wk.slice(8),10)+' de '+MES[+wk.slice(5,7)-1]+' al '+parseInt(fin.slice(8),10)+' de '+MES[+fin.slice(5,7)-1]+'</span></div><h2>'+esc(R[0])+'</h2><p class="sub" style="margin:4px 0 16px">'+esc(R[1])+'</p>'
+ +'<div class="rbar"><b style="width:'+pct+'%"></b><span>'+pct+'%</span></div>'
+ +'<div class="mstats" style="margin-top:14px"><div><b>'+tot.toLocaleString('es-ES')+'</b><span>de '+R[3].toLocaleString('es-ES')+' '+R[4]+'</span></div><div><b>'+n+'</b><span>personas participando</span></div><div><b>'+mine+'</b><span>tu aportación</span></div></div>'
+ +'<p class="note" style="margin:10px 0 0">'+(live?'Datos en directo de todos los usuarios.':'Datos de ejemplo de la comunidad. Tu aportación sí es real. '+(USER?'Para ver los datos reales, activa el reto en Firebase.':'Inicia sesión para sumar tu parte al reto de todos.'))+'</p>'
+ +(done?(cl?'<p class="rok">¡Meta conseguida! Ya has recogido tu premio.</p>':mine>0?'<button class="btn" id="retoclaim" style="margin-top:12px;width:100%">¡Meta conseguida! Recoger 50 puntos</button>':'<p class="rok">¡La comunidad lo ha conseguido! Participa la próxima semana para llevarte el premio.</p>'):'<p class="rok" style="color:var(--mute)">Si llegáis a la meta, todos los que hayan aportado algo ganan 50 puntos.</p>');
+ var nx=[1,2,3].map(function(i){var d=new Date(+wk.slice(0,4),+wk.slice(5,7)-1,+wk.slice(8,10)+7*i),k=ds(d),r=RETOS[retoIdx(k)];return '<li class="habit"><span class="nm"><b>'+esc(r[0])+'</b><br><span class="hmeta">Semana del '+d.getDate()+' de '+MES[d.getMonth()]+' · '+esc(r[1])+'</span></span></li>';}).join('');
+ $('retonext').innerHTML=nx;}
+(function(){document.addEventListener('click',function(e){if(e.target&&e.target.id==='retoclaim'){var wk=retoWeek();S.retoC=S.retoC||{};if(S.retoC[wk])return;S.retoC[wk]=1;S.points+=50;save();render();toast('¡+50 puntos por el reto de la comunidad!');}});})();
+
+var SEC=['reto','logros','pueblo','inicio','tienda','estilos','habitos','puntos','lectura','duolingo','notas','extensiones','terminal','juegos','snake','futbol'];
 function route(){
  var h=(location.hash||'').slice(1);if(h==='anadir')h='habitos';if(SEC.indexOf(h)<0)h='inicio';var xe=extOfSec(h);if(xe&&!extOn(xe))h='extensiones';
  SEC.forEach(function(s){$('s-'+s).classList.toggle('on',s===h);});
- Array.prototype.forEach.call($('nav').children,function(a){if(a.dataset.s===(h==='estilos'?'tienda':(h==='juegos'||h==='snake')?'terminal':h)){a.setAttribute('aria-current','page');a.scrollIntoView({inline:'center',block:'nearest'});}else a.removeAttribute('aria-current');});
+ Array.prototype.forEach.call($('nav').children,function(a){if(a.dataset.s===((h==='estilos'||h==='logros'||h==='reto')?'tienda':(h==='juegos'||h==='snake')?'terminal':h)){a.setAttribute('aria-current','page');a.scrollIntoView({inline:'center',block:'nearest'});}else a.removeAttribute('aria-current');});
  window.scrollTo(0,0);
  if(h!=='notas'&&NS.id){ntClose();ntShowNone();renderNotes();}
+ if(h==='pueblo'){renderPueblo();pbStart();}
+ if(h==='logros'){renderAch();if(RTAB==='r')renderSummary();}
+ if(h==='reto'){retoListen();retoRender();}
  if(h==='snake')snReset();else if(SN.run){clearInterval(SN.t);SN.run=false;}
  if(h==='terminal'){if(!TINIT){TINIT=true;tout('Anprovilla Terminal [Versión 1.0]');tout('Escribe «ayuda» para ver los comandos.');tout('');}setTimeout(function(){$('tin').focus();},0);}
 }
@@ -1147,11 +2211,13 @@ window.addEventListener('hashchange',route);
 try{var sv=localStorage.getItem(SK);if(!CLOUD&&sv&&accts()[sv]){USER=sv;KEY='anprovilla-u-'+sv;}}catch(e){}
 load();lastJ=sjson();
 fixStreak();
+if(S.tin===undefined)S.tin=S.hist.length;
 save();render();route();updLogin();
 setInterval(function(){if(!$('restb').hidden&&!restOn())render();},60000);
+document.addEventListener('visibilitychange',function(){if(!document.hidden&&location.hash==='#pueblo')pbStart();});
 if(CLOUD)fbAuth.onAuthStateChanged(function(u){if(u)cloudIn(u);else if(USER)cloudOut();});
-$('pb').onclick=function(){$('pledge').hidden=true;toast('Compromiso hecho 💪');};
-$('pledge').hidden=false;$('pb').focus();
+$('pb').onclick=function(){if(!$('whybox').hidden){var v=$('whyin').value.trim();if(v.length<3){$('whyerr').textContent='Escribe por qué has instalado este juego (mínimo 3 letras).';$('whyin').focus();return;}S.why=v.slice(0,200);save();render();}$('pledge').hidden=true;toast('Compromiso hecho 💪');setTimeout(whyMonday,500);};
+$('pledge').hidden=false;$('whybox').hidden=!!S.why;(S.why?$('pb'):$('whyin')).focus();
 })();
 </script>
 </body>
